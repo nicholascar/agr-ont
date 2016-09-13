@@ -18,9 +18,9 @@ We think of this ontology as a 'middle' ontology, that is one which specializes 
 ## Publications
 An introduction to this ontology was first published at SciDataCon 2016:
 * [paper](http://www.scidatacon.org/2016/sessions/37/paper/185/) 
-** and PDF in references folder (Car2016h-Agreeing-about-Agreements.pdf)
+	* and PDF in references folder (Car2016h-Agreeing-about-Agreements.pdf)
 * presentation
-** references folder: Car-Box-Agreeing-about-agreements.pptx
+	* references folder: Car-Box-Agreeing-about-agreements.pptx
 
 
 ## Authors and Contact
