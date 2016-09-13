@@ -8,7 +8,8 @@ We think of this ontology as a 'middle' ontology, that is one which specializes 
 
 
 ## Ontology document
-*coming*
+Turtle format: agr.ttl
+HTML format: *coming soon*
 
 
 ## Example Instances
