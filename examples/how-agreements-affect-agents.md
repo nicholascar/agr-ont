@@ -1,5 +1,5 @@
-## How Agreements affect Entities
-![How Agreements affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affect-agents.png)
+## How Agreements affect Agents
+![How Agreements affect Agents](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affect-agents.png)
 
 Unlike Agreements that did affect Agents, Agreements affecting Agents (i.e continuing to have an affect) are not a provenance scenario since it is not in the past, thus PROV-O relationships cannot be used. The simplest construct is given in Figure A where an Agent is a member of a Group and that Group is within the scope of (*inScopeOf*) an Agreement.
 
