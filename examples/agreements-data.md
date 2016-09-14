@@ -1,5 +1,5 @@
 ## Agreements are Data
-![Agreements are data](https://github.com/nicholascar/agr-o/tree/master/examples/agreements-data-1.png)
+![Agreements are data](https://github.com/nicholascar/agr-o/blob/master/examples/agreements-data-1.png)
 
 An Agreement is a subclass of the PROV ontology’s Entity. From [PROV-O](https://www.w3.org/TR/prov-o/#Entity): "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary." So an Agreement not an occurent thing or action which PROV-O would categorise as an Activity.
 
