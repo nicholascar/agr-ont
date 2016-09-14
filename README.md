@@ -17,19 +17,19 @@ Here are a series of images with notes explaining how this ontology can be used 
 
 ### Agreements <--> Data
 In PROV-O, data is a type of prov:Entity.
-####[How Agreements are Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-are-entities.md)
-####[How Agreements make data or [How Agreements affected Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
-####How data is affected by Agreements or [How Agreements affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affect-entities.md)
+#### [How Agreements are Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-are-entities.md)
+#### How Agreements make data or [How Agreements did affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
+#### How data is affected by Agreements or [How Agreements affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affect-entities.md)
 
 
 ### Agreements <--> Agents
 #### How Agents make Agreements
 Since Agreements are a sublclass of Entity, the normal PROV-O processes for Agents making Entities apply.
 #### How Agreements make Agents
-Since Agreements are a subclass of Entity, the normal PROV-O Entity/Agent relationships apply so see [How Agreements make Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
-#### How Agents were affected by Agreements or [How Agreements affected Agents](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-agents.md)
+Since Agreements are a subclass of Entity, the normal PROV-O Entity/Agent relationships apply so see [How Agreements did affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
+#### How Agents were affected by Agreements or [How Agreements did affect Agents](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-agents.md)
 #### How Agents are affected by Agreements or [How Agreements affect Agents](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affect-agents.md)
-### [What Agreements make Agent do](https://github.com/nicholascar/agr-o/blob/master/examples/what-agreements-make-agents-do.md)
+#### [What Agreements make Agent do](https://github.com/nicholascar/agr-o/blob/master/examples/what-agreements-make-agents-do.md)
 
 
 ### Agreements <--> Agreements
