@@ -7,8 +7,13 @@ Every Agreement must have at least one Requirement and every requirement can hav
 
 All of these relationships and restrictions are indicated in Figure A.
 
+### Satisfying Requirements
+In order to indicate that a Requirement has been satisfied, an Agent must generate a RequirementResolution class object. Like a Requirement, a RequirementResolution is subclass of both skos:Concept and of prov:Entity and the latter subclassification means one can be produced (*prov:generated*) by a prov:Activity. In order to know which Requirement a RequirementResolution applies to, the RequirementResolution must have an *agr:satisfies* predicate indicating a particular Requirement class instance. Different Requirements many be satisfied by different RequirementResolutions but no Requirement can require multiple RequirementResolutions simultaneously in order to be satisfied. This is indcated in Figure B.
+
 
 #### Namespaces
 Prefix | URI
 ------ | ---
 agr | http://promsns.org/def/agr#
+skos | http://www.w3.org/2004/02/skos/core#
+prov | http://www.w3.org/ns/prov#

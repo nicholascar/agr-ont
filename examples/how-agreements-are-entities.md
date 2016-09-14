@@ -8,7 +8,7 @@ An Agreement is also a subclass of PROV's Plan. From [PROV-O](https://www.w3.org
 #### Namespaces
 Prefix | URI
 ------ | ---
+agr | http://promsns.org/def/agr#
 owl | http://www.w3.org/2002/07/owl#
 prov | http://www.w3.org/ns/prov#
 rdfs | http://www.w3.org/2000/01/rdf-schema#
-agr | http://promsns.org/def/agr#
