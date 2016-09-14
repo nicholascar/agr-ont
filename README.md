@@ -8,12 +8,24 @@ We think of this ontology as a 'middle' ontology, that is one which specializes 
 
 
 ## Ontology document
-Turtle format: agr.ttl
+Turtle format: agr.ttl  
 HTML format: *coming soon*
 
 
-## Example Instances
-*coming*
+## Examples
+Here are a series of images with notes explaining how this ontology can be used for particular relationships. These examples are all described in the SciDataCon publications listed below.
+
+### Agreements <--> Data
+#### How Agents are Data
+#### How Agents relate to Data
+
+### Agreements <--> Agents
+#### How Agents make Agreements
+#### How Agreements make Agents
+#### How Agents are affected by Agreements
+
+### Agreements <--> Agreements
+*coming - a hierarchy of Agreement types hasn't been made yet*
 
 
 ## Publications
