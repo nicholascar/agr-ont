@@ -16,8 +16,9 @@ HTML format: *coming soon*
 Here are a series of images with notes explaining how this ontology can be used for particular relationships. These examples are all described in the SciDataCon publications listed below.
 
 ### Agreements <--> Data
-#### How Agents are Data
-#### How Agents relate to Data
+####[How Agreements are Data](https://github.com/nicholascar/agr-o/blob/master/examples/agreements-data.md)
+
+#### How Agreements relate to Data
 
 ### Agreements <--> Agents
 #### How Agents make Agreements
