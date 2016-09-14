@@ -16,14 +16,18 @@ HTML format: *coming soon*
 Here are a series of images with notes explaining how this ontology can be used for particular relationships. These examples are all described in the SciDataCon publications listed below.
 
 ### Agreements <--> Data
-####[How Agreements are Data](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-are-data.md)
-
-#### How Agreements relate to Data
+In PROV-O, data is a type of prov:Entity.
+####[How Agreements are Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-are-entities.md)
+####[How Agreements make data or [How Agreements affected Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
+####How data is affected by Agreements or [How Agreements affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affecte-entities.md)
 
 ### Agreements <--> Agents
 #### How Agents make Agreements
+Since Agreements are a subclass of Entity, the normal PROV-O Entity/Agent relationships apply
 #### How Agreements make Agents
-#### How Agents are affected by Agreements
+Agents are able to be viewed as Entities thus see [How Agreements make Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-make-entities.md)
+#### [How Agents are affected by Agreements](https://github.com/nicholascar/agr-o/blob/master/examples/how-agents-are-affected-by-agreements.md)
+
 
 ### Agreements <--> Agreements
 *coming - a hierarchy of Agreement types hasn't been made yet*
