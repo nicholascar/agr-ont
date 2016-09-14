@@ -19,7 +19,7 @@ Here are a series of images with notes explaining how this ontology can be used 
 In PROV-O, data is a type of prov:Entity.
 ####[How Agreements are Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-are-entities.md)
 ####[How Agreements make data or [How Agreements affected Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
-####How data is affected by Agreements or [How Agreements affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affecte-entities.md)
+####How data is affected by Agreements or [How Agreements affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affect-entities.md)
 
 ### Agreements <--> Agents
 #### How Agents make Agreements
