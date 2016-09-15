@@ -20,7 +20,7 @@ In PROV-O, data of any form will always be a subclass of prov:Entity.
  
 * [How Agreements are Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-are-entities.md)
 * How Agreements make data 
-	* see [How Agreements affectd Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
+	* see [How Agreements affected Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
 * How data is affected by Agreements 
 	* see [How Agreements affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affect-entities.md)
 
@@ -29,7 +29,7 @@ In PROV-O, data of any form will always be a subclass of prov:Entity.
 * How Agents make Agreements
 	* Since Agreements are a sublclass of Entity, the normal PROV-O processes for Agents making Entities apply.
 * How Agreements make Agents
-	*Since Agreements are a subclass of Entity, the normal PROV-O Entity/Agent relationships apply so see [How Agreements did affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
+	* Since Agreements are a subclass of Entity, the normal PROV-O Entity/Agent relationships apply so see [How Agreements did affect Entities](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-entities.md)
 * How Agents were affected by Agreements in the past
 	* see [How Agreements did affect Agents](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-agents.md)
 * How Agents are affected by Agreements in an on-going manner
@@ -38,7 +38,7 @@ In PROV-O, data of any form will always be a subclass of prov:Entity.
 
 
 ### Agreements and other Agreements
-* coming - a hierarchy of Agreement types hasn't been made yet*
+* coming - a hierarchy of Agreement types hasn't been made yet
 
 
 ## References
