@@ -22,7 +22,6 @@
   rdf:type owl:Ontology ;
   dc:creator "Nicholas Car"^^xsd:string ;
   dcterms:created "2016-09-12"^^xsd:string ;
-  dcterms:creator :NicholasCar ;
   dcterms:modified "2016-09-14"^^xsd:string ;
   rdfs:comment "This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata. Its purpose is to support data sharing by making explicit the relationships between agreements and data and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements."^^xsd:string ;
   rdfs:label "Agreements ontology"^^xsd:string ;
@@ -45,40 +44,28 @@
       owl:onProperty :requires ;
     ] ;
 .
-:Imperative
-  rdf:type owl:Class ;
-  rdfs:comment "An Imperative is the imperative level that an Agreement carries for the Agents it affects. The initial instances of Imperative are taken from RFC2119."^^xsd:string ;
-  rdfs:label "Imperative"^^xsd:string ;
-  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-.
 :MAY
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "MAY"^^xsd:string ;
 .
 :MUST
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "MUST"^^xsd:string ;
 .
 :MUST_NOT
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "MUST NOT"^^xsd:string ;
 .
-:NicholasCar
-  rdf:type foaf:Person ;
-  rdfs:label "Nicholas Car"^^xsd:string ;
-  foaf:mbox <nicholas.car@ga.gov.au> ;
-  foaf:name "Nicholas J. Car"^^xsd:string ;
-.
 :OPTIONAL
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "OPTIONAL"^^xsd:string ;
 .
 :RECOMMENDED
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "RECOMMENDED"^^xsd:string ;
 .
 :REQUIRED
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "REQUIRED"^^xsd:string ;
 .
 :Requirement
@@ -89,8 +76,14 @@
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :imperative ;
+      owl:onProperty :requirementLevel ;
     ] ;
+.
+:RequirementLevel
+  rdf:type owl:Class ;
+  rdfs:comment "An RequirementLevel is the level at which an Agreement complels the Agents it affects to action. The initial instances of Imperative are taken from RFC2119."^^xsd:string ;
+  rdfs:label "RequirementLevel"^^xsd:string ;
+  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
 .
 :RequirementResolution
   rdf:type owl:Class ;
@@ -103,19 +96,19 @@
     ] ;
 .
 :SHALL
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "SHALL"^^xsd:string ;
 .
 :SHALL_NOT
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "SHALL NOT"^^xsd:string ;
 .
 :SHOULD
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "SHOULD"^^xsd:string ;
 .
 :SHOULD_NOT
-  rdf:type :Imperative ;
+  rdf:type :RequirementLevel ;
   rdfs:label "SHOULD NOT"^^xsd:string ;
 .
 :hasScopeOf
@@ -125,20 +118,23 @@
   rdfs:label "hasScopeOf"^^xsd:string ;
   rdfs:range prov:Agent ;
 .
-:imperative
+:requirementLevel
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "a Requirement has a requirementLevel of a RequirementLevel"^^xsd:string ;
   rdfs:domain :Requirement ;
-  rdfs:label "imperative"^^xsd:string ;
-  rdfs:range :Imperative ;
+  rdfs:label "requirementLevel"^^xsd:string ;
+  rdfs:range :RequirementLevel ;
 .
 :requires
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "an Agreement requires a Requirement"^^xsd:string ;
   rdfs:domain :Agreement ;
-  rdfs:label "name"^^xsd:string ;
+  rdfs:label "requires"^^xsd:string ;
   rdfs:range :Requirement ;
 .
 :satisfies
   rdf:type owl:ObjectProperty ;
+  rdfs:comment "a RequirementResolution satisfies a Requirement"^^xsd:string ;
   rdfs:domain :RequirementResolution ;
   rdfs:label "satisfies"^^xsd:string ;
   rdfs:range :Requirement ;
