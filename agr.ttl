@@ -21,8 +21,8 @@
 <http://promsns.org/def/agr>
   rdf:type owl:Ontology ;
   dc:creator "Nicholas Car"^^xsd:string ;
-  dcterms:created "2016-09-12"^^xsd:string ;
-  dcterms:modified "2016-09-14"^^xsd:string ;
+  dcterms:created "2016-09-12"^^xsd:date ;
+  dcterms:modified "2016-09-18"^^xsd:date ;
   rdfs:comment "This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata. Its purpose is to support data sharing by making explicit the relationships between agreements and data and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements."^^xsd:string ;
   rdfs:label "Agreements ontology"^^xsd:string ;
   owl:imports <http://creativecommons.org/schema.rdf> ;
