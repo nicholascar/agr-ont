@@ -43,7 +43,7 @@ In PROV-O, data of any form will always be a subclass of prov:Entity.
 
 ## References
 An introduction to this ontology was first published at SciDataCon 2016:
-* [paper](http://www.scidatacon.org/2016/sessions/37/paper/185/) 
+* [paper online](http://www.scidatacon.org/2016/sessions/37/paper/185/) 
 	* [local copy](references/Car2016h-Agreeing-about-Agreements.pdf)
 * presentation
 	* [local copy](references/Car-Box-Agreeing-about-agreements.pdf)

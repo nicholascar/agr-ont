@@ -1,5 +1,5 @@
 ## How Agreements affected Agents
-![How Agreements affected Agents](https://github.com/nicholascar/agr-o/blob/master/examples/how-agreements-affected-agents.png)
+![How Agreements affected Agents](how-agreements-affected-agents.png)
 
 To infer how Agreements affected Agents in the past, we find the Activities that the Agent was associated with.
 
