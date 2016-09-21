@@ -132,17 +132,18 @@
 .
 :requirementOf
   rdf:type owl:InverseFunctionalProperty ;
+  rdfs:comment "A Requirement is a requirementOf an Agreement"@en ;
   rdfs:domain :Requirement ;
-  rdfs:label "requirement of"^^xsd:string ;
+  rdfs:label "requirement of"@en ;
   rdfs:range :Agreement ;
   rdfs:subPropertyOf dcterms:isPartOf ;
   owl:inverseOf :requires ;
 .
 :requires
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "an Agreement requires a Requirement"^^xsd:string ;
+  rdfs:comment "An Agreement requires a Requirement"@en ;
   rdfs:domain :Agreement ;
-  rdfs:label "requires"^^xsd:string ;
+  rdfs:label "requires"@en ;
   rdfs:range :Requirement ;
   rdfs:subPropertyOf dcterms:hasPart ;
   owl:inverseOf :requirementOf ;
