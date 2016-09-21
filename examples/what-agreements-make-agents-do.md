@@ -9,7 +9,7 @@ All of these relationships and restrictions are indicated in Figure A.
 
 ### Satisfying Requirements
 ![What Agreements make Agents do 2](what-agreements-make-agents-do-2.png)  
-In order to indicate that a Requirement has been satisfied, an Agent must generate a RequirementResolution class object. Like a Requirement, a RequirementResolution is subclass of both skos:Concept and of prov:Entity and the latter subclassification means one can be produced (*prov:generated*) by a prov:Activity. In order to know which Requirement a RequirementResolution applies to, the RequirementResolution must have an *agr:satisfies* predicate indicating a particular Requirement class instance. Different Requirements many be satisfied by different RequirementResolutions but no Requirement can require multiple RequirementResolutions simultaneously in order to be satisfied. This is indcated in Figure B.
+In order to indicate that a Requirement has been satisfied, an Agent must perform a RequirementResolution action. A RequirementResolution is subclass of both skos:Concept and of prov:Activity therefore it is a thing to be done, by some Agent.  In order to know which Requirement a RequirementResolution applies to, the RequirementResolution must have an *agr:satisfies* predicate indicating a particular Requirement class instance, the inverse of which is *agr:satisfiedBy*. Different Requirements many be satisfied by different RequirementResolutions (i.e. different Agents may undertake different actions to satisfy a particular Requirement). This is indcated in Figure B.
 
 
 #### Namespaces

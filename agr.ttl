@@ -2,10 +2,10 @@
 # imports: http://creativecommons.org/schema.rdf
 # imports: http://dublincore.org/2012/06/14/dcterms.rdf
 # imports: http://purl.org/dc/elements/1.1/
+# imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/ns/org.ttl
-# imports: http://www.w3.org/ns/prov-o
-# imports: http://xmlns.com/foaf/spec/index.rdf
-# imports: https://www.w3.org/2009/08/skos-reference/skos.rdf
+# imports: http://www.w3.org/ns/prov-o#
+# imports: http://xmlns.com/foaf/0.1/
 
 @prefix : <http://promsns.org/def/agr#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
@@ -22,21 +22,23 @@
   rdf:type owl:Ontology ;
   dc:creator "Nicholas Car"^^xsd:string ;
   dcterms:created "2016-09-12"^^xsd:date ;
-  dcterms:modified "2016-09-18"^^xsd:date ;
+  dcterms:creator <http://promsns.org/id/person/nicholascar> ;
+  dcterms:modified "2016-09-22"^^xsd:date ;
   rdfs:comment "This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata. Its purpose is to support data sharing by making explicit the relationships between agreements and data and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements."^^xsd:string ;
   rdfs:label "Agreements ontology"^^xsd:string ;
   owl:imports <http://creativecommons.org/schema.rdf> ;
   owl:imports <http://dublincore.org/2012/06/14/dcterms.rdf> ;
   owl:imports dc: ;
+  owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <http://www.w3.org/ns/org.ttl> ;
-  owl:imports <http://www.w3.org/ns/prov-o> ;
-  owl:imports <http://xmlns.com/foaf/spec/index.rdf> ;
-  owl:imports <https://www.w3.org/2009/08/skos-reference/skos.rdf> ;
-  owl:versionInfo "v1.0"^^xsd:string ;
+  owl:imports <http://www.w3.org/ns/prov-o#> ;
+  owl:imports foaf: ;
+  owl:versionInfo "v1.1"^^xsd:string ;
 .
 :Agreement
   rdf:type owl:Class ;
-  rdfs:label "Agreement"^^xsd:string ;
+  rdfs:comment "A description of a set of required actions by particular agents"@en ;
+  rdfs:label "Agreement"@en ;
   rdfs:subClassOf prov:Plan ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -70,9 +72,10 @@
 .
 :Requirement
   rdf:type owl:Class ;
-  rdfs:comment "This class is analagous to the Creative Commons ontology formerly available. According to CC, a Requirement is \"an action that may or may not be requested of you\". In this ontology, it is only \"an action that may be requested of you\""^^xsd:string ;
-  rdfs:label "Requirement"^^xsd:string ;
+  rdfs:comment "This class is analagous to the Creative Commons ontology formerly available. According to CC, a Requirement is \"an action that may or may not be requested of you\". In this ontology, it is only \"an action that may be requested of you\""@en ;
+  rdfs:label "Requirement"@en ;
   rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+  rdfs:subClassOf prov:Plan ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -81,14 +84,16 @@
 .
 :RequirementLevel
   rdf:type owl:Class ;
-  rdfs:comment "An RequirementLevel is the level at which an Agreement complels the Agents it affects to action. The initial instances of Imperative are taken from RFC2119."^^xsd:string ;
-  rdfs:label "RequirementLevel"^^xsd:string ;
+  rdfs:comment "An RequirementLevel is the level at which an Agreement complels the Agents it affects to action. The initial instances of Imperative are taken from RFC2119."@en ;
+  rdfs:label "Requirement Level"@en ;
   rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
 .
 :RequirementResolution
   rdf:type owl:Class ;
-  rdfs:label "Requirement Resolution"^^xsd:string ;
+  rdfs:comment "An action that resolves requirements"@en ;
+  rdfs:label "Requirement Resolution"@en ;
   rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+  rdfs:subClassOf prov:Activity ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -113,17 +118,25 @@
 .
 :hasScopeOf
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "This property indicates which Agent is affected by an Agreement. It is likely that the Agent will be a group (foaf:Group) or an Organization (org:Organisation) rather than an individual person and certainly not a machine Agent."^^xsd:string ;
+  rdfs:comment "This property indicates which Agent is affected by an Agreement. It is likely that the Agent will be a group (foaf:Group) or an Organization (org:Organisation) rather than an individual person and certainly not a machine Agent."@en ;
   rdfs:domain :Agreement ;
-  rdfs:label "hasScopeOf"^^xsd:string ;
+  rdfs:label "has scope of"@en ;
   rdfs:range prov:Agent ;
 .
 :requirementLevel
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "a Requirement has a requirementLevel of a RequirementLevel"^^xsd:string ;
+  rdfs:comment "a Requirement has a requirementLevel of a RequirementLevel"@en ;
   rdfs:domain :Requirement ;
-  rdfs:label "requirementLevel"^^xsd:string ;
+  rdfs:label "requirement level"@en ;
   rdfs:range :RequirementLevel ;
+.
+:requirementOf
+  rdf:type owl:InverseFunctionalProperty ;
+  rdfs:domain :Requirement ;
+  rdfs:label "requirement of"^^xsd:string ;
+  rdfs:range :Agreement ;
+  rdfs:subPropertyOf dcterms:isPartOf ;
+  owl:inverseOf :requires ;
 .
 :requires
   rdf:type owl:ObjectProperty ;
@@ -131,11 +144,24 @@
   rdfs:domain :Agreement ;
   rdfs:label "requires"^^xsd:string ;
   rdfs:range :Requirement ;
+  rdfs:subPropertyOf dcterms:hasPart ;
+  owl:inverseOf :requirementOf ;
+.
+:satisfiedBy
+  rdf:type owl:InverseFunctionalProperty ;
+  rdfs:comment "inverse of satisfies"@en ;
+  rdfs:domain :Requirement ;
+  rdfs:label "satisfied by"@en ;
+  rdfs:range :RequirementResolution ;
+  rdfs:subPropertyOf prov:influenced ;
+  owl:inverseOf :satisfies ;
 .
 :satisfies
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "a RequirementResolution satisfies a Requirement"^^xsd:string ;
+  rdfs:comment "a Requirement Resolution satisfies a Requirement"@en ;
   rdfs:domain :RequirementResolution ;
-  rdfs:label "satisfies"^^xsd:string ;
+  rdfs:label "satisfies"@en ;
   rdfs:range :Requirement ;
+  rdfs:subPropertyOf prov:wasInfluencedBy ;
+  owl:inverseOf :satisfiedBy ;
 .
