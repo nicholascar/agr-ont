@@ -9,7 +9,7 @@ We think of this ontology as a 'middle' ontology, that is one which specializes 
 
 ## Ontology document
 Turtle format: [agr.ttl](agr.ttl)  
-HTML format: [agr.html](agr.html)
+HTML format (generated live): [agr.html](http://www.essepuntato.it/lode/owlapi/https://raw.githubusercontent.com/nicholascar/agr-o/master/agr.ttl)
 
 
 ## Examples
