@@ -9,8 +9,8 @@ We think of this ontology as a 'middle' ontology, that is one which specializes 
 
 ## Ontology document
 Turtle format: [agr.ttl](agr.ttl)  
-RDF XML format: [agr.rdf](agr.rdf) 
-HTML format: [agr.html](agr.html)
+RDF XML format: [agr.rdf](agr.rdf)  
+HTML format: [agr.html](http://htmlpreview.github.io/?https://github.com/nicholascar/agr-o/blob/master/agr.html)
 
 
 ## Examples
