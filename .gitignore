@@ -1,3 +1,5 @@
 # TopBraid
 .project
 
+# PyCharm
+.idea/

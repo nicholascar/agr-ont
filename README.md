@@ -17,29 +17,18 @@ HTML format: [agr.html](http://htmlpreview.github.io/?https://github.com/nichola
 Here are a series of example of the ontology's use showing how it sees agreements relating to data, people (Agents) and so on. These examples are described here and are also described in the SciDataCon publications listed in the References section below.
 
 ### Agreements and Data
-In PROV-O, data of any form will always be a subclass of prov:Entity.
  
-* [How Agreements are Entities](examples/how-agreements-are-entities.md)
-* How Agreements make data 
-	* see [How Agreements affected Entities](examples/how-agreements-affected-entities.md)
-* How data is affected by Agreements 
-	* see [How Agreements affect Entities](examples/how-agreements-affect-entities.md)
+* [Indicating Agreement data relationships](examples/indicating-agreement-data-relationships.md)
+* How data is affected by Agreements *(coming)*
 
 
 ### Agreements and Agents
-* How Agents make Agreements
-	* Since Agreements are a sublclass of Entity, the normal PROV-O processes for Agents making Entities apply.
-* How Agreements make Agents
-	* Since Agreements are a subclass of Entity, the normal PROV-O Entity/Agent relationships apply so see [How Agreements did affect Entities](examples/how-agreements-affected-entities.md)
-* How Agents were affected by Agreements in the past
-	* see [How Agreements did affect Agents](examples/how-agreements-affected-agents.md)
-* How Agents are affected by Agreements in an on-going manner
-	* see [How Agreements affect Agents](examples/how-agreements-affect-agents.md)
-* [What Agreements make Agent do](examples/what-agreements-make-agents-do.md)
+* [Indicating Agreement Agent relationships](examples/indicating-agreement-agent-relationships.md)
+* What Agreements make Agents do *(coming)*
 
 
 ### Agreements and other Agreements
-* coming - a hierarchy of Agreement types hasn't been made yet.
+* *coming* - a hierarchy of Agreement types hasn't been made yet.
 
 
 ## References

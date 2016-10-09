@@ -20,12 +20,12 @@
 
 <http://promsns.org/def/agr>
   rdf:type owl:Ontology ;
-  dc:creator "Nicholas Car"^^xsd:string ;
+  dc:creator "Nicholas Car" ;
   dcterms:created "2016-09-12"^^xsd:date ;
   dcterms:creator <http://promsns.org/id/person/nicholascar> ;
-  dcterms:modified "2016-09-22"^^xsd:date ;
-  rdfs:comment "This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata. Its purpose is to support data sharing by making explicit the relationships between agreements and data and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements."^^xsd:string ;
-  rdfs:label "Agreements ontology"^^xsd:string ;
+  dcterms:modified "2016-10-09"^^xsd:date ;
+  rdfs:comment "This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata. Its purpose is to support data sharing by making explicit the relationships between agreements and data and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements."@en ;
+  rdfs:label "Agreements ontology"@en ;
   owl:imports <http://creativecommons.org/schema.rdf> ;
   owl:imports <http://dublincore.org/2012/06/14/dcterms.rdf> ;
   owl:imports dc: ;
@@ -33,12 +33,13 @@
   owl:imports <http://www.w3.org/ns/org.ttl> ;
   owl:imports <http://www.w3.org/ns/prov-o#> ;
   owl:imports foaf: ;
-  owl:versionInfo "v1.1"^^xsd:string ;
+  owl:versionInfo "v1.1" ;
 .
 :Agreement
   rdf:type owl:Class ;
   rdfs:comment "A description of a set of required actions by particular agents"@en ;
   rdfs:label "Agreement"@en ;
+  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Collection> ;
   rdfs:subClassOf prov:Plan ;
   rdfs:subClassOf [
       rdf:type owl:Restriction ;
@@ -48,27 +49,27 @@
 .
 :MAY
   rdf:type :RequirementLevel ;
-  rdfs:label "MAY"^^xsd:string ;
+  rdfs:label "MAY" ;
 .
 :MUST
   rdf:type :RequirementLevel ;
-  rdfs:label "MUST"^^xsd:string ;
+  rdfs:label "MUST" ;
 .
 :MUST_NOT
   rdf:type :RequirementLevel ;
-  rdfs:label "MUST NOT"^^xsd:string ;
+  rdfs:label "MUST NOT" ;
 .
 :OPTIONAL
   rdf:type :RequirementLevel ;
-  rdfs:label "OPTIONAL"^^xsd:string ;
+  rdfs:label "OPTIONAL" ;
 .
 :RECOMMENDED
   rdf:type :RequirementLevel ;
-  rdfs:label "RECOMMENDED"^^xsd:string ;
+  rdfs:label "RECOMMENDED" ;
 .
 :REQUIRED
   rdf:type :RequirementLevel ;
-  rdfs:label "REQUIRED"^^xsd:string ;
+  rdfs:label "REQUIRED" ;
 .
 :Requirement
   rdf:type owl:Class ;
@@ -102,26 +103,55 @@
 .
 :SHALL
   rdf:type :RequirementLevel ;
-  rdfs:label "SHALL"^^xsd:string ;
+  rdfs:label "SHALL" ;
 .
 :SHALL_NOT
   rdf:type :RequirementLevel ;
-  rdfs:label "SHALL NOT"^^xsd:string ;
+  rdfs:label "SHALL NOT" ;
 .
 :SHOULD
   rdf:type :RequirementLevel ;
-  rdfs:label "SHOULD"^^xsd:string ;
+  rdfs:label "SHOULD" ;
 .
 :SHOULD_NOT
   rdf:type :RequirementLevel ;
-  rdfs:label "SHOULD NOT"^^xsd:string ;
+  rdfs:label "SHOULD NOT" ;
 .
 :hasScopeOf
   rdf:type owl:ObjectProperty ;
-  rdfs:comment "This property indicates which Agent is affected by an Agreement. It is likely that the Agent will be a group (foaf:Group) or an Organization (org:Organisation) rather than an individual person and certainly not a machine Agent."@en ;
+  rdfs:comment "This property is the union (group) of all Agents indicated as being within the scope of an Agreement by the hasWithinScope property."@en ;
   rdfs:domain :Agreement ;
   rdfs:label "has scope of"@en ;
   rdfs:range prov:Agent ;
+  rdfs:subPropertyOf prov:influenced ;
+  owl:inverseOf :isScopeOf ;
+.
+:hasWithinScope
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "This property indicates an Agent affected by an Agreement. It is likely that the Agent will be a group (foaf:Group) or an Organization (org:Organisation) rather than an individual person and certainly not a machine Agent. Individual Agents indicated as being affected by an Agreement via this property collectively make a group, formal or informal, that can be indicated as being the entire scope group of an Agreement via hasScopeOf property of it."@en ;
+  rdfs:domain :Agreement ;
+  rdfs:label "has within scope"@en ;
+  rdfs:range prov:Agent ;
+  rdfs:subPropertyOf prov:influenced ;
+  owl:inverseOf :isWithinScope ;
+.
+:isScopeOf
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "inverse of hasScopeOf"@en ;
+  rdfs:domain prov:Agent ;
+  rdfs:label "is scope of"@en ;
+  rdfs:range :Agreement ;
+  rdfs:subPropertyOf prov:wasInfluencedBy ;
+  owl:inverseOf :hasScopeOf ;
+.
+:isWithinScope
+  rdf:type owl:ObjectProperty ;
+  rdfs:comment "inverse of hasWithinScope"@en ;
+  rdfs:domain prov:Agent ;
+  rdfs:label "is within scope"@en ;
+  rdfs:range :Agreement ;
+  rdfs:subPropertyOf prov:wasInfluencedBy ;
+  owl:inverseOf :hasWithinScope ;
 .
 :requirementLevel
   rdf:type owl:ObjectProperty ;
