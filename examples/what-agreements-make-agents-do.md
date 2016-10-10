@@ -11,6 +11,7 @@ All of these relationships and restrictions are indicated in Figure A.
 ![What Agreements make Agents do 2](what-agreements-make-agents-do-2.png)  
 In order to indicate that a Requirement has been satisfied, an Agent must perform a RequirementResolution action. A RequirementResolution is subclass of both skos:Concept and of prov:Activity therefore it is a thing to be done, by some Agent.  In order to know which Requirement a RequirementResolution applies to, the RequirementResolution must have an *agr:satisfies* predicate indicating a particular Requirement class instance, the inverse of which is *agr:satisfiedBy*. Different Requirements many be satisfied by different RequirementResolutions (i.e. different Agents may undertake different actions to satisfy a particular Requirement). This is indcated in Figure B.
 
+Figure C in [Indicating Agreement / data relationships](examples/indicating-agreement-data-relationships.md) shows a Requirement to Publish Data being satisfied by a Data Publication Event Activity.
 
 #### Namespaces
 Prefix | URI
