@@ -14,17 +14,23 @@ HTML format: [agr.html](http://htmlpreview.github.io/?https://github.com/nichola
 
 
 ## Examples
-Here are a series of example of the ontology's use showing how it sees agreements relating to data, people (Agents) and so on. These examples are described here and are also described in the SciDataCon publications listed in the References section below.
+Here are a series of examples of the ontology's use in relation to data, people (Agents) and so on.
+
+### Defining Agreements
+
+* [How Agreements are Entities](examples/how-agreements-are-entities.md)
+* (Agreements and their relations](examples/agreements-and-their-relations.md)
+
 
 ### Agreements and Data
  
-* [Indicating Agreement data relationships](examples/indicating-agreement-data-relationships.md)
+* [Indicating Agreement / data relationships](examples/indicating-agreement-data-relationships.md)
 * How data is affected by Agreements *(coming)*
 
 
 ### Agreements and Agents
-* [Indicating Agreement Agent relationships](examples/indicating-agreement-agent-relationships.md)
-* What Agreements make Agents do *(coming)*
+* [Indicating Agreement / Agent relationships](examples/indicating-agreement-agent-relationships.md)
+* [What Agreements make Agents do](examples/what-agreements-make-agents-do.md)
 
 
 ### Agreements and other Agreements

@@ -1,378 +1,3495 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>Agreements ontology</title>
-        <link href="http://eelst.cs.unibo.it/apps/LODE/owl.css" rel="stylesheet" type="text/css" />
-        <link href="http://eelst.cs.unibo.it/apps/LODE/Primer.css" rel="stylesheet" type="text/css" />
-        <link href="http://eelst.cs.unibo.it/apps/LODE/rec.css" rel="stylesheet" type="text/css" />
-        <link href="http://eelst.cs.unibo.it/apps/LODE/extra.css" rel="stylesheet" type="text/css" />
-        <link rel="shortcut icon" href="http://eelst.cs.unibo.it/apps/LODE/favicon.ico" />
-    </head>
-    <body>
-        <div class="head">
-            <h1>Agreements ontology</h1>
-            <dl>
-                <dt>IRI:</dt>
-                <dd>http://promsns.org/def/agr</dd>
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <title>Agreements ontology</title>
+    <title>Agreements ontology</title>
+    <link href="http://eelst.cs.unibo.it/apps/LODE/owl.css" rel="stylesheet"
+    type="text/css">
+    <link href="http://eelst.cs.unibo.it/apps/LODE/Primer.css" rel="stylesheet"
+    type="text/css">
+    <link href="http://eelst.cs.unibo.it/apps/LODE/rec.css" rel="stylesheet"
+    type="text/css">
+    <link href="http://eelst.cs.unibo.it/apps/LODE/extra.css" rel="stylesheet"
+    type="text/css">
+    <link href="http://eelst.cs.unibo.it/apps/LODE/favicon.ico" rel=
+    "shortcut icon">
+    <script src="http://eelst.cs.unibo.it/apps/LODE/jquery.js">
+    </script>
+    <script src="http://eelst.cs.unibo.it/apps/LODE/jquery.scrollTo.js">
+    </script>
+    <script src="/static/js/marked.min.js">
+    </script>
+    <script>
+                $(document).ready(
+                    function () {
+                        jQuery(".markdown").each(function(el){
+                            jQuery(this).after(marked(jQuery(this).text())).remove()});
+                        var list = $('a[name="http://www.essepuntato.it/tmp/1476252778-ontology"]');
+                        if (list.size() != 0) {
+                            var element = list.first();
+                            $.scrollTo(element);
+                        }
+                    });
+    </script>
+</head>
+<body>
+    <div class="head">
+        <h1>Agreements ontology</h1>
+        <dl>
+            <dt>IRI:</dt>
+            <dd>http://promsns.org/def/agr</dd>
+        </dl>
+        <dl>
+            <dt>Current version:</dt>
+            <dd>v1.1</dd>
+        </dl>
+        <dl>
+            <dt>Authors:</dt>
+            <dd>Nicholas Car</dd>
+            <dd>
+                <a href=
+                "http://promsns.org/id/person/nicholascar">http://promsns.org/id/person/nicholascar</a>
+            </dd>
+        </dl>
+        <dl>
+            <dt>Imported Ontologies:</dt>
+            <dd>
+                <a href=
+                "http://creativecommons.org/schema.rdf">http://creativecommons.org/schema.rdf</a>
+                (<a href=
+                "http://www.essepuntato.it/lode/owlapi/http://creativecommons.org/schema.rdf">visualise
+                it with LODE</a>)
+            </dd>
+            <dd>
+                <a href=
+                "http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
+                (<a href=
+                "http://www.essepuntato.it/lode/owlapi/http://www.w3.org/2004/02/skos/core">visualise
+                it with LODE</a>)
+            </dd>
+            <dd>
+                <a href=
+                "http://www.w3.org/ns/org.ttl">http://www.w3.org/ns/org.ttl</a>
+                (<a href=
+                "http://www.essepuntato.it/lode/owlapi/http://www.w3.org/ns/org.ttl">visualise
+                it with LODE</a>)
+            </dd>
+            <dd>
+                <a href=
+                "http://www.w3.org/ns/prov-o#">http://www.w3.org/ns/prov-o#</a>
+                (<a href=
+                "http://www.essepuntato.it/lode/owlapi/http://www.w3.org/ns/prov-o#">visualise
+                it with LODE</a>)
+            </dd>
+            <dd>
+                <a href=
+                "http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
+                (<a href=
+                "http://www.essepuntato.it/lode/owlapi/http://xmlns.com/foaf/0.1/">visualise
+                it with LODE</a>)
+            </dd>
+        </dl>
+        <dl>
+            <dt>Other visualisation:</dt>
+            <dd>
+                <a href=
+                "http://eelst.cs.unibo.it/apps/LODE/source?url=http://www.essepuntato.it/tmp/1476252778-ontology">
+                Ontology source</a>
+            </dd>
+        </dl>
+    </div>
+    <hr>
+    <h2>Abstract</h2><span class="markdown">This Agreements Ontology is
+    designed to model 'agreements' which are social contracts that include
+    licenses, laws, contracts, Memoranda of Understanding, standards and
+    definitional metadata. Its purpose is to support data sharing by making
+    explicit the relationships between agreements and data and agreements and
+    Agents (people and organisations). Eventually it will also help with the
+    interplay between different classes of agreements.</span>
+    <div id="toc">
+        <h2>Table of Content</h2>
+        <ol>
+            <li>
+                <a href="#classes">Classes</a>
+            </li>
+            <li>
+                <a href="#objectproperties">Object Properties</a>
+            </li>
+            <li>
+                <a href="#namedindividuals">Named Individuals</a>
+            </li>
+            <li>
+                <a href="#namespacedeclarations">Namespace Declarations</a>
+            </li>
+        </ol>
+    </div>
+    <div id="classes">
+        <h2>Classes</h2>
+        <ul class="hlist">
+            <li>
+                <a href="#d4e3386" title=
+                "http://promsns.org/def/agr#Agreement">Agreement</a>
+            </li>
+            <li>
+                <a href="#d4e3412" title=
+                "http://promsns.org/def/agr#Requirement">Requirement</a>
+            </li>
+            <li>
+                <a href="#d4e3439" title=
+                "http://promsns.org/def/agr#RequirementLevel">Requirement Level</a>
+            </li>
+            <li>
+                <a href="#RequirementResolution" title=
+                "http://promsns.org/def/agr#RequirementResolution">Requirement Resolution</a>
+            </li>
+        </ul>
+            <a id="http://purl.org/dc/terms/Agent" name=
+            "http://purl.org/dc/terms/Agent"></a>
+            <h3>Agent<sup class="type-c" title="class">c</sup> <span class=
+            "backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/Agent</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
             </dl>
-            <dl>
-                <dt>Current version:</dt>
-                <dd>v1.1</dd>
-            </dl>
-            <dl>
-                <dt>Authors:</dt>
-                <dd>Nicholas Car (<a href="nicholas.car@ga.gov.au">nicholas.car@ga.gov.au</a>)</dd>
-            </dl>
-            <dl>
-                <dt>Imported Ontologies:</dt>
-                <dd><a href="http://creativecommons.org/schema.rdf">http://creativecommons.org/schema.rdf</a> (<a href="http://www.essepuntato.it/lode/owlapi/http://creativecommons.org/schema.rdf">visualise it with LODE</a>)</dd>
-                <dd><a href="http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a> (<a href="http://www.essepuntato.it/lode/owlapi/http://www.w3.org/2004/02/skos/core">visualise it with LODE</a>)</dd>
-                <dd><a href="http://www.w3.org/ns/org.ttl">http://www.w3.org/ns/org.ttl</a> (<a href="http://www.essepuntato.it/lode/owlapi/http://www.w3.org/ns/org.ttl">visualise it with LODE</a>)</dd>
-                <dd><a href="http://www.w3.org/ns/prov-o#">http://www.w3.org/ns/prov-o#</a> (<a href="http://www.essepuntato.it/lode/owlapi/http://www.w3.org/ns/prov-o#">visualise it with LODE</a>)</dd>
-                <dd><a href="http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a> (<a href="http://www.essepuntato.it/lode/owlapi/http://xmlns.com/foaf/0.1/">visualise it with LODE</a>)</dd>
-            </dl>
-            <dl>
-                <dt>Ontology Source:</dt>
-                <dd><a href="https://raw.githubusercontent.com/nicholascar/agr-o/master/agr.ttl">Turtle document</a></dd>
-				<dd><a href="https://raw.githubusercontent.com/nicholascar/agr-o/master/agr.rdf">RDF XML document</a></dd>
-            </dl>
-            <dl>
-                <dt>Documentation:</dt>
-                <dd><a href="http://github.com/nicholascar/agr-o">Agreements ontology in GitHub</a></dd>
-            </dl>			
-        </div>
-        <hr />
-        <h2>Abstract</h2>
-        <span class="markdown">This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata. Its purpose is to support data sharing by making explicit the relationships between agreements and data and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements.</span>
-        <div id="toc">
-            <h2>Table of Content</h2>
-            <ol>
-                <li><a href="#classes">Classes</a></li>
-                <li><a href="#objectproperties">Object Properties</a></li>
-                <li><a href="#namedindividuals">Named Individuals</a></li>
-                <li><a href="#namespacedeclarations">Namespace Declarations</a></li>
-            </ol>
-        </div>
-        <div id="classes">
-            <h2>Classes</h2>
-            <ul class="hlist">
-                <li><a href="#d4e3324" title="http://promsns.org/def/agr#Agreement">Agreement</a></li>
-                <li><a href="#d4e3348" title="http://promsns.org/def/agr#Requirement">Requirement</a></li>
-                <li><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a></li>
-                <li><a href="#d4e3388" title="http://promsns.org/def/agr#RequirementResolution">Requirement Resolution</a></li>
-            </ul>
-            <div id="d4e3324" class="entity">
-                <a name="http://promsns.org/def/agr#Agreement"></a>
-                <h3>Agreement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#Agreement</p>
-                <div class="comment"><span class="markdown">A description of a set of required actions by particular agents</span></div>
-                <dl class="description">
-                    <dt>has super-classes</dt>
-                    <dd><span class="dotted" title="http://www.w3.org/ns/prov#Plan">plan</span></dd>
-                    <dd><a href="#d4e2250" title="http://promsns.org/def/agr#requires">requires</a><sup title="object property" class="type-op">op</sup> <span class="logic">min</span> 1</dd>
-                    <dt>is in domain of</dt>
-                    <dd><a href="#d4e2199" title="http://promsns.org/def/agr#hasScopeOf">has scope of</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e2250" title="http://promsns.org/def/agr#requires">requires</a><sup title="object property" class="type-op">op</sup></dd>
-                    <dt>is in range of</dt>
-                    <dd><a href="#d4e2230" title="http://promsns.org/def/agr#requirementOf">requirement of</a><sup title="object property" class="type-op">op</sup></dd>
-                </dl>
+            <div class="comment">
+                <span class="markdown">A resource that acts or has the power to
+                act.</span>
             </div>
-            <div id="d4e3348" class="entity">
-                <a name="http://promsns.org/def/agr#Requirement"></a>
-                <h3>Requirement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#Requirement</p>
-                <div class="comment"><span class="markdown">This class is analagous to the Creative Commons ontology formerly available. According to CC, a Requirement is "an action that may or may not be requested of you". In this ontology, it is only "an action that may be requested of you"</span></div>
-                <dl class="description">
-                    <dt>has super-classes</dt>
-                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span></dd>
-                    <dd><span class="dotted" title="http://www.w3.org/ns/prov#Plan">plan</span></dd>
-                    <dd><a href="#d4e2214" title="http://promsns.org/def/agr#requirementLevel">requirement level</a><sup title="object property" class="type-op">op</sup> <span class="logic">exactly</span> 1</dd>
-                    <dt>is in domain of</dt>
-                    <dd><a href="#d4e2214" title="http://promsns.org/def/agr#requirementLevel">requirement level</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e2230" title="http://promsns.org/def/agr#requirementOf">requirement of</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e2270" title="http://promsns.org/def/agr#satisfiedBy">satisfied by</a><sup title="object property" class="type-op">op</sup></dd>
-                    <dt>is in range of</dt>
-                    <dd><a href="#d4e2250" title="http://promsns.org/def/agr#requires">requires</a><sup title="object property" class="type-op">op</sup>, <a href="#d4e2291" title="http://promsns.org/def/agr#satisfies">satisfies</a><sup title="object property" class="type-op">op</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3375" class="entity">
-                <a name="http://promsns.org/def/agr#RequirementLevel"></a>
-                <h3>Requirement Level<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#RequirementLevel</p>
-                <div class="comment"><span class="markdown">An RequirementLevel is the level at which an Agreement complels the Agents it affects to action. The initial instances of Imperative are taken from RFC2119.</span></div>
-                <dl class="description">
-                    <dt>has super-classes</dt>
-                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span></dd>
-                    <dt>is in range of</dt>
-                    <dd><a href="#d4e2214" title="http://promsns.org/def/agr#requirementLevel">requirement level</a><sup title="object property" class="type-op">op</sup></dd>
-                    <dt>has members</dt>
-                    <dd><a href="#d4e3887" title="http://promsns.org/def/agr#MAY">MAY</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e3898" title="http://promsns.org/def/agr#MUST">MUST</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e3908" title="http://promsns.org/def/agr#MUST_NOT">MUST NOT</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e3918" title="http://promsns.org/def/agr#OPTIONAL">OPTIONAL</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e3929" title="http://promsns.org/def/agr#RECOMMENDED">RECOMMENDED</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e3939" title="http://promsns.org/def/agr#REQUIRED">REQUIRED</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e3949" title="http://promsns.org/def/agr#SHALL">SHALL</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e3960" title="http://promsns.org/def/agr#SHALL_NOT">SHALL NOT</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e3970" title="http://promsns.org/def/agr#SHOULD">SHOULD</a><sup title="named individual" class="type-ni">ni</sup>, <a href="#d4e3980" title="http://promsns.org/def/agr#SHOULD_NOT">SHOULD NOT</a><sup title="named individual" class="type-ni">ni</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3388" class="entity">
-                <a name="http://promsns.org/def/agr#RequirementResolution"></a>
-                <h3>Requirement Resolution<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#RequirementResolution</p>
-                <div class="comment"><span class="markdown">An action that resolves requirements</span></div>
-                <dl class="description">
-                    <dt>has super-classes</dt>
-                    <dd><span class="dotted" title="http://www.w3.org/2004/02/skos/core#Concept">concept</span></dd>
-                    <dd><span class="dotted" title="http://www.w3.org/ns/prov#Activity">activity</span></dd>
-                    <dd><a href="#d4e2291" title="http://promsns.org/def/agr#satisfies">satisfies</a><sup title="object property" class="type-op">op</sup> <span class="logic">exactly</span> 1</dd>
-                    <dt>is in domain of</dt>
-                    <dd><a href="#d4e2291" title="http://promsns.org/def/agr#satisfies">satisfies</a><sup title="object property" class="type-op">op</sup></dd>
-                    <dt>is in range of</dt>
-                    <dd><a href="#d4e2270" title="http://promsns.org/def/agr#satisfiedBy">satisfied by</a><sup title="object property" class="type-op">op</sup></dd>
-                </dl>
-            </div>
-        </div>
-        <div id="objectproperties">
-            <h2>Object Properties</h2>
-            <ul class="hlist">
-                <li><a href="#d4e2199" title="http://promsns.org/def/agr#hasScopeOf">has scope of</a></li>
-                <li><a href="#d4e2214" title="http://promsns.org/def/agr#requirementLevel">requirement level</a></li>
-                <li><a href="#d4e2230" title="http://promsns.org/def/agr#requirementOf">requirement of</a></li>
-                <li><a href="#d4e2250" title="http://promsns.org/def/agr#requires">requires</a></li>
-                <li><a href="#d4e2270" title="http://promsns.org/def/agr#satisfiedBy">satisfied by</a></li>
-                <li><a href="#d4e2291" title="http://promsns.org/def/agr#satisfies">satisfies</a></li>
-            </ul>
-            <div id="d4e2199" class="entity">
-                <a name="http://promsns.org/def/agr#hasScopeOf"></a>
-                <h3>has scope of<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#hasScopeOf</p>
-                <div class="comment"><span class="markdown">This property indicates which Agent is affected by an Agreement. It is likely that the Agent will be a group (foaf:Group) or an Organization (org:Organisation) rather than an individual person and certainly not a machine Agent.</span></div>
-                <div class="description">
-                    <dl>
-                        <dt>has domain</dt>
-                        <dd><a href="#d4e3324" title="http://promsns.org/def/agr#Agreement">Agreement</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>has range</dt>
-                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#Agent">agent</span></dd>
-                    </dl>
-                </div>
-            </div>
-            <div id="d4e2214" class="entity">
-                <a name="http://promsns.org/def/agr#requirementLevel"></a>
-                <h3>requirement level<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#requirementLevel</p>
-                <div class="comment"><span class="markdown">a Requirement has a requirementLevel of a RequirementLevel</span></div>
-                <div class="description">
-                    <dl>
-                        <dt>has domain</dt>
-                        <dd><a href="#d4e3348" title="http://promsns.org/def/agr#Requirement">Requirement</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>has range</dt>
-                        <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                    </dl>
-                </div>
-            </div>
-            <div id="d4e2230" class="entity">
-                <a name="http://promsns.org/def/agr#requirementOf"></a>
-                <h3>requirement of<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#requirementOf</p>
-                <div class="comment"><span class="markdown">A Requirement is a requirementOf an Agreement</span></div>
-                <div class="description">
-                    <p><strong>has characteristics:</strong> inverse functional</p>
-                    <dl>
-                        <dt>has super-properties</dt>
-                        <dd><span class="dotted" title="http://purl.org/dc/terms/isPartOf">Is Part Of</span></dd>
-                        <dt>has domain</dt>
-                        <dd><a href="#d4e3348" title="http://promsns.org/def/agr#Requirement">Requirement</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>has range</dt>
-                        <dd><a href="#d4e3324" title="http://promsns.org/def/agr#Agreement">Agreement</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>is inverse of</dt>
-                        <dd><a href="#d4e2250" title="http://promsns.org/def/agr#requires">requires</a><sup title="object property" class="type-op">op</sup></dd>
-                    </dl>
-                </div>
-            </div>
-            <div id="d4e2250" class="entity">
-                <a name="http://promsns.org/def/agr#requires"></a>
-                <h3>requires<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#requires</p>
-                <div class="comment"><span class="markdown">An Agreement requires a Requirement</span></div>
-                <div class="description">
-                    <dl>
-                        <dt>has super-properties</dt>
-                        <dd><span class="dotted" title="http://purl.org/dc/terms/hasPart">Has Part</span></dd>
-                        <dt>has domain</dt>
-                        <dd><a href="#d4e3324" title="http://promsns.org/def/agr#Agreement">Agreement</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>has range</dt>
-                        <dd><a href="#d4e3348" title="http://promsns.org/def/agr#Requirement">Requirement</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>is inverse of</dt>
-                        <dd><a href="#d4e2230" title="http://promsns.org/def/agr#requirementOf">requirement of</a><sup title="object property" class="type-op">op</sup></dd>
-                    </dl>
-                </div>
-            </div>
-            <div id="d4e2270" class="entity">
-                <a name="http://promsns.org/def/agr#satisfiedBy"></a>
-                <h3>satisfied by<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#satisfiedBy</p>
-                <div class="comment"><span class="markdown">inverse of satisfies</span></div>
-                <div class="description">
-                    <p><strong>has characteristics:</strong> inverse functional</p>
-                    <dl>
-                        <dt>has super-properties</dt>
-                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#influenced">influenced</span></dd>
-                        <dt>has domain</dt>
-                        <dd><a href="#d4e3348" title="http://promsns.org/def/agr#Requirement">Requirement</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>has range</dt>
-                        <dd><a href="#d4e3388" title="http://promsns.org/def/agr#RequirementResolution">Requirement Resolution</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>is inverse of</dt>
-                        <dd><a href="#d4e2291" title="http://promsns.org/def/agr#satisfies">satisfies</a><sup title="object property" class="type-op">op</sup></dd>
-                    </dl>
-                </div>
-            </div>
-            <div id="d4e2291" class="entity">
-                <a name="http://promsns.org/def/agr#satisfies"></a>
-                <h3>satisfies<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#satisfies</p>
-                <div class="comment"><span class="markdown">a Requirement Resolution satisfies a Requirement</span></div>
-                <div class="description">
-                    <dl>
-                        <dt>has super-properties</dt>
-                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span></dd>
-                        <dt>has domain</dt>
-                        <dd><a href="#d4e3388" title="http://promsns.org/def/agr#RequirementResolution">Requirement Resolution</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>has range</dt>
-                        <dd><a href="#d4e3348" title="http://promsns.org/def/agr#Requirement">Requirement</a><sup title="class" class="type-c">c</sup></dd>
-                        <dt>is inverse of</dt>
-                        <dd><a href="#d4e2270" title="http://promsns.org/def/agr#satisfiedBy">satisfied by</a><sup title="object property" class="type-op">op</sup></dd>
-                    </dl>
-                </div>
-            </div>
-        </div>
-        <div id="namedindividuals">
-            <h2>Named Individuals</h2>
-            <ul class="hlist">
-                <li><a href="#d4e3874" title="http://promsns.org/def/agr"><span>Agreements ontology</span></a></li>
-                <li><a href="#d4e3887" title="http://promsns.org/def/agr#MAY">MAY</a></li>
-                <li><a href="#d4e3898" title="http://promsns.org/def/agr#MUST">MUST</a></li>
-                <li><a href="#d4e3908" title="http://promsns.org/def/agr#MUST_NOT">MUST NOT</a></li>
-                <li><a href="#d4e3918" title="http://promsns.org/def/agr#OPTIONAL">OPTIONAL</a></li>
-                <li><a href="#d4e3929" title="http://promsns.org/def/agr#RECOMMENDED">RECOMMENDED</a></li>
-                <li><a href="#d4e3939" title="http://promsns.org/def/agr#REQUIRED">REQUIRED</a></li>
-                <li><a href="#d4e3949" title="http://promsns.org/def/agr#SHALL">SHALL</a></li>
-                <li><a href="#d4e3960" title="http://promsns.org/def/agr#SHALL_NOT">SHALL NOT</a></li>
-                <li><a href="#d4e3970" title="http://promsns.org/def/agr#SHOULD">SHOULD</a></li>
-                <li><a href="#d4e3980" title="http://promsns.org/def/agr#SHOULD_NOT">SHOULD NOT</a></li>
-            </ul>
-            <div id="d4e3874" class="entity">
-                <a name="http://promsns.org/def/agr"></a>
-                <h3>Agreements ontology<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr</p>
-                <dl class="description">
-                    <dt>has facts</dt>
-                    <dd><a href="#d4e3063" title="http://purl.org/dc/terms/created">Date Created</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"2016-09-12"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">date</span></span></dd>
-                    <dd><a href="#d4e3247" title="http://purl.org/dc/terms/modified">Date Modified</a><sup title="data property" class="type-dp">dp</sup> <span class="literal">"2016-09-22"^^<span class="dotted" title="http://www.w3.org/2001/XMLSchema#date">date</span></span></dd>
-                    <dd><a href="#d4e2515" title="http://purl.org/dc/terms/creator">Creator</a><sup title="object property" class="type-op">op</sup> <span class="dotted" title="http://promsns.org/id/person/nicholascar">nicholascar</span></dd>
-                </dl>
-            </div>
-            <div id="d4e3887" class="entity">
-                <a name="http://promsns.org/def/agr#MAY"></a>
-                <h3>MAY<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#MAY</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3898" class="entity">
-                <a name="http://promsns.org/def/agr#MUST"></a>
-                <h3>MUST<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#MUST</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3908" class="entity">
-                <a name="http://promsns.org/def/agr#MUST_NOT"></a>
-                <h3>MUST NOT<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#MUST_NOT</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3918" class="entity">
-                <a name="http://promsns.org/def/agr#OPTIONAL"></a>
-                <h3>OPTIONAL<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#OPTIONAL</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3929" class="entity">
-                <a name="http://promsns.org/def/agr#RECOMMENDED"></a>
-                <h3>RECOMMENDED<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#RECOMMENDED</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3939" class="entity">
-                <a name="http://promsns.org/def/agr#REQUIRED"></a>
-                <h3>REQUIRED<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#REQUIRED</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3949" class="entity">
-                <a name="http://promsns.org/def/agr#SHALL"></a>
-                <h3>SHALL<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#SHALL</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3960" class="entity">
-                <a name="http://promsns.org/def/agr#SHALL_NOT"></a>
-                <h3>SHALL NOT<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#SHALL_NOT</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3970" class="entity">
-                <a name="http://promsns.org/def/agr#SHOULD"></a>
-                <h3>SHOULD<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#SHOULD</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-            <div id="d4e3980" class="entity">
-                <a name="http://promsns.org/def/agr#SHOULD_NOT"></a>
-                <h3>SHOULD NOT<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
-                <p><strong>IRI:</strong> http://promsns.org/def/agr#SHOULD_NOT</p>
-                <dl class="description">
-                    <dt>belongs to</dt>
-                    <dd><a href="#d4e3375" title="http://promsns.org/def/agr#RequirementLevel">Requirement Level</a><sup title="class" class="type-c">c</sup></dd>
-                </dl>
-            </div>
-        </div>
-        <div id="namespacedeclarations">
-            <h2>Namespace Declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
-            <dl>
-                <dt><em>default namespace</em></dt>
-                <dd>http://promsns.org/def/agr#</dd>
-                <dt>dc</dt>
-                <dd>http://purl.org/dc/elements/1.1/</dd>
-                <dt>owl</dt>
-                <dd>http://www.w3.org/2002/07/owl#</dd>
-                <dt>prov</dt>
-                <dd>http://www.w3.org/ns/prov#</dd>
-                <dt>rdf</dt>
-                <dd>http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
-                <dt>rdfs</dt>
-                <dd>http://www.w3.org/2000/01/rdf-schema#</dd>
-                <dt>xsd</dt>
-                <dd>http://www.w3.org/2001/XMLSchema#</dd>
+            <dl class="description">
+                <dt>is in range of</dt>
+                <dd>
+                    <a href="#d4e2522" title=
+                    "http://purl.org/dc/terms/contributor">Contributor</a><sup class="type-op"
+                    title="object property">op</sup>, <a href="#d4e2577" title=
+                    "http://purl.org/dc/terms/creator">Creator</a><sup class=
+                    "type-op" title="object property">op</sup>, <a href=
+                    "#d4e2889" title=
+                    "http://purl.org/dc/terms/publisher">Publisher</a><sup class="type-op"
+                    title="object property">op</sup>, <a href="#d4e2943" title=
+                    "http://purl.org/dc/terms/rightsHolder">Rights
+                    Holder</a><sup class="type-op" title=
+                    "object property">op</sup>
+                </dd>
+                <dt>is also defined as</dt>
+                <dd>
+                    <a href="#d4e4053">named individual</a>
+                </dd>
             </dl>
         </div>
-        <p class="endnote">This HTML document was obtained by processing the OWL ontology source code through <a href="http://www.essepuntato.it/lode">LODE</a>, <em>Live OWL Documentation Environment</em>, developed by <a href="http://www.essepuntato.it">Silvio Peroni</a>.</p>
-    </body>
+            <a id="http://purl.org/dc/terms/AgentClass" name=
+            "http://purl.org/dc/terms/AgentClass"></a>
+            <h3>Agent Class<sup class="type-c" title="class">c</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/AgentClass</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A group of agents.</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><span class="dotted" title=
+                "http://www.w3.org/2000/01/rdf-schema#Class">class</span></dd>
+                <dt>is in range of</dt>
+                <dd>
+                    <a href="#d4e2473" title=
+                    "http://purl.org/dc/terms/audience">Audience</a><sup class=
+                    "type-op" title="object property">op</sup>, <a href=
+                    "#d4e2604" title=
+                    "http://purl.org/dc/terms/educationLevel">Audience
+                    Education Level</a><sup class="type-op" title=
+                    "object property">op</sup>, <a href="#d4e2810" title=
+                    "http://purl.org/dc/terms/mediator">Mediator</a><sup class=
+                    "type-op" title="object property">op</sup>
+                </dd>
+                <dt>has members</dt>
+                <dd>
+                    <a href="#d4e4053" title=
+                    "http://purl.org/dc/terms/Agent">Agent</a><sup class=
+                    "type-ni" title="named individual">ni</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="Agreement">
+            <a id="http://promsns.org/def/agr#Agreement" name=
+            "http://promsns.org/def/agr#Agreement"></a>
+            <h3>Agreement<sup class="type-c" title="class">c</sup> <span class=
+            "backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#Agreement</p>
+            <div class="comment">
+                <span class="markdown">A description of a set of required
+                actions by particular agents. All the required actions are
+                detailed in Requirements class objects that this is a
+                Collection of so the Agreement is just a container</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><span class="dotted" title=
+                "http://www.w3.org/2004/02/skos/core#Collection">collection</span></dd>
+                <dd><span class="dotted" title=
+                "http://www.w3.org/ns/prov#Plan">plan</span></dd>
+                <dd>
+                    <a href="#d4e2274" title=
+                    "http://promsns.org/def/agr#requires">requires</a><sup class="type-op"
+                    title="object property">op</sup> <span class=
+                    "logic">min</span> 1
+                </dd>
+                <dt>is in domain of</dt>
+                <dd>
+                    <a href="#d4e2201" title=
+                    "http://promsns.org/def/agr#hasScope">has
+                    scope</a><sup class="type-op" title=
+                    "object property">op</sup>, <a href="#d4e2221" title=
+                    "http://promsns.org/def/agr#hasWithinScope">has within
+                    scope</a><sup class="type-op" title=
+                    "object property">op</sup>, <a href="#d4e2274" title=
+                    "http://promsns.org/def/agr#requires">requires</a><sup class="type-op"
+                    title="object property">op</sup>
+                </dd>
+                <dt>is in range of</dt>
+                <dd>
+                    <a href="#d4e2254" title=
+                    "http://promsns.org/def/agr#requirementOf">requirement
+                    of</a><sup class="type-op" title=
+                    "object property">op</sup>, <a href="#d4e2335" title=
+                    "http://promsns.org/def/agr#scopeOf">scope
+                    of</a><sup class="type-op" title=
+                    "object property">op</sup>, <a href="#d4e2353" title=
+                    "http://promsns.org/def/agr#withinScopeOf">within
+                    scope</a><sup class="type-op" title=
+                    "object property">op</sup>
+                </dd>
+            </dl>
+        </div>
+            <a id="http://purl.org/dc/terms/ProvenanceStatement" name=
+            "http://purl.org/dc/terms/ProvenanceStatement"></a>
+            <h3>Provenance Statement<sup class="type-c" title="class">c</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://purl.org/dc/terms/ProvenanceStatement</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A statement of any changes in ownership
+                and custody of a resource since its creation that are
+                significant for its authenticity, integrity, and
+                interpretation.</span>
+            </div>
+            <dl class="description">
+                <dt>is in range of</dt>
+                <dd>
+                    <a href="#d4e2861" title=
+                    "http://purl.org/dc/terms/provenance">Provenance</a><sup class="type-op"
+                    title="object property">op</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="Requirement">
+            <a id="http://promsns.org/def/agr#Requirement" name=
+            "http://promsns.org/def/agr#Requirement"></a>
+            <h3>Requirement<sup class="type-c" title="class">c</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#Requirement</p>
+            <div class="comment">
+                <span class="markdown">This class is analagous to the Creative
+                Commons ontology formerly available. According to CC, a
+                Requirement is "an action that may or may not be requested of
+                you". In this ontology, it is only "an action that may be
+                requested of you"</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><span class="dotted" title=
+                "http://www.w3.org/2004/02/skos/core#Concept">concept</span></dd>
+                <dd><span class="dotted" title=
+                "http://www.w3.org/ns/prov#Plan">plan</span></dd>
+                <dd>
+                    <a href="#d4e2239" title=
+                    "http://promsns.org/def/agr#requirementLevel">requirement
+                    level</a><sup class="type-op" title=
+                    "object property">op</sup> <span class=
+                    "logic">exactly</span> 1
+                </dd>
+                <dt>is in domain of</dt>
+                <dd>
+                    <a href="#d4e2239" title=
+                    "http://promsns.org/def/agr#requirementLevel">requirement
+                    level</a><sup class="type-op" title=
+                    "object property">op</sup>, <a href="#d4e2254" title=
+                    "http://promsns.org/def/agr#requirementOf">requirement
+                    of</a><sup class="type-op" title=
+                    "object property">op</sup>, <a href="#d4e2295" title=
+                    "http://promsns.org/def/agr#satisfiedBy">satisfied
+                    by</a><sup class="type-op" title="object property">op</sup>
+                </dd>
+                <dt>is in range of</dt>
+                <dd>
+                    <a href="#d4e2274" title=
+                    "http://promsns.org/def/agr#requires">requires</a><sup class="type-op"
+                    title="object property">op</sup>, <a href="#d4e2315" title=
+                    "http://promsns.org/def/agr#satisfies">satisfies</a><sup class="type-op"
+                    title="object property">op</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="RequirementLevel">
+            <a id="http://promsns.org/def/agr#RequirementLevel" name=
+            "http://promsns.org/def/agr#RequirementLevel"></a>
+            <h3>Requirement Level<sup class="type-c" title="class">c</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://promsns.org/def/agr#RequirementLevel</p>
+            <div class="comment">
+                <span class="markdown">An RequirementLevel is the level at
+                which an Agreement complels the Agents it affects to action.
+                The initial instances of Imperative are taken from
+                RFC2119.</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><span class="dotted" title=
+                "http://www.w3.org/2004/02/skos/core#Concept">concept</span></dd>
+                <dt>is in range of</dt>
+                <dd>
+                    <a href="#d4e2239" title=
+                    "http://promsns.org/def/agr#requirementLevel">requirement
+                    level</a><sup class="type-op" title=
+                    "object property">op</sup>
+                </dd>
+                <dt>has members</dt>
+                <dd>
+                    <a href="#d4e3949" title=
+                    "http://promsns.org/def/agr#MAY">MAY</a><sup class=
+                    "type-ni" title="named individual">ni</sup>, <a href=
+                    "#d4e3960" title=
+                    "http://promsns.org/def/agr#MUST">MUST</a><sup class=
+                    "type-ni" title="named individual">ni</sup>, <a href=
+                    "#d4e3970" title="http://promsns.org/def/agr#MUST_NOT">MUST
+                    NOT</a><sup class="type-ni" title=
+                    "named individual">ni</sup>, <a href="#OPTIONAL" title=
+                    "http://promsns.org/def/agr#OPTIONAL">OPTIONAL</a><sup class="type-ni"
+                    title="named individual">ni</sup>, <a href="#RECOMMENDED"
+                    title="http://promsns.org/def/agr#RECOMMENDED">RECOMMENDED</a><sup class="type-ni"
+                    title="named individual">ni</sup>, <a href="#REQUIRED"
+                    title="http://promsns.org/def/agr#REQUIRED">REQUIRED</a><sup class="type-ni"
+                    title="named individual">ni</sup>, <a href="#SHALL"
+                    title="http://promsns.org/def/agr#SHALL">SHALL</a><sup class="type-ni"
+                    title="named individual">ni</sup>, <a href="#SHALL_NOT"
+                    title="http://promsns.org/def/agr#SHALL_NOT">SHALL
+                    NOT</a><sup class="type-ni" title=
+                    "named individual">ni</sup>, <a href="#SHOULD" title=
+                    "http://promsns.org/def/agr#SHOULD">SHOULD</a><sup class=
+                    "type-ni" title="named individual">ni</sup>, <a href=
+                    "#SHOULD_NOT" title=
+                    "http://promsns.org/def/agr#SHOULD_NOT">SHOULD
+                    NOT</a><sup class="type-ni" title=
+                    "named individual">ni</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="RequirementResolution">
+            <a id="http://promsns.org/def/agr#RequirementResolution" name=
+            "http://promsns.org/def/agr#RequirementResolution"></a>
+            <h3>Requirement Resolution<sup class="type-c" title="class">c</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://promsns.org/def/agr#RequirementResolution</p>
+            <div class="comment">
+                <span class="markdown">An action that resolves
+                requirements</span>
+            </div>
+            <dl class="description">
+                <dt>has super-classes</dt>
+                <dd><span class="dotted" title=
+                "http://www.w3.org/2004/02/skos/core#Concept">concept</span></dd>
+                <dd><span class="dotted" title=
+                "http://www.w3.org/ns/prov#Activity">activity</span></dd>
+                <dd>
+                    <a href="#d4e2315" title=
+                    "http://promsns.org/def/agr#satisfies">satisfies</a><sup class="type-op"
+                    title="object property">op</sup> <span class=
+                    "logic">exactly</span> 1
+                </dd>
+                <dt>is in domain of</dt>
+                <dd>
+                    <a href="#d4e2315" title=
+                    "http://promsns.org/def/agr#satisfies">satisfies</a><sup class="type-op"
+                    title="object property">op</sup>
+                </dd>
+                <dt>is in range of</dt>
+                <dd>
+                    <a href="#d4e2295" title=
+                    "http://promsns.org/def/agr#satisfiedBy">satisfied
+                    by</a><sup class="type-op" title="object property">op</sup>
+                </dd>
+            </dl>
+        </div>
+            <a id="http://purl.org/dc/terms/Standard" name=
+            "http://purl.org/dc/terms/Standard"></a>
+            <h3>Standard<sup class="type-c" title="class">c</sup> <span class=
+            "backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#classes">Class ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/Standard</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A basis for comparison; a reference
+                point against which other things can be evaluated.</span>
+            </div>
+            <dl class="description">
+                <dt>is in range of</dt>
+                <dd>
+                    <a href="#d4e2498" title=
+                    "http://purl.org/dc/terms/conformsTo">Conforms
+                    To</a><sup class="type-op" title="object property">op</sup>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div id="objectproperties">
+        <h2>Object Properties</h2>
+        <ul class="hlist">
+            <li>
+                <a href="#hasScope" title=
+                "http://promsns.org/def/agr#hasScope">has scope</a>
+            </li>
+            <li>
+                <a href="#hasWithinScope" title=
+                "http://promsns.org/def/agr#hasWithinScope">has within
+                scope</a>
+            </li>
+            <li>
+                <a href="#requirementLevel" title=
+                "http://promsns.org/def/agr#requirementLevel">requirement
+                level</a>
+            </li>
+            <li>
+                <a href="#requirementOf" title=
+                "http://promsns.org/def/agr#requirementOf">requirement of</a>
+            </li>
+            <li>
+                <a href="#requires" title=
+                "http://promsns.org/def/agr#requires">requires</a>
+            </li>
+            <li>
+                <a href="#d4e2295" title=
+                "http://promsns.org/def/agr#satisfiedBy">satisfied by</a>
+            </li>
+            <li>
+                <a href="#satisfies" title=
+                "http://promsns.org/def/agr#satisfies">satisfies</a>
+            </li>
+            <li>
+                <a href="#scopeOf" title=
+                "http://promsns.org/def/agr#scopeOf">scope of</a>
+            </li>
+            <li>
+                <a href="#withinScope" title=
+                "http://promsns.org/def/agr#withinScopeOf">within scope</a>
+            </li>
+        </ul>
+            <a id="http://purl.org/dc/terms/format" name=
+            "http://purl.org/dc/terms/format"></a>
+            <h3>Format<sup class="type-op" title="object property">op</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/format</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The file format, physical medium, or
+                dimensions of the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#d4e3719" title=
+                        "http://purl.org/dc/terms/MediaTypeOrExtent">Media Type
+                        or Extent</a><sup class="type-c" title="class">c</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e1024">annotation property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="hasScope">
+            <a id="http://promsns.org/def/agr#hasScope" name=
+            "http://promsns.org/def/agr#hasScope"></a>
+            <h3>has scope<sup class="type-op" title="object property">op</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#hasScope</p>
+            <div class="comment">
+                <span class="markdown">This property is the union (group) of
+                all Agents indicated as being within the scope of an Agreement
+                by the hasWithinScope property.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#influenced">influenced</span></dd>
+                    <dt>has domain</dt>
+                    <dd>
+                        <a href="#Agreement" title=
+                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#Agent">agent</span></dd>
+                    <dt>is inverse of</dt>
+                    <dd>
+                        <a href="#scopeOf" title=
+                        "http://promsns.org/def/agr#scopeOf">scope
+                        of</a><sup class="type-op" title=
+                        "object property">op</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="hasWithinScope">
+            <a id="http://promsns.org/def/agr#hasWithinScope" name=
+            "http://promsns.org/def/agr#hasWithinScope"></a>
+            <h3>has within scope<sup class="type-op" title=
+            "object property">op</sup> <span class="backlink">back to <a href=
+            "#toc">ToC</a> or <a href="#objectproperties">Object Property
+            ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://promsns.org/def/agr#hasWithinScope</p>
+            <div class="comment">
+                <span class="markdown">This property indicates an Agent
+                affected by an Agreement. It is likely that the Agent will be a
+                group (foaf:Group) or an Organization (org:Organisation) rather
+                than an individual person and certainly not a machine Agent.
+                Individual Agents indicated as being affected by an Agreement
+                via this property collectively make a group, formal or
+                informal, that can be indicated as being the entire scope group
+                of an Agreement via hasScopeOf property of it.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#influenced">influenced</span></dd>
+                    <dt>has domain</dt>
+                    <dd>
+                        <a href="#Agreement" title=
+                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#Agent">agent</span></dd>
+                    <dt>is inverse of</dt>
+                    <dd>
+                        <a href="#withinScope" title=
+                        "http://promsns.org/def/agr#withinScopeOf">within
+                        scope</a><sup class="type-op" title=
+                        "object property">op</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+            <a id="http://purl.org/dc/terms/publisher" name=
+            "http://purl.org/dc/terms/publisher"></a>
+            <h3>Publisher<sup class="type-op" title="object property">op</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">An entity responsible for making the
+                resource available.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#d4e3483" title=
+                        "http://purl.org/dc/terms/Agent">Agent</a><sup class=
+                        "type-c" title="class">c</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e1508">annotation property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="requirementLevel">
+            <a id="http://promsns.org/def/agr#requirementLevel" name=
+            "http://promsns.org/def/agr#requirementLevel"></a>
+            <h3>requirement level<sup class="type-op" title=
+            "object property">op</sup> <span class="backlink">back to <a href=
+            "#toc">ToC</a> or <a href="#objectproperties">Object Property
+            ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://promsns.org/def/agr#requirementLevel</p>
+            <div class="comment">
+                <span class="markdown">a Requirement has a requirementLevel of
+                a RequirementLevel</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd>
+                        <a href="#Requirement" title=
+                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#RequirementLevel" title=
+                        "http://promsns.org/def/agr#RequirementLevel">Requirement
+                        Level</a><sup class="type-c" title="class">c</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="requirementOf">
+            <a id="http://promsns.org/def/agr#requirementOf" name=
+            "http://promsns.org/def/agr#requirementOf"></a>
+            <h3>requirement of<sup class="type-op" title=
+            "object property">op</sup> <span class="backlink">back to <a href=
+            "#toc">ToC</a> or <a href="#objectproperties">Object Property
+            ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://promsns.org/def/agr#requirementOf</p>
+            <div class="comment">
+                <span class="markdown">A Requirement is a requirementOf an
+                Agreement</span>
+            </div>
+            <div class="description">
+                <p><strong>has characteristics:</strong> inverse functional</p>
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/terms/isPartOf">Is Part Of</span></dd>
+                    <dt>has domain</dt>
+                    <dd>
+                        <a href="#Requirement" title=
+                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#Agreement" title=
+                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>is inverse of</dt>
+                    <dd>
+                        <a href="#requires" title=
+                        "http://promsns.org/def/agr#requires">requires</a><sup class="type-op"
+                        title="object property">op</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="requires">
+            <a id="http://promsns.org/def/agr#requires" name=
+            "http://promsns.org/def/agr#requires"></a>
+            <h3>requires<sup class="type-op" title="object property">op</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#requires</p>
+            <div class="comment">
+                <span class="markdown">An Agreement requires a
+                Requirement</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/terms/hasPart">Has Part</span></dd>
+                    <dt>has domain</dt>
+                    <dd>
+                        <a href="#Agreement" title=
+                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#Requirement" title=
+                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>is inverse of</dt>
+                    <dd>
+                        <a href="#requirementOf" title=
+                        "http://promsns.org/def/agr#requirementOf">requirement
+                        of</a><sup class="type-op" title=
+                        "object property">op</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+            <a id="http://purl.org/dc/terms/rightsHolder" name=
+            "http://purl.org/dc/terms/rightsHolder"></a>
+            <h3>Rights Holder<sup class="type-op" title=
+            "object property">op</sup> <span class="backlink">back to <a href=
+            "#toc">ToC</a> or <a href="#objectproperties">Object Property
+            ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/rightsHolder</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A person or organization owning or
+                managing rights over the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#d4e3483" title=
+                        "http://purl.org/dc/terms/Agent">Agent</a><sup class=
+                        "type-c" title="class">c</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="satisfiedBy">
+            <a id="http://promsns.org/def/agr#satisfiedBy" name=
+            "http://promsns.org/def/agr#satisfiedBy"></a>
+            <h3>satisfied by<sup class="type-op" title=
+            "object property">op</sup> <span class="backlink">back to <a href=
+            "#toc">ToC</a> or <a href="#objectproperties">Object Property
+            ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#satisfiedBy</p>
+            <div class="comment">
+                <span class="markdown">inverse of satisfies</span>
+            </div>
+            <div class="description">
+                <p><strong>has characteristics:</strong> inverse functional</p>
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#influenced">influenced</span></dd>
+                    <dt>has domain</dt>
+                    <dd>
+                        <a href="#Requirement" title=
+                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#RequirementResolution" title=
+                        "http://promsns.org/def/agr#RequirementResolution">Requirement
+                        Resolution</a><sup class="type-c" title="class">c</sup>
+                    </dd>
+                    <dt>is inverse of</dt>
+                    <dd>
+                        <a href="#satisfies" title=
+                        "http://promsns.org/def/agr#satisfies">satisfies</a><sup class="type-op"
+                        title="object property">op</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="satisfies">
+            <a id="http://promsns.org/def/agr#satisfies" name=
+            "http://promsns.org/def/agr#satisfies"></a>
+            <h3>satisfies<sup class="type-op" title="object property">op</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#satisfies</p>
+            <div class="comment">
+                <span class="markdown">a Requirement Resolution satisfies a
+                Requirement</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#wasInfluencedBy">was influenced
+                    by</span></dd>
+                    <dt>has domain</dt>
+                    <dd>
+                        <a href="#RequirementResolution" title=
+                        "http://promsns.org/def/agr#RequirementResolution">Requirement
+                        Resolution</a><sup class="type-c" title="class">c</sup>
+                    </dd>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#Requirement" title=
+                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>is inverse of</dt>
+                    <dd>
+                        <a href="#satisfiedBy" title=
+                        "http://promsns.org/def/agr#satisfiedBy">satisfied
+                        by</a><sup class="type-op" title=
+                        "object property">op</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="scopeOf">
+            <a id="http://promsns.org/def/agr#scopeOf" name=
+            "http://promsns.org/def/agr#scopeOf"></a>
+            <h3>scope of<sup class="type-op" title="object property">op</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#scopeOf</p>
+            <div class="comment">
+                <span class="markdown">inverse of hasScopeOf</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#wasInfluencedBy">was influenced
+                    by</span></dd>
+                    <dt>has domain</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#Agent">agent</span></dd>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#Agreement" title=
+                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>is inverse of</dt>
+                    <dd>
+                        <a href="#hasScope" title=
+                        "http://promsns.org/def/agr#hasScope">has
+                        scope</a><sup class="type-op" title=
+                        "object property">op</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+            <a id="http://purl.org/dc/terms/type" name=
+            "http://purl.org/dc/terms/type"></a>
+            <h3>Type<sup class="type-op" title="object property">op</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#objectproperties">Object Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/type</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The nature or genre of the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has range</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/2000/01/rdf-schema#Class">class</span></dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e1847">annotation property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="withinScope">
+            <a id="http://promsns.org/def/agr#withinScopeOf" name=
+            "http://promsns.org/def/agr#withinScopeOf"></a>
+            <h3>within scope<sup class="type-op" title=
+            "object property">op</sup> <span class="backlink">back to <a href=
+            "#toc">ToC</a> or <a href="#objectproperties">Object Property
+            ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://promsns.org/def/agr#withinScopeOf</p>
+            <div class="comment">
+                <span class="markdown">inverse of hasWithinScope</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#wasInfluencedBy">was influenced
+                    by</span></dd>
+                    <dt>has domain</dt>
+                    <dd><span class="dotted" title=
+                    "http://www.w3.org/ns/prov#Agent">agent</span></dd>
+                    <dt>has range</dt>
+                    <dd>
+                        <a href="#Agreement" title=
+                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
+                        title="class">c</sup>
+                    </dd>
+                    <dt>is inverse of</dt>
+                    <dd>
+                        <a href="#hasWithinScope" title=
+                        "http://promsns.org/def/agr#hasWithinScope">has within
+                        scope</a><sup class="type-op" title=
+                        "object property">op</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div id="namedindividuals">
+        <h2>Named Individuals</h2>
+        <ul class="hlist">
+            <li>
+                <a href="#agr-o" title=
+                "http://promsns.org/def/agr"><span>Agreements
+                ontology</span></a>
+            </li>
+            <li>
+                <a href="#MAY" title=
+                "http://promsns.org/def/agr#MAY">MAY</a>
+            </li>
+            <li>
+                <a href="#MUST" title=
+                "http://promsns.org/def/agr#MUST">MUST</a>
+            </li>
+            <li>
+                <a href="#MUST_NOT" title=
+                "http://promsns.org/def/agr#MUST_NOT">MUST NOT</a>
+            </li>
+            <li>
+                <a href="#OPTIONAL" title=
+                "http://promsns.org/def/agr#OPTIONAL">OPTIONAL</a>
+            </li>
+            <li>
+                <a href="#RECOMMENDED" title=
+                "http://promsns.org/def/agr#RECOMMENDED">RECOMMENDED</a>
+            </li>
+            <li>
+                <a href="#REQUIRED" title=
+                "http://promsns.org/def/agr#REQUIRED">REQUIRED</a>
+            </li>
+            <li>
+                <a href="#SHALL" title=
+                "http://promsns.org/def/agr#SHALL">SHALL</a>
+            </li>
+            <li>
+                <a href="#SHALL_NOT" title=
+                "http://promsns.org/def/agr#SHALL_NOT">SHALL NOT</a>
+            </li>
+            <li>
+                <a href="#SHOULD" title=
+                "http://promsns.org/def/agr#SHOULD">SHOULD</a>
+            </li>
+            <li>
+                <a href="#SHOULD_NOT" title=
+                "http://promsns.org/def/agr#SHOULD_NOT">SHOULD NOT</a>
+            </li>
+        </ul>
+            <a id="http://purl.org/dc/terms/Agent" name=
+            "http://purl.org/dc/terms/Agent"></a>
+            <h3>Agent<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/Agent</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#d4e3505" title=
+                    "http://purl.org/dc/terms/AgentClass">Agent
+                    Class</a><sup class="type-c" title="class">c</sup>
+                </dd>
+                <dt>is also defined as</dt>
+                <dd>
+                    <a href="#d4e3483">class</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="agr-o">
+            <a id="http://promsns.org/def/agr" name=
+            "http://promsns.org/def/agr"></a>
+            <h3>Agreements ontology<sup class="type-ni" title=
+            "named individual">ni</sup> <span class="backlink">back to <a href=
+            "#toc">ToC</a> or <a href="#namedindividuals">Named Individual
+            ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr</p>
+            <dl class="description">
+                <dt>has facts</dt>
+                <dd>
+                    <a href="#d4e3125" title=
+                    "http://purl.org/dc/terms/created">Date
+                    Created</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2016-09-12"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+                <dd>
+                    <a href="#d4e3309" title=
+                    "http://purl.org/dc/terms/modified">Date
+                    Modified</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2016-10-09"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+            </dl>
+        </div>
+            <a id="http://purl.org/dc/terms/LCSH" name=
+            "http://purl.org/dc/terms/LCSH"></a>
+            <h3>LCSH<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/LCSH</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The set of labeled concepts specified by
+                the Library of Congress Subject Headings.</span>
+            </div>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd><span class="dotted" title=
+                "http://purl.org/dc/dcam/VocabularyEncodingScheme">vocabulary
+                encoding scheme</span><sup class="type-c" title=
+                "class">c</sup></dd>
+                <dt>has facts</dt>
+                <dd>
+                    <a href="#d4e3283" title=
+                    "http://purl.org/dc/terms/issued">Date
+                    Issued</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2000-07-11"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+                <dd>
+                    <a href="#d4e3309" title=
+                    "http://purl.org/dc/terms/modified">Date
+                    Modified</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2008-01-14"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="MAY">
+            <a id="http://promsns.org/def/agr#MAY" name=
+            "http://promsns.org/def/agr#MAY"></a>
+            <h3>MAY<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#MAY</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+            <a id="http://purl.org/dc/terms/MESH" name=
+            "http://purl.org/dc/terms/MESH"></a>
+            <h3>MeSH<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/MESH</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The set of labeled concepts specified by
+                the Medical Subject Headings.</span>
+            </div>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd><span class="dotted" title=
+                "http://purl.org/dc/dcam/VocabularyEncodingScheme">vocabulary
+                encoding scheme</span><sup class="type-c" title=
+                "class">c</sup></dd>
+                <dt>has facts</dt>
+                <dd>
+                    <a href="#d4e3283" title=
+                    "http://purl.org/dc/terms/issued">Date
+                    Issued</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2000-07-11"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+                <dd>
+                    <a href="#d4e3309" title=
+                    "http://purl.org/dc/terms/modified">Date
+                    Modified</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2008-01-14"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="MUST">
+            <a id="http://promsns.org/def/agr#MUST" name=
+            "http://promsns.org/def/agr#MUST"></a>
+            <h3>MUST<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#MUST</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="MUST_NOT">
+            <a id="http://promsns.org/def/agr#MUST_NOT" name=
+            "http://promsns.org/def/agr#MUST_NOT"></a>
+            <h3>MUST NOT<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#MUST_NOT</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+            <a id="http://purl.org/dc/terms/NLM" name=
+            "http://purl.org/dc/terms/NLM"></a>
+            <h3>NLM<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/NLM</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The set of conceptual resources
+                specified by the National Library of Medicine
+                Classification.</span>
+            </div>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd><span class="dotted" title=
+                "http://purl.org/dc/dcam/VocabularyEncodingScheme">vocabulary
+                encoding scheme</span><sup class="type-c" title=
+                "class">c</sup></dd>
+                <dt>has facts</dt>
+                <dd>
+                    <a href="#d4e3283" title=
+                    "http://purl.org/dc/terms/issued">Date
+                    Issued</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2005-06-13"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+                <dd>
+                    <a href="#d4e3309" title=
+                    "http://purl.org/dc/terms/modified">Date
+                    Modified</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2008-01-14"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="OPTIONAL">
+            <a id="http://promsns.org/def/agr#OPTIONAL" name=
+            "http://promsns.org/def/agr#OPTIONAL"></a>
+            <h3>OPTIONAL<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#OPTIONAL</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="RECOMMENDED">
+            <a id="http://promsns.org/def/agr#RECOMMENDED" name=
+            "http://promsns.org/def/agr#RECOMMENDED"></a>
+            <h3>RECOMMENDED<sup class="type-ni" title=
+            "named individual">ni</sup> <span class="backlink">back to <a href=
+            "#toc">ToC</a> or <a href="#namedindividuals">Named Individual
+            ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#RECOMMENDED</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="REQUIRED">
+            <a id="http://promsns.org/def/agr#REQUIRED" name=
+            "http://promsns.org/def/agr#REQUIRED"></a>
+            <h3>REQUIRED<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#REQUIRED</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="SHALL">
+            <a id="http://promsns.org/def/agr#SHALL" name=
+            "http://promsns.org/def/agr#SHALL"></a>
+            <h3>SHALL<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#SHALL</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="SHALL_NOT">
+            <a id="http://promsns.org/def/agr#SHALL_NOT" name=
+            "http://promsns.org/def/agr#SHALL_NOT"></a>
+            <h3>SHALL NOT<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#SHALL_NOT</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="SHOULD">
+            <a id="http://promsns.org/def/agr#SHOULD" name=
+            "http://promsns.org/def/agr#SHOULD"></a>
+            <h3>SHOULD<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#SHOULD</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+        <div class="entity" id="SHOULD_NOT">
+            <a id="http://promsns.org/def/agr#SHOULD_NOT" name=
+            "http://promsns.org/def/agr#SHOULD_NOT"></a>
+            <h3>SHOULD NOT<sup class="type-ni" title=
+            "named individual">ni</sup> <span class="backlink">back to <a href=
+            "#toc">ToC</a> or <a href="#namedindividuals">Named Individual
+            ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://promsns.org/def/agr#SHOULD_NOT</p>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd>
+                    <a href="#RequirementLevel" title=
+                    "http://promsns.org/def/agr#RequirementLevel">Requirement
+                    Level</a><sup class="type-c" title="class">c</sup>
+                </dd>
+            </dl>
+        </div>
+            <a id="http://purl.org/dc/terms/UDC" name=
+            "http://purl.org/dc/terms/UDC"></a>
+            <h3>UDC<sup class="type-ni" title="named individual">ni</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#namedindividuals">Named Individual ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/UDC</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The set of conceptual resources
+                specified by the Universal Decimal Classification.</span>
+            </div>
+            <dl class="description">
+                <dt>belongs to</dt>
+                <dd><span class="dotted" title=
+                "http://purl.org/dc/dcam/VocabularyEncodingScheme">vocabulary
+                encoding scheme</span><sup class="type-c" title=
+                "class">c</sup></dd>
+                <dt>has facts</dt>
+                <dd>
+                    <a href="#d4e3283" title=
+                    "http://purl.org/dc/terms/issued">Date
+                    Issued</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2000-07-11"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+                <dd>
+                    <a href="#d4e3309" title=
+                    "http://purl.org/dc/terms/modified">Date
+                    Modified</a><sup class="type-dp" title=
+                    "data property">dp</sup> <span class=
+                    "literal">"2008-01-14"^^<span class="dotted" title=
+                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
+                </dd>
+            </dl>
+        </div>
+    </div>
+        <h2>Annotation Properties</h2>
+        <ul class="hlist">
+            <li>
+                <a href="#d4e459" title=
+                "http://purl.org/dc/terms/abstract">Abstract</a>
+            </li>
+            <li>
+                <a href="#d4e486" title=
+                "http://purl.org/dc/terms/accessRights">Access Rights</a>
+            </li>
+            <li>
+                <a href="#d4e515" title=
+                "http://purl.org/dc/terms/accrualMethod">Accrual Method</a>
+            </li>
+            <li>
+                <a href="#d4e539" title=
+                "http://purl.org/dc/terms/accrualPeriodicity">Accrual
+                Periodicity</a>
+            </li>
+            <li>
+                <a href="#d4e564" title=
+                "http://purl.org/dc/terms/accrualPolicy">Accrual Policy</a>
+            </li>
+            <li>
+                <a href="#d4e588" title=
+                "http://purl.org/dc/terms/alternative">Alternative Title</a>
+            </li>
+            <li>
+                <a href="#d4e974" title=
+                "http://purl.org/dc/terms/educationLevel">Audience Education
+                Level</a>
+            </li>
+            <li>
+                <a href="#d4e666" title=
+                "http://purl.org/dc/terms/bibliographicCitation">Bibliographic
+                Citation</a>
+            </li>
+            <li>
+                <a href="#d4e697" title=
+                "http://purl.org/dc/terms/conformsTo">Conforms To</a>
+            </li>
+            <li>
+                <a href="#d4e724" title=
+                "http://purl.org/dc/terms/contributor">Contributor</a>
+            </li>
+            <li>
+                <a href="#d4e751" title=
+                "http://purl.org/dc/terms/coverage">Coverage</a>
+            </li>
+            <li>
+                <a href="#d4e805" title=
+                "http://purl.org/dc/terms/creator">Creator</a>
+            </li>
+            <li>
+                <a href="#d4e834" title=
+                "http://purl.org/dc/terms/date">Date</a>
+            </li>
+            <li>
+                <a href="#d4e861" title=
+                "http://purl.org/dc/terms/dateAccepted">Date Accepted</a>
+            </li>
+            <li>
+                <a href="#d4e640" title=
+                "http://purl.org/dc/terms/available">Date Available</a>
+            </li>
+            <li>
+                <a href="#d4e891" title=
+                "http://purl.org/dc/terms/dateCopyrighted">Date Copyrighted</a>
+            </li>
+            <li>
+                <a href="#d4e778" title="http://purl.org/dc/terms/created">Date
+                Created</a>
+            </li>
+            <li>
+                <a href="#d4e1346" title="http://purl.org/dc/terms/issued">Date
+                Issued</a>
+            </li>
+            <li>
+                <a href="#d4e1482" title=
+                "http://purl.org/dc/terms/modified">Date Modified</a>
+            </li>
+            <li>
+                <a href="#d4e917" title=
+                "http://purl.org/dc/terms/dateSubmitted">Date Submitted</a>
+            </li>
+            <li>
+                <a href="#d4e1874" title="http://purl.org/dc/terms/valid">Date
+                Valid</a>
+            </li>
+            <li>
+                <a href="#d4e946" title=
+                "http://purl.org/dc/terms/description">Description</a>
+            </li>
+            <li>
+                <a href="#d4e998" title=
+                "http://purl.org/dc/terms/extent">Extent</a>
+            </li>
+            <li>
+                <a href="#d4e1024" title=
+                "http://purl.org/dc/terms/format">Format</a>
+            </li>
+            <li>
+                <a href="#d4e1052" title=
+                "http://purl.org/dc/terms/hasFormat">Has Format</a>
+            </li>
+            <li>
+                <a href="#d4e1081" title="http://purl.org/dc/terms/hasPart">Has
+                Part</a>
+            </li>
+            <li>
+                <a href="#d4e1110" title=
+                "http://purl.org/dc/terms/hasVersion">Has Version</a>
+            </li>
+            <li>
+                <a href="#d4e1140" title=
+                "http://purl.org/dc/terms/identifier">Identifier</a>
+            </li>
+            <li>
+                <a href="#d4e1167" title=
+                "http://purl.org/dc/terms/isFormatOf">Is Format Of</a>
+            </li>
+            <li>
+                <a href="#d4e1196" title="http://purl.org/dc/terms/isPartOf">Is
+                Part Of</a>
+            </li>
+            <li>
+                <a href="#d4e1226" title=
+                "http://purl.org/dc/terms/isReferencedBy">Is Referenced By</a>
+            </li>
+            <li>
+                <a href="#d4e1255" title=
+                "http://purl.org/dc/terms/isReplacedBy">Is Replaced By</a>
+            </li>
+            <li>
+                <a href="#d4e1284" title=
+                "http://purl.org/dc/terms/isRequiredBy">Is Required By</a>
+            </li>
+            <li>
+                <a href="#d4e1314" title=
+                "http://purl.org/dc/terms/isVersionOf">Is Version Of</a>
+            </li>
+            <li>
+                <a href="#d4e1372" title=
+                "http://purl.org/dc/terms/language">Language</a>
+            </li>
+            <li>
+                <a href="#d4e1400" title=
+                "http://purl.org/dc/terms/license">License</a>
+            </li>
+            <li>
+                <a href="#d4e1426" title=
+                "http://purl.org/dc/terms/mediator">Mediator</a>
+            </li>
+            <li>
+                <a href="#d4e1453" title=
+                "http://purl.org/dc/terms/medium">Medium</a>
+            </li>
+            <li>
+                <a href="#d4e1508" title=
+                "http://purl.org/dc/terms/publisher">Publisher</a>
+            </li>
+            <li>
+                <a href="#d4e1535" title=
+                "http://purl.org/dc/terms/references">References</a>
+            </li>
+            <li>
+                <a href="#d4e1565" title=
+                "http://purl.org/dc/terms/relation">Relation</a>
+            </li>
+            <li>
+                <a href="#d4e1595" title=
+                "http://purl.org/dc/terms/replaces">Replaces</a>
+            </li>
+            <li>
+                <a href="#d4e1624" title=
+                "http://purl.org/dc/terms/requires">Requires</a>
+            </li>
+            <li>
+                <a href="#d4e1654" title=
+                "http://purl.org/dc/terms/rights">Rights</a>
+            </li>
+            <li>
+                <a href="#d4e1681" title=
+                "http://purl.org/dc/terms/source">Source</a>
+            </li>
+            <li>
+                <a href="#d4e1713" title=
+                "http://purl.org/dc/terms/spatial">Spatial Coverage</a>
+            </li>
+            <li>
+                <a href="#d4e1740" title=
+                "http://purl.org/dc/terms/subject">Subject</a>
+            </li>
+            <li>
+                <a href="#d4e1770" title=
+                "http://purl.org/dc/terms/tableOfContents">Table Of
+                Contents</a>
+            </li>
+            <li>
+                <a href="#d4e1796" title=
+                "http://purl.org/dc/terms/temporal">Temporal Coverage</a>
+            </li>
+            <li>
+                <a href="#d4e1823" title=
+                "http://purl.org/dc/terms/title">Title</a>
+            </li>
+            <li>
+                <a href="#d4e1847" title=
+                "http://purl.org/dc/terms/type">Type</a>
+            </li>
+        </ul>
+        <div class="entity" id="d4e459">
+            <a id="http://purl.org/dc/terms/abstract" name=
+            "http://purl.org/dc/terms/abstract"></a>
+            <h3>Abstract<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/abstract</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A summary of the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/description">Description</span></dd>
+                    <dd>
+                        <a href="#d4e946" title=
+                        "http://purl.org/dc/terms/description">Description</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e486">
+            <a id="http://purl.org/dc/terms/accessRights" name=
+            "http://purl.org/dc/terms/accessRights"></a>
+            <h3>Access Rights<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/accessRights</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Information about who can access the
+                resource or an indication of its security status.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/rights">Rights</span></dd>
+                    <dd>
+                        <a href="#d4e1654" title=
+                        "http://purl.org/dc/terms/rights">Rights</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2373">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e515">
+            <a id="http://purl.org/dc/terms/accrualMethod" name=
+            "http://purl.org/dc/terms/accrualMethod"></a>
+            <h3>Accrual Method<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/accrualMethod</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The method by which items are added to a
+                collection.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/dcmitype/Collection">collection</span></dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2400">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e539">
+            <a id="http://purl.org/dc/terms/accrualPeriodicity" name=
+            "http://purl.org/dc/terms/accrualPeriodicity"></a>
+            <h3>Accrual Periodicity<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://purl.org/dc/terms/accrualPeriodicity</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The frequency with which items are added
+                to a collection.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/dcmitype/Collection">collection</span></dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2425">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e564">
+            <a id="http://purl.org/dc/terms/accrualPolicy" name=
+            "http://purl.org/dc/terms/accrualPolicy"></a>
+            <h3>Accrual Policy<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/accrualPolicy</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The policy governing the addition of
+                items to a collection.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has domain</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/dcmitype/Collection">collection</span></dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2449">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e588">
+            <a id="http://purl.org/dc/terms/alternative" name=
+            "http://purl.org/dc/terms/alternative"></a>
+            <h3>Alternative Title<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/alternative</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">An alternative name for the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/title">Title</span></dd>
+                    <dd>
+                        <a href="#d4e1823" title=
+                        "http://purl.org/dc/terms/title">Title</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3046">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e974">
+            <a id="http://purl.org/dc/terms/educationLevel" name=
+            "http://purl.org/dc/terms/educationLevel"></a>
+            <h3>Audience Education Level<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://purl.org/dc/terms/educationLevel</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A class of entity, defined in terms of
+                progression through an educational or training context, for
+                which the described resource is intended.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/terms/audience">Audience</span></dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2604">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e666">
+            <a id="http://purl.org/dc/terms/bibliographicCitation" name=
+            "http://purl.org/dc/terms/bibliographicCitation"></a>
+            <h3>Bibliographic Citation<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://purl.org/dc/terms/bibliographicCitation</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A bibliographic reference for the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/identifier">Identifier</span></dd>
+                    <dd>
+                        <a href="#d4e1140" title=
+                        "http://purl.org/dc/terms/identifier">Identifier</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                    <dt>has domain</dt>
+                    <dd>
+                        <a href="#d4e3532" title=
+                        "http://purl.org/dc/terms/BibliographicResource">Bibliographic
+                        Resource</a><sup class="type-c" title="class">c</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3097">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e697">
+            <a id="http://purl.org/dc/terms/conformsTo" name=
+            "http://purl.org/dc/terms/conformsTo"></a>
+            <h3>Conforms To<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/conformsTo</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">An established standard to which the
+                described resource conforms.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2498">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e724">
+            <a id="http://purl.org/dc/terms/contributor" name=
+            "http://purl.org/dc/terms/contributor"></a>
+            <h3>Contributor<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/contributor</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">An entity responsible for making
+                contributions to the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/contributor">Contributor</span></dd>
+                    <dt>has sub-properties</dt>
+                    <dd>
+                        <a href="#d4e805" title=
+                        "http://purl.org/dc/terms/creator">Creator</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2522">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e751">
+            <a id="http://purl.org/dc/terms/coverage" name=
+            "http://purl.org/dc/terms/coverage"></a>
+            <h3>Coverage<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/coverage</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The spatial or temporal topic of the
+                resource, the spatial applicability of the resource, or the
+                jurisdiction under which the resource is relevant.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/coverage">Coverage</span></dd>
+                    <dt>has sub-properties</dt>
+                    <dd>
+                        <a href="#d4e1713" title=
+                        "http://purl.org/dc/terms/spatial">Spatial
+                        Coverage</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1796"
+                        title="http://purl.org/dc/terms/temporal">Temporal
+                        Coverage</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2549">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e805">
+            <a id="http://purl.org/dc/terms/creator" name=
+            "http://purl.org/dc/terms/creator"></a>
+            <h3>Creator<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/creator</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">An entity primarily responsible for
+                making the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/creator">Creator</span></dd>
+                    <dd>
+                        <a href="#d4e724" title=
+                        "http://purl.org/dc/terms/contributor">Contributor</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2577">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e834">
+            <a id="http://purl.org/dc/terms/date" name=
+            "http://purl.org/dc/terms/date"></a>
+            <h3>Date<sup class="type-ap" title="annotation property">ap</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/date</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A point or period of time associated
+                with an event in the lifecycle of the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/date">Date</span></dd>
+                    <dt>has sub-properties</dt>
+                    <dd>
+                        <a href="#d4e861" title=
+                        "http://purl.org/dc/terms/dateAccepted">Date
+                        Accepted</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e640"
+                        title="http://purl.org/dc/terms/available">Date
+                        Available</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e891"
+                        title="http://purl.org/dc/terms/dateCopyrighted">Date
+                        Copyrighted</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e778"
+                        title="http://purl.org/dc/terms/created">Date
+                        Created</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1346"
+                        title="http://purl.org/dc/terms/issued">Date
+                        Issued</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1482"
+                        title="http://purl.org/dc/terms/modified">Date
+                        Modified</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e917"
+                        title="http://purl.org/dc/terms/dateSubmitted">Date
+                        Submitted</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1874"
+                        title="http://purl.org/dc/terms/valid">Date
+                        Valid</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3149">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e861">
+            <a id="http://purl.org/dc/terms/dateAccepted" name=
+            "http://purl.org/dc/terms/dateAccepted"></a>
+            <h3>Date Accepted<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/dateAccepted</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Date of acceptance of the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/date">Date</span></dd>
+                    <dd>
+                        <a href="#d4e834" title=
+                        "http://purl.org/dc/terms/date">Date</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3176">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e640">
+            <a id="http://purl.org/dc/terms/available" name=
+            "http://purl.org/dc/terms/available"></a>
+            <h3>Date Available<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/available</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Date (often a range) that the resource
+                became or will become available.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/date">Date</span></dd>
+                    <dd>
+                        <a href="#d4e834" title=
+                        "http://purl.org/dc/terms/date">Date</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3073">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e891">
+            <a id="http://purl.org/dc/terms/dateCopyrighted" name=
+            "http://purl.org/dc/terms/dateCopyrighted"></a>
+            <h3>Date Copyrighted<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://purl.org/dc/terms/dateCopyrighted</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Date of copyright.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/date">Date</span></dd>
+                    <dd>
+                        <a href="#d4e834" title=
+                        "http://purl.org/dc/terms/date">Date</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3204">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e778">
+            <a id="http://purl.org/dc/terms/created" name=
+            "http://purl.org/dc/terms/created"></a>
+            <h3>Date Created<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/created</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Date of creation of the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/date">Date</span></dd>
+                    <dd>
+                        <a href="#d4e834" title=
+                        "http://purl.org/dc/terms/date">Date</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3125">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1346">
+            <a id="http://purl.org/dc/terms/issued" name=
+            "http://purl.org/dc/terms/issued"></a>
+            <h3>Date Issued<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/issued</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Date of formal issuance (e.g.,
+                publication) of the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/date">Date</span></dd>
+                    <dd>
+                        <a href="#d4e834" title=
+                        "http://purl.org/dc/terms/date">Date</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3283">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1482">
+            <a id="http://purl.org/dc/terms/modified" name=
+            "http://purl.org/dc/terms/modified"></a>
+            <h3>Date Modified<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/modified</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Date on which the resource was
+                changed.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/date">Date</span></dd>
+                    <dd>
+                        <a href="#d4e834" title=
+                        "http://purl.org/dc/terms/date">Date</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3309">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e917">
+            <a id="http://purl.org/dc/terms/dateSubmitted" name=
+            "http://purl.org/dc/terms/dateSubmitted"></a>
+            <h3>Date Submitted<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/dateSubmitted</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Date of submission of the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/date">Date</span></dd>
+                    <dd>
+                        <a href="#d4e834" title=
+                        "http://purl.org/dc/terms/date">Date</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3228">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1874">
+            <a id="http://purl.org/dc/terms/valid" name=
+            "http://purl.org/dc/terms/valid"></a>
+            <h3>Date Valid<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/valid</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Date (often a range) of validity of a
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/date">Date</span></dd>
+                    <dd>
+                        <a href="#d4e834" title=
+                        "http://purl.org/dc/terms/date">Date</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3360">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e946">
+            <a id="http://purl.org/dc/terms/description" name=
+            "http://purl.org/dc/terms/description"></a>
+            <h3>Description<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/description</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">An account of the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/description">Description</span></dd>
+                    <dt>has sub-properties</dt>
+                    <dd>
+                        <a href="#d4e459" title=
+                        "http://purl.org/dc/terms/abstract">Abstract</a><sup class="type-ap"
+                        title="annotation property">ap</sup>, <a href=
+                        "#d4e1770" title=
+                        "http://purl.org/dc/terms/tableOfContents">Table Of
+                        Contents</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e998">
+            <a id="http://purl.org/dc/terms/extent" name=
+            "http://purl.org/dc/terms/extent"></a>
+            <h3>Extent<sup class="type-ap" title="annotation property">ap</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/extent</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The size or duration of the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/format">Format</span></dd>
+                    <dd>
+                        <a href="#d4e1024" title=
+                        "http://purl.org/dc/terms/format">Format</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2628">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1024">
+            <a id="http://purl.org/dc/terms/format" name=
+            "http://purl.org/dc/terms/format"></a>
+            <h3>Format<sup class="type-ap" title="annotation property">ap</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/format</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The file format, physical medium, or
+                dimensions of the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/format">Format</span></dd>
+                    <dt>has sub-properties</dt>
+                    <dd>
+                        <a href="#d4e998" title=
+                        "http://purl.org/dc/terms/extent">Extent</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>,
+                        <a href="#d4e1453" title=
+                        "http://purl.org/dc/terms/medium">Medium</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2653">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1052">
+            <a id="http://purl.org/dc/terms/hasFormat" name=
+            "http://purl.org/dc/terms/hasFormat"></a>
+            <h3>Has Format<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/hasFormat</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that is substantially
+                the same as the pre-existing described resource, but in another
+                format.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1081">
+            <a id="http://purl.org/dc/terms/hasPart" name=
+            "http://purl.org/dc/terms/hasPart"></a>
+            <h3>Has Part<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/hasPart</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that is included
+                either physically or logically in the described
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1110">
+            <a id="http://purl.org/dc/terms/hasVersion" name=
+            "http://purl.org/dc/terms/hasVersion"></a>
+            <h3>Has Version<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/hasVersion</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that is a version,
+                edition, or adaptation of the described resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1140">
+            <a id="http://purl.org/dc/terms/identifier" name=
+            "http://purl.org/dc/terms/identifier"></a>
+            <h3>Identifier<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/identifier</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">An unambiguous reference to the resource
+                within a given context.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/identifier">Identifier</span></dd>
+                    <dt>has sub-properties</dt>
+                    <dd>
+                        <a href="#d4e666" title=
+                        "http://purl.org/dc/terms/bibliographicCitation">Bibliographic
+                        Citation</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3255">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1167">
+            <a id="http://purl.org/dc/terms/isFormatOf" name=
+            "http://purl.org/dc/terms/isFormatOf"></a>
+            <h3>Is Format Of<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/isFormatOf</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that is substantially
+                the same as the described resource, but in another
+                format.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1196">
+            <a id="http://purl.org/dc/terms/isPartOf" name=
+            "http://purl.org/dc/terms/isPartOf"></a>
+            <h3>Is Part Of<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/isPartOf</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource in which the
+                described resource is physically or logically included.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1226">
+            <a id="http://purl.org/dc/terms/isReferencedBy" name=
+            "http://purl.org/dc/terms/isReferencedBy"></a>
+            <h3>Is Referenced By<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://purl.org/dc/terms/isReferencedBy</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that references,
+                cites, or otherwise points to the described resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1255">
+            <a id="http://purl.org/dc/terms/isReplacedBy" name=
+            "http://purl.org/dc/terms/isReplacedBy"></a>
+            <h3>Is Replaced By<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/isReplacedBy</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that supplants,
+                displaces, or supersedes the described resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1284">
+            <a id="http://purl.org/dc/terms/isRequiredBy" name=
+            "http://purl.org/dc/terms/isRequiredBy"></a>
+            <h3>Is Required By<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/isRequiredBy</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that requires the
+                described resource to support its function, delivery, or
+                coherence.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1314">
+            <a id="http://purl.org/dc/terms/isVersionOf" name=
+            "http://purl.org/dc/terms/isVersionOf"></a>
+            <h3>Is Version Of<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/isVersionOf</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource of which the
+                described resource is a version, edition, or adaptation.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1372">
+            <a id="http://purl.org/dc/terms/language" name=
+            "http://purl.org/dc/terms/language"></a>
+            <h3>Language<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/language</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A language of the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/language">Language</span></dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2758">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1400">
+            <a id="http://purl.org/dc/terms/license" name=
+            "http://purl.org/dc/terms/license"></a>
+            <h3>License<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/license</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A legal document giving official
+                permission to do something with the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/rights">Rights</span></dd>
+                    <dd>
+                        <a href="#d4e1654" title=
+                        "http://purl.org/dc/terms/rights">Rights</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2785">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1426">
+            <a id="http://purl.org/dc/terms/mediator" name=
+            "http://purl.org/dc/terms/mediator"></a>
+            <h3>Mediator<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/mediator</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">An entity that mediates access to the
+                resource and for whom the resource is intended or
+                useful.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/terms/audience">Audience</span></dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2810">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1453">
+            <a id="http://purl.org/dc/terms/medium" name=
+            "http://purl.org/dc/terms/medium"></a>
+            <h3>Medium<sup class="type-ap" title="annotation property">ap</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/medium</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The material or physical carrier of the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/format">Format</span></dd>
+                    <dd>
+                        <a href="#d4e1024" title=
+                        "http://purl.org/dc/terms/format">Format</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                    <dt>has domain</dt>
+                    <dd>
+                        <a href="#d4e3820" title=
+                        "http://purl.org/dc/terms/PhysicalResource">Physical
+                        Resource</a><sup class="type-c" title="class">c</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2837">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1508">
+            <a id="http://purl.org/dc/terms/publisher" name=
+            "http://purl.org/dc/terms/publisher"></a>
+            <h3>Publisher<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/publisher</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">An entity responsible for making the
+                resource available.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/publisher">Publisher</span></dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2889">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1535">
+            <a id="http://purl.org/dc/terms/references" name=
+            "http://purl.org/dc/terms/references"></a>
+            <h3>References<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/references</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that is referenced,
+                cited, or otherwise pointed to by the described
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1565">
+            <a id="http://purl.org/dc/terms/relation" name=
+            "http://purl.org/dc/terms/relation"></a>
+            <h3>Relation<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/relation</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dt>has sub-properties</dt>
+                    <dd>
+                        <a href="#d4e697" title=
+                        "http://purl.org/dc/terms/conformsTo">Conforms
+                        To</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1052"
+                        title="http://purl.org/dc/terms/hasFormat">Has
+                        Format</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1081"
+                        title="http://purl.org/dc/terms/hasPart">Has
+                        Part</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1110"
+                        title="http://purl.org/dc/terms/hasVersion">Has
+                        Version</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1167"
+                        title="http://purl.org/dc/terms/isFormatOf">Is Format
+                        Of</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1196"
+                        title="http://purl.org/dc/terms/isPartOf">Is Part
+                        Of</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1226"
+                        title="http://purl.org/dc/terms/isReferencedBy">Is
+                        Referenced By</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1255"
+                        title="http://purl.org/dc/terms/isReplacedBy">Is
+                        Replaced By</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1284"
+                        title="http://purl.org/dc/terms/isRequiredBy">Is
+                        Required By</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1314"
+                        title="http://purl.org/dc/terms/isVersionOf">Is Version
+                        Of</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1535"
+                        title=
+                        "http://purl.org/dc/terms/references">References</a><sup class="type-ap"
+                        title="annotation property">ap</sup>, <a href=
+                        "#d4e1595" title=
+                        "http://purl.org/dc/terms/replaces">Replaces</a><sup class="type-ap"
+                        title="annotation property">ap</sup>, <a href=
+                        "#d4e1624" title=
+                        "http://purl.org/dc/terms/requires">Requires</a><sup class="type-ap"
+                        title="annotation property">ap</sup>, <a href=
+                        "#d4e1681" title=
+                        "http://purl.org/dc/terms/source">Source</a><sup class=
+                        "type-ap" title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1595">
+            <a id="http://purl.org/dc/terms/replaces" name=
+            "http://purl.org/dc/terms/replaces"></a>
+            <h3>Replaces<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/replaces</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that is supplanted,
+                displaced, or superseded by the described resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1624">
+            <a id="http://purl.org/dc/terms/requires" name=
+            "http://purl.org/dc/terms/requires"></a>
+            <h3>Requires<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/requires</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource that is required by
+                the described resource to support its function, delivery, or
+                coherence.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/relation">Relation</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1654">
+            <a id="http://purl.org/dc/terms/rights" name=
+            "http://purl.org/dc/terms/rights"></a>
+            <h3>Rights<sup class="type-ap" title="annotation property">ap</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/rights</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Information about rights held in and
+                over the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/rights">Rights</span></dd>
+                    <dt>has sub-properties</dt>
+                    <dd>
+                        <a href="#d4e486" title=
+                        "http://purl.org/dc/terms/accessRights">Access
+                        Rights</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>, <a href="#d4e1400"
+                        title=
+                        "http://purl.org/dc/terms/license">License</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2916">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1681">
+            <a id="http://purl.org/dc/terms/source" name=
+            "http://purl.org/dc/terms/source"></a>
+            <h3>Source<sup class="type-ap" title="annotation property">ap</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/source</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A related resource from which the
+                described resource is derived.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/source">Source</span></dd>
+                    <dd>
+                        <a href="#d4e1565" title=
+                        "http://purl.org/dc/terms/relation">Relation</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1713">
+            <a id="http://purl.org/dc/terms/spatial" name=
+            "http://purl.org/dc/terms/spatial"></a>
+            <h3>Spatial Coverage<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/spatial</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Spatial characteristics of the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/coverage">Coverage</span></dd>
+                    <dd>
+                        <a href="#d4e751" title=
+                        "http://purl.org/dc/terms/coverage">Coverage</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2968">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1740">
+            <a id="http://purl.org/dc/terms/subject" name=
+            "http://purl.org/dc/terms/subject"></a>
+            <h3>Subject<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/subject</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The topic of the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/subject">Subject</span></dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1770">
+            <a id="http://purl.org/dc/terms/tableOfContents" name=
+            "http://purl.org/dc/terms/tableOfContents"></a>
+            <h3>Table Of Contents<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong>
+            http://purl.org/dc/terms/tableOfContents</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A list of subunits of the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/description">Description</span></dd>
+                    <dd>
+                        <a href="#d4e946" title=
+                        "http://purl.org/dc/terms/description">Description</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1796">
+            <a id="http://purl.org/dc/terms/temporal" name=
+            "http://purl.org/dc/terms/temporal"></a>
+            <h3>Temporal Coverage<sup class="type-ap" title=
+            "annotation property">ap</sup> <span class="backlink">back to
+            <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/temporal</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">Temporal characteristics of the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/coverage">Coverage</span></dd>
+                    <dd>
+                        <a href="#d4e751" title=
+                        "http://purl.org/dc/terms/coverage">Coverage</a><sup class="type-ap"
+                        title="annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e2992">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1823">
+            <a id="http://purl.org/dc/terms/title" name=
+            "http://purl.org/dc/terms/title"></a>
+            <h3>Title<sup class="type-ap" title="annotation property">ap</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/title</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">A name given to the resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/title">Title</span></dd>
+                    <dt>has sub-properties</dt>
+                    <dd>
+                        <a href="#d4e588" title=
+                        "http://purl.org/dc/terms/alternative">Alternative
+                        Title</a><sup class="type-ap" title=
+                        "annotation property">ap</sup>
+                    </dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3335">data property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+        <div class="entity" id="d4e1847">
+            <a id="http://purl.org/dc/terms/type" name=
+            "http://purl.org/dc/terms/type"></a>
+            <h3>Type<sup class="type-ap" title="annotation property">ap</sup>
+            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
+            "#annotationproperties">Annotation Property ToC</a></span></h3>
+            <p><strong>IRI:</strong> http://purl.org/dc/terms/type</p>
+            <dl class="definedBy">
+                <dt>is defined by</dt>
+                <dd>
+                    <a href=
+                    "http://purl.org/dc/terms/">http://purl.org/dc/terms/</a>
+                </dd>
+            </dl>
+            <div class="comment">
+                <span class="markdown">The nature or genre of the
+                resource.</span>
+            </div>
+            <div class="description">
+                <dl>
+                    <dt>has super-properties</dt>
+                    <dd><span class="dotted" title=
+                    "http://purl.org/dc/elements/1.1/type">Type</span></dd>
+                    <dt>is also defined as</dt>
+                    <dd>
+                        <a href="#d4e3016">object property</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+    <div id="namespacedeclarations">
+        <h2>Namespace Declarations <span class="backlink">back to <a href=
+        "#toc">ToC</a></span></h2>
+        <dl>
+            <dt><em>default namespace</em></dt>
+            <dd>http://promsns.org/def/agr#</dd>
+            <dt>02iso-3166-code-lists</dt>
+            <dd>
+            http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-code-lists/</dd>
+            <dt>aboutdcmi</dt>
+            <dd>http://purl.org/dc/aboutdcmi#</dd>
+            <dt>creativecommons-org</dt>
+            <dd>http://creativecommons.org/</dd>
+            <dt>dc</dt>
+            <dd>http://purl.org/dc/elements/1.1/</dd>
+            <dt>dcam</dt>
+            <dd>http://purl.org/dc/dcam/</dd>
+            <dt>dcmitype</dt>
+            <dd>http://purl.org/dc/dcmitype/</dd>
+            <dt>def</dt>
+            <dd>http://promsns.org/def/</dd>
+            <dt>iso639-2</dt>
+            <dd>http://lcweb.loc.gov/standards/iso639-2/</dd>
+            <dt>lcco</dt>
+            <dd>http://lcweb.loc.gov/catdir/cpso/lcco/</dd>
+            <dt>mesh</dt>
+            <dd>http://www.nlm.nih.gov/mesh/</dd>
+            <dt>ns</dt>
+            <dd>http://www.w3.org/ns/</dd>
+            <dt>owl</dt>
+            <dd>http://www.w3.org/2002/07/owl#</dd>
+            <dt>person</dt>
+            <dd>http://promsns.org/id/person/</dd>
+            <dt>prov</dt>
+            <dd>http://www.w3.org/ns/prov#</dd>
+            <dt>rdf</dt>
+            <dd>http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
+            <dt>rdfs</dt>
+            <dd>http://www.w3.org/2000/01/rdf-schema#</dd>
+            <dt>rfc</dt>
+            <dd>http://www.ietf.org/rfc/</dd>
+            <dt>skos</dt>
+            <dd>http://www.w3.org/2004/02/skos/core#</dd>
+            <dt>terms</dt>
+            <dd>http://purl.org/dc/terms/</dd>
+            <dt>tgn</dt>
+            <dd>http://www.getty.edu/research/tools/vocabulary/tgn/</dd>
+            <dt>tr</dt>
+            <dd>http://www.w3.org/TR/</dd>
+            <dt>xsd</dt>
+            <dd>http://www.w3.org/2001/XMLSchema#</dd>
+        </dl>
+    </div>
+    <p class="endnote">This HTML document was obtained by processing the OWL
+    ontology source code through <a href=
+    "http://www.essepuntato.it/lode">LODE</a>, <em>Live OWL Documentation
+    Environment</em>, developed by <a href="http://www.essepuntato.it">Silvio
+    Peroni</a>.</p>
+</body>
 </html>
