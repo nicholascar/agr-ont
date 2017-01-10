@@ -17,9 +17,8 @@ HTML format: [agr.html](http://htmlpreview.github.io/?https://github.com/nichola
 Here are a series of examples of the ontology's use in relation to data, people (Agents) and so on.
 
 ### Defining Agreements
-
 * [How Agreements are Entities](examples/how-agreements-are-entities.md)
-* (Agreements and their relations](examples/agreements-and-their-relations.md)
+* [Agreements and their relations](examples/agreements-and-their-relations.md)
 
 
 ### Agreements and Data
@@ -37,12 +36,29 @@ Here are a series of examples of the ontology's use in relation to data, people 
 * *coming* - a hierarchy of Agreement types hasn't been made yet.
 
 
+### Specific Agreement examples
+#### Data sharing agreements
+* NSW State Government open data policy *(coming)*
+* Australian national biosecurity data sharing agreement *(coming)*
+* Future Australian National Data Custodian mandate *(coming)*
+
+#### Licenses
+* Creative Commons BY 4.0 *(coming)*
+* A custom Australian government license *(coming)*
+* A custom commercial data license *(coming)*
+
+
 ## References
 An introduction to this ontology was first published at SciDataCon 2016:
 * [paper online](http://www.scidatacon.org/2016/sessions/37/paper/185/) 
 	* [local copy](references/Car2016h-Agreeing-about-Agreements.pdf)
 * presentation
 	* [local copy](references/Car-Box-Agreeing-about-agreements.pdf)
+
+
+## Ontology publication
+
+This ontology is developed jointly by [Geoscience Australia](http://www.ga.gov.au) (GA) and the [CSIRO](http://csiro.au) and it is catalogued in GA's main data catalogue, eCat, at: http://pid.geoscience.gov.au/dataset/103680 (note that this link will only work for parties outside of GA from February, 2017).
 
 
 ## Authors and Contact

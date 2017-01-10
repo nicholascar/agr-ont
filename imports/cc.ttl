@@ -1,0 +1,198 @@
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cc:Jurisdiction a rdfs:Class ;
+    rdfs:label "Jurisdiction"@en-US ;
+    rdfs:comment """the legal jurisdiction
+		    of a license"""@en-US .
+
+cc:License a rdfs:Class ;
+    rdfs:label "License"@en-US ;
+    rdfs:comment """a set of
+		    requests/permissions to users of a Work, e.g. a
+		    copyright license, the public domain, information
+		    for distributors"""@en-US ;
+    rdfs:subClassOf <http://purl.org/dc/terms/LicenseDocument> .
+
+cc:Permission a rdfs:Class ;
+    rdfs:label "Permission"@en-US ;
+    rdfs:comment """an action that may or
+		    may not be allowed or desired"""@en-US .
+
+cc:Prohibition a rdfs:Class ;
+    rdfs:label "Prohibition"@en-US ;
+    rdfs:comment """something you may be
+		    asked not to do"""@en-US .
+
+cc:Requirement a rdfs:Class ;
+    rdfs:label "Requirement"@en-US ;
+    rdfs:comment """an action that may or
+		    may not be requested of you"""@en-US .
+
+cc:Work a rdfs:Class ;
+    rdfs:label "Work"@en-US ;
+    rdfs:comment """a potentially
+		    copyrightable work"""@en-US .
+
+cc:Copyleft a cc:Requirement ;
+    rdfs:label "Copyleft"@en-US ;
+    rdfs:comment """derivative and
+		    combined works must be licensed under specified
+		    terms, similar to those on the original
+		    work"""@en-US .
+
+cc:HighIncomeNationUse a cc:Prohibition ;
+    rdfs:label "High Income Nation Use"@en-US ;
+    rdfs:comment """use in a
+		    non-developing country"""@en-US .
+
+cc:LesserCopyleft a cc:Requirement ;
+    rdfs:label "Lesser Copyleft"@en-US ;
+    rdfs:comment """derivative works must
+		    be licensed under specified terms, with at least
+		    the same conditions as the original work;
+		    combinations with the work may be licensed under
+		    different terms"""@en-US .
+
+cc:Sharing a cc:Permission ;
+    rdfs:label "Sharing"@en-US ;
+    rdfs:comment """permits commercial
+		    derivatives, but only non-commercial
+		    distribution"""@en-US .
+
+cc:attributionName a rdf:Property ;
+    rdfs:domain cc:Work ;
+    rdfs:range rdfs:Literal .
+
+cc:attributionURL a rdf:Property ;
+    rdfs:domain cc:Work ;
+    rdfs:range rdfs:Resource .
+
+cc:deprecatedOn a rdf:Property ;
+    rdfs:label """deprecated
+		  on"""@en-US ;
+    rdfs:domain cc:License ;
+    rdfs:range <http://www.w3.org/2001/XMLSchema-datatypes#date> .
+
+cc:jurisdiction a rdf:Property ;
+    rdfs:label "jurisdiction"@en-US ;
+    rdfs:domain cc:License ;
+    rdfs:range cc:Jurisdiction .
+
+cc:legalcode a rdf:Property ;
+    rdfs:domain cc:License ;
+    rdfs:range rdfs:Resource .
+
+cc:morePermissions a rdf:Property ;
+    rdfs:domain cc:Work ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf <http://purl.org/dc/terms/relation> .
+
+cc:useGuidelines a rdf:Property ;
+    rdfs:domain cc:Work ;
+    rdfs:range rdfs:Resource ;
+    rdfs:subPropertyOf <http://purl.org/dc/terms/relation> .
+
+<http://web.resource.org/cc/Attribution> owl:equivalentClass cc:Attribution .
+
+<http://web.resource.org/cc/CommercialUse> owl:equivalentClass cc:CommercialUse .
+
+<http://web.resource.org/cc/DerivativeWorks> owl:equivalentClass cc:DerivativeWorks .
+
+<http://web.resource.org/cc/Distribution> owl:equivalentClass cc:Distribution .
+
+<http://web.resource.org/cc/License> owl:equivalentClass cc:License .
+
+<http://web.resource.org/cc/Notice> owl:equivalentClass cc:Notice .
+
+<http://web.resource.org/cc/Permission> owl:equivalentClass cc:Permission .
+
+<http://web.resource.org/cc/Prohibition> owl:equivalentClass cc:Prohibition .
+
+<http://web.resource.org/cc/Reproduction> owl:equivalentClass cc:Reproduction .
+
+<http://web.resource.org/cc/Requirement> owl:equivalentClass cc:Requirement .
+
+<http://web.resource.org/cc/ShareAlike> owl:equivalentClass cc:ShareAlike .
+
+<http://web.resource.org/cc/SourceCode> owl:equivalentClass cc:SourceCode .
+
+<http://web.resource.org/cc/Work> owl:equivalentClass cc:Work .
+
+<http://web.resource.org/cc/license> owl:equivalentProperty cc:license .
+
+<http://web.resource.org/cc/permits> owl:equivalentProperty cc:permits .
+
+<http://web.resource.org/cc/prohibits> owl:equivalentProperty cc:prohibits .
+
+<http://web.resource.org/cc/requires> owl:equivalentProperty cc:requires .
+
+cc:Attribution a cc:Requirement ;
+    rdfs:label "Attribution"@en-US ;
+    rdfs:comment """credit be given to
+		    copyright holder and/or author"""@en-US .
+
+cc:CommercialUse a cc:Prohibition ;
+    rdfs:label "Commercial Use"@en-US ;
+    rdfs:comment """exercising rights for
+		    commercial purposes"""@en-US .
+
+cc:DerivativeWorks a cc:Permission ;
+    rdfs:label "Derivative Works"@en-US ;
+    rdfs:comment """distribution of
+		    derivative works"""@en-US .
+
+cc:Distribution a cc:Permission ;
+    rdfs:label "Distribution"@en-US ;
+    rdfs:comment """distribution, public
+		    display, and publicly performance"""@en-US .
+
+cc:Notice a cc:Requirement ;
+    rdfs:label "Notice"@en-US ;
+    rdfs:comment """copyright and license
+		    notices be kept intact"""@en-US .
+
+cc:Reproduction a cc:Permission ;
+    rdfs:label "Reproduction"@en-US ;
+    rdfs:comment """making multiple
+		    copies"""@en-US .
+
+cc:ShareAlike a cc:Requirement ;
+    rdfs:label "Share Alike"@en-US ;
+    rdfs:comment """derivative works be
+		    licensed under the same terms or compatible terms
+		    as the original work"""@en-US .
+
+cc:SourceCode a cc:Requirement ;
+    rdfs:label "Source Code"@en-US ;
+    rdfs:comment """source code (the
+		    preferred form for making modifications) must be
+		    provided when exercising some rights granted by
+		    the license."""@en-US .
+
+cc:license a rdf:Property ;
+    rdfs:label """has
+		  license"""@en-US ;
+    rdfs:domain cc:Work ;
+    rdfs:range cc:License ;
+    rdfs:subPropertyOf <http://purl.org/dc/terms/license> ;
+    = <http://www.w3.org/1999/xhtml/vocab#license> .
+
+cc:permits a rdf:Property ;
+    rdfs:label "permits"@en-US ;
+    rdfs:domain cc:License ;
+    rdfs:range cc:Permission .
+
+cc:prohibits a rdf:Property ;
+    rdfs:label "prohibits"@en-US ;
+    rdfs:domain cc:License ;
+    rdfs:range cc:Prohibition .
+
+cc:requires a rdf:Property ;
+    rdfs:label "requires"@en-US ;
+    rdfs:domain cc:License ;
+    rdfs:range cc:Requirement .

@@ -5,12 +5,9 @@
 # imports: http://www.w3.org/2004/02/skos/core
 # imports: http://www.w3.org/ns/org.ttl
 # imports: http://www.w3.org/ns/prov-o#
-# imports: http://xmlns.com/foaf/0.1/
 
 @prefix : <http://promsns.org/def/agr#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
@@ -20,21 +17,25 @@
 
 <http://promsns.org/def/agr>
   rdf:type owl:Ontology ;
-  dc:creator "Nicholas Car" ;
   dcterms:created "2016-09-12"^^xsd:date ;
-  dcterms:creator <http://promsns.org/id/person/nicholascar> ;
+  dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
   dcterms:modified "2016-10-12"^^xsd:date ;
   rdfs:comment "This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata. Its purpose is to support data sharing by making explicit the relationships between agreements and data and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements."@en ;
   rdfs:label "Agreements ontology"@en ;
   owl:imports <http://creativecommons.org/schema.rdf> ;
   owl:imports <http://dublincore.org/2012/06/14/dcterms.rdf> ;
-  owl:imports dc: ;
   owl:imports <http://www.w3.org/2004/02/skos/core> ;
   owl:imports <http://www.w3.org/ns/org.ttl> ;
   owl:imports <http://www.w3.org/ns/prov-o#> ;
-  owl:imports foaf: ;
   owl:versionInfo "v1.1" ;
 .
+
+<https://orcid.org/0000-0002-8742-7730>
+    rdf:type dcterms:Agent ;
+    rdfs:label "Nicholas Car"@en ;
+    rdfs:comment "Contact Nicholas on nicholas.car@ga.gov.au."@en ;
+.
+
 :Agreement
   rdf:type owl:Class ;
   rdfs:comment "A description of a set of required actions by particular agents. All the required actions are detailed in Requirements class objects that this is a Collection of so the Agreement is just a container"@en ;
