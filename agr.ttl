@@ -1,199 +1,275 @@
-# baseURI: http://promsns.org/def/agr
-# imports: http://creativecommons.org/schema.rdf
-# imports: http://dublincore.org/2012/06/14/dcterms.rdf
-# imports: http://purl.org/dc/elements/1.1/
-# imports: http://www.w3.org/2004/02/skos/core
-# imports: http://www.w3.org/ns/org.ttl
-# imports: http://www.w3.org/ns/prov-o#
-
 @prefix : <http://promsns.org/def/agr#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://promsns.org/def/agr> .
 
-<http://promsns.org/def/agr>
-  rdf:type owl:Ontology ;
-  dcterms:created "2016-09-12"^^xsd:date ;
-  dcterms:creator <https://orcid.org/0000-0002-8742-7730> ;
-  dcterms:modified "2016-10-12"^^xsd:date ;
-  rdfs:comment "This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata. Its purpose is to support data sharing by making explicit the relationships between agreements and data and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements."@en ;
-  rdfs:label "Agreements ontology"@en ;
-  owl:imports <http://creativecommons.org/schema.rdf> ;
-  owl:imports <http://dublincore.org/2012/06/14/dcterms.rdf> ;
-  owl:imports <http://www.w3.org/2004/02/skos/core> ;
-  owl:imports <http://www.w3.org/ns/org.ttl> ;
-  owl:imports <http://www.w3.org/ns/prov-o#> ;
-  owl:versionInfo "v1.1" ;
-.
+<http://promsns.org/def/agr> rdf:type owl:Ontology ;
+                              owl:versionIRI <http://promsns.org/def/agr/1.3> ;
+                              owl:imports <http://www.w3.org/ns/org.ttl> ,
+                                          <http://www.w3.org/ns/prov-o#> ;
+                              dcterms:modified "2018-02-21"^^xsd:date ;
+                              dcterms:created "2016-09-12"^^xsd:date ;
+                              rdfs:label "Agreements ontology"@en ;
+                              owl:versionInfo "1.3"^^xsd:string ;
+                              dcterms:creator <http://orcid.org/0000-0002-8742-7730> ;
+                              rdfs:comment """This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata.
 
-<https://orcid.org/0000-0002-8742-7730>
-    rdf:type dcterms:Agent ;
-    rdfs:label "Nicholas Car"@en ;
-    rdfs:comment "Contact Nicholas on nicholas.car@ga.gov.au."@en ;
-.
+Agreements' porposes are to effect the behaviour of Agents that use Entities or undertake Activities. This ontology defines those effects as further actions (Requirment Resolutions) that satisfy stated Requirements articulated within the Agreement. The Requirement Resolutions can compelled to be performed with one of a number of different Imperatives such as MUST, SHOULD etc.
 
-:Agreement
-  rdf:type owl:Class ;
-  rdfs:comment "A description of a set of required actions by particular agents. All the required actions are detailed in Requirements class objects that this is a Collection of so the Agreement is just a container"@en ;
-  rdfs:label "Agreement"@en ;
-  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Collection> ;
-  rdfs:subClassOf prov:Plan ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :requires ;
-    ] ;
-.
-:MAY
-  rdf:type :RequirementLevel ;
-  rdfs:label "MAY" ;
-.
-:MUST
-  rdf:type :RequirementLevel ;
-  rdfs:label "MUST" ;
-.
-:MUST_NOT
-  rdf:type :RequirementLevel ;
-  rdfs:label "MUST NOT" ;
-.
-:OPTIONAL
-  rdf:type :RequirementLevel ;
-  rdfs:label "OPTIONAL" ;
-.
-:RECOMMENDED
-  rdf:type :RequirementLevel ;
-  rdfs:label "RECOMMENDED" ;
-.
-:REQUIRED
-  rdf:type :RequirementLevel ;
-  rdfs:label "REQUIRED" ;
-.
-:Requirement
-  rdf:type owl:Class ;
-  rdfs:comment "This class is analagous to the Creative Commons ontology formerly available. According to CC, a Requirement is \"an action that may or may not be requested of you\". In this ontology, it is only \"an action that may be requested of you\""@en ;
-  rdfs:label "Requirement"@en ;
-  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-  rdfs:subClassOf prov:Plan ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :requirementLevel ;
-    ] ;
-.
-:RequirementLevel
-  rdf:type owl:Class ;
-  rdfs:comment "An RequirementLevel is the level at which an Agreement complels the Agents it affects to action. The initial instances of Imperative are taken from RFC2119."@en ;
-  rdfs:label "Requirement Level"@en ;
-  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-.
-:RequirementResolution
-  rdf:type owl:Class ;
-  rdfs:comment "An action that resolves requirements"@en ;
-  rdfs:label "Requirement Resolution"@en ;
-  rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
-  rdfs:subClassOf prov:Activity ;
-  rdfs:subClassOf [
-      rdf:type owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty :satisfies ;
-    ] ;
-.
-:SHALL
-  rdf:type :RequirementLevel ;
-  rdfs:label "SHALL" ;
-.
-:SHALL_NOT
-  rdf:type :RequirementLevel ;
-  rdfs:label "SHALL NOT" ;
-.
-:SHOULD
-  rdf:type :RequirementLevel ;
-  rdfs:label "SHOULD" ;
-.
-:SHOULD_NOT
-  rdf:type :RequirementLevel ;
-  rdfs:label "SHOULD NOT" ;
-.
-:hasScope
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "This property is the union (group) of all Agents indicated as being within the scope of an Agreement by the hasWithinScope property."@en ;
-  rdfs:domain :Agreement ;
-  rdfs:label "has scope"@en ;
-  rdfs:range prov:Agent ;
-  rdfs:subPropertyOf prov:influenced ;
-  owl:inverseOf :scopeOf ;
-.
-:hasWithinScope
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "This property indicates an Agent affected by an Agreement. It is likely that the Agent will be a group (foaf:Group) or an Organization (org:Organisation) rather than an individual person and certainly not a machine Agent. Individual Agents indicated as being affected by an Agreement via this property collectively make a group, formal or informal, that can be indicated as being the entire scope group of an Agreement via hasScopeOf property of it."@en ;
-  rdfs:domain :Agreement ;
-  rdfs:label "has within scope"@en ;
-  rdfs:range prov:Agent ;
-  rdfs:subPropertyOf prov:influenced ;
-  owl:inverseOf :withinScopeOf ;
-.
-:requirementLevel
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "a Requirement has a requirementLevel of a RequirementLevel"@en ;
-  rdfs:domain :Requirement ;
-  rdfs:label "requirement level"@en ;
-  rdfs:range :RequirementLevel ;
-.
-:requirementOf
-  rdf:type owl:InverseFunctionalProperty ;
-  rdfs:comment "A Requirement is a requirementOf an Agreement"@en ;
-  rdfs:domain :Requirement ;
-  rdfs:label "requirement of"@en ;
-  rdfs:range :Agreement ;
-  rdfs:subPropertyOf dcterms:isPartOf ;
-  owl:inverseOf :requires ;
-.
-:requires
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "An Agreement requires a Requirement"@en ;
-  rdfs:domain :Agreement ;
-  rdfs:label "requires"@en ;
-  rdfs:range :Requirement ;
-  rdfs:subPropertyOf dcterms:hasPart ;
-  owl:inverseOf :requirementOf ;
-.
-:satisfiedBy
-  rdf:type owl:InverseFunctionalProperty ;
-  rdfs:comment "inverse of satisfies"@en ;
-  rdfs:domain :Requirement ;
-  rdfs:label "satisfied by"@en ;
-  rdfs:range :RequirementResolution ;
-  rdfs:subPropertyOf prov:influenced ;
-  owl:inverseOf :satisfies ;
-.
-:satisfies
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "a Requirement Resolution satisfies a Requirement"@en ;
-  rdfs:domain :RequirementResolution ;
-  rdfs:label "satisfies"@en ;
-  rdfs:range :Requirement ;
-  rdfs:subPropertyOf prov:wasInfluencedBy ;
-  owl:inverseOf :satisfiedBy ;
-.
-:scopeOf
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "inverse of hasScopeOf"@en ;
-  rdfs:domain prov:Agent ;
-  rdfs:label "scope of"@en ;
-  rdfs:range :Agreement ;
-  rdfs:subPropertyOf prov:wasInfluencedBy ;
-  owl:inverseOf :hasScope ;
-.
-:withinScopeOf
-  rdf:type owl:ObjectProperty ;
-  rdfs:comment "inverse of hasWithinScope"@en ;
-  rdfs:domain prov:Agent ;
-  rdfs:label "within scope"@en ;
-  rdfs:range :Agreement ;
-  rdfs:subPropertyOf prov:wasInfluencedBy ;
-  owl:inverseOf :hasWithinScope ;
-.
+This ontology's purpose is to support data sharing by making explicit the relationships between agreements and data, agreements and actions and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements."""@en ;
+                              <http://purl.org/dc/elements/1.1/creator> <https://orcid.org/0000-0002-8742-7730> .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://promsns.org/def/agr#requirementOf
+:requirementOf rdf:type owl:AnnotationProperty ;
+               rdfs:subPropertyOf dcterms:isPartOf ;
+               rdfs:range :Agreement .
+
+
+###  http://promsns.org/def/agr#requires
+:requires rdf:type owl:AnnotationProperty ;
+          rdfs:subPropertyOf dcterms:hasPart ;
+          rdfs:range :Requirement .
+
+
+###  http://purl.org/dc/terms/hasPart
+dcterms:hasPart rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/isPartOf
+dcterms:isPartOf rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/source
+dcterms:source rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://promsns.org/def/agr#hadAgreement
+:hadAgreement rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf prov:wasInfluencedBy ;
+              rdfs:range :Agreement ;
+              rdfs:comment """Anything (an endurant thing like a Dataset or a Car) or a perdurant thing (like a course of action or a process) can have a related Agreement that affects Agents related to the production, use or agency related to the thing.
+
+The way Agreements affect Agents is through the articulation of Requirements - required actions - which exist with varying imperatives."""@en ;
+              rdfs:label "had agreement"@en .
+
+
+###  http://promsns.org/def/agr#hadImperative
+:hadImperative rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf prov:hadPlan ;
+               rdfs:range :Imperative ;
+               rdfs:comment """Something (permissive domain for this property) had an imperative according to a particular Imperative.
+
+e.g. Requirement X: \"Undertake Action Y\" hadImperative agr:MUST
+
+This indicates the Requirment MUST be stafisfied by the undertaking of Action Y.
+
+The Imperative individuals are sources from RFC2119 (https://www.ietf.org/rfc/rfc2119.txt)."""@en ;
+               rdfs:label "had imperative"@en .
+
+
+###  http://promsns.org/def/agr#hadScope
+:hadScope rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf prov:wasInfluencedBy ;
+          owl:inverseOf :scopeOf .
+
+
+###  http://promsns.org/def/agr#satisfiedBy
+:satisfiedBy rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf prov:wasInfluencedBy ;
+             owl:inverseOf :satisfies ;
+             rdfs:comment "satisfied by"@en .
+
+
+###  http://promsns.org/def/agr#satisfies
+:satisfies rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf prov:wasInfluencedBy ;
+           rdfs:domain :RequirementResolution ;
+           rdfs:range :Requirement ;
+           rdfs:comment "A Requirement Resolution may satisfy Requirement(s)"@en ;
+           rdfs:label "satisfies"@en .
+
+
+###  http://promsns.org/def/agr#scopeOf
+:scopeOf rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf prov:wasInfluencedBy ;
+         rdfs:range :Agreement ;
+         rdfs:comment "An Agent is within the scopeOf an Agreement if that Agent, or members of it if it is a collection Agent such as a Group or Organisation, are bound by that Agreement's requirements within a certain Agreement use scenario."@en ;
+         rdfs:label "scope of"@en .
+
+
+###  http://promsns.org/def/agr#wasMemberOf
+:wasMemberOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf prov:wasInfluencedBy ;
+             owl:inverseOf prov:hadMember .
+
+
+###  http://promsns.org/def/agr#withinScopeOf
+:withinScopeOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf prov:wasInfluencedBy ;
+               rdfs:range :Agreement ;
+               rdfs:comment "inverse of hasWithinScope"@en ;
+               rdfs:label "within scope"@en .
+
+
+###  http://www.w3.org/ns/prov#hadMember
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://promsns.org/def/agr#Agreement
+:Agreement rdf:type owl:Class ;
+           rdfs:subClassOf prov:Collection ;
+           rdfs:comment "A collection of Requirements."@en ;
+           rdfs:label "Agreement"@en .
+
+
+###  http://promsns.org/def/agr#Imperative
+:Imperative rdf:type owl:Class ;
+            rdfs:subClassOf prov:Plan ;
+            dcterms:source "Named Individual Imperatives in this ontology are taken from RFC2119 (https://www.ietf.org/rfc/rfc2119.txt)."@en ;
+            rdfs:comment "An Imperative is the force with which a Requirement compels an Agents within the scope of an Agreement containing that Requirment to take action expressed in a RequirementResolution."@en ;
+            rdfs:label "Imperative"@en .
+
+
+###  http://promsns.org/def/agr#License
+:License rdf:type owl:Class ;
+         rdfs:subClassOf :Agreement ;
+         rdfs:comment """A specialised Agreement pertaining to licensing.
+
+This subclass introduces no restrictions to Agreement but is defined in this ontology due to the common expected use of Agreements for licenses. Its inclusion also indicated how (by subclassing) laws, MoUs and other specialised Agreements should be made."""@en .
+
+
+###  http://promsns.org/def/agr#Requirement
+:Requirement rdf:type owl:Class ;
+             rdfs:subClassOf prov:Plan ,
+                             <https://creativecommons.org/ns#Requirement> ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :wasMemberOf ;
+                               owl:someValuesFrom :Agreement
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hadImperative ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Imperative
+                             ] ;
+             rdfs:comment """An action that may be requested of an agent requiring demonstrable fullfillment via a RequirmentResolution action with an imperative given by a RequirementLevel. The RequirmentResolution is thus conducted in accordance with the instructions implicit or explicit in the Requirement.
+
+A Requrement is a specialised version of both a Creative Commons Requirement (a cc:Requirement is \"an action that may or may not be requested of you\") and a prov:Plan (\"A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals\")."""@en ;
+             rdfs:label "Requirement"@en .
+
+
+###  http://promsns.org/def/agr#RequirementLevel
+:RequirementLevel rdf:type owl:Class .
+
+
+###  http://promsns.org/def/agr#RequirementResolution
+:RequirementResolution rdf:type owl:Class ;
+                       rdfs:subClassOf prov:Activity ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty :satisfies ;
+                                         owl:someValuesFrom :Requirement
+                                       ] ;
+                       rdfs:comment """An action (a prov:Activity) that resolves one or more Requirements.
+
+Since a Requirement is a subclass of prov:Plan, a Requirement Resolution is then a prov:Activity which is conducted according to the Plan."""@en ;
+                       rdfs:label "Requirement Resolution"@en .
+
+
+###  http://purl.org/dc/terms/Agent
+dcterms:Agent rdf:type owl:Class .
+
+
+###  https://creativecommons.org/ns#Requirement
+<https://creativecommons.org/ns#Requirement> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://promsns.org/def/agr
+<http://promsns.org/def/agr> rdf:type owl:NamedIndividual .
+
+
+###  http://promsns.org/def/agr#MAY
+:MAY rdf:type owl:NamedIndividual ,
+              :RequirementLevel ;
+     rdfs:label "MAY" .
+
+
+###  http://promsns.org/def/agr#MUST
+:MUST rdf:type owl:NamedIndividual ,
+               :RequirementLevel ;
+      rdfs:label "MUST" .
+
+
+###  http://promsns.org/def/agr#MUST_NOT
+:MUST_NOT rdf:type owl:NamedIndividual ,
+                   :RequirementLevel ;
+          rdfs:label "MUST NOT" .
+
+
+###  http://promsns.org/def/agr#OPTIONAL
+:OPTIONAL rdf:type owl:NamedIndividual ,
+                   :RequirementLevel ;
+          rdfs:label "OPTIONAL" .
+
+
+###  http://promsns.org/def/agr#RECOMMENDED
+:RECOMMENDED rdf:type owl:NamedIndividual ,
+                      :RequirementLevel ;
+             rdfs:label "RECOMMENDED" .
+
+
+###  http://promsns.org/def/agr#REQUIRED
+:REQUIRED rdf:type owl:NamedIndividual ,
+                   :RequirementLevel ;
+          rdfs:label "REQUIRED" .
+
+
+###  http://promsns.org/def/agr#SHALL
+:SHALL rdf:type owl:NamedIndividual ,
+                :RequirementLevel ;
+       rdfs:label "SHALL" .
+
+
+###  http://promsns.org/def/agr#SHALL_NOT
+:SHALL_NOT rdf:type owl:NamedIndividual ,
+                    :RequirementLevel ;
+           rdfs:label "SHALL NOT" .
+
+
+###  http://promsns.org/def/agr#SHOULD
+:SHOULD rdf:type owl:NamedIndividual ,
+                 :RequirementLevel ;
+        rdfs:label "SHOULD" .
+
+
+###  http://promsns.org/def/agr#SHOULD_NOT
+:SHOULD_NOT rdf:type owl:NamedIndividual ,
+                     :RequirementLevel ;
+            rdfs:label "SHOULD NOT" .
+
+
+###  https://orcid.org/0000-0002-8742-7730
+<https://orcid.org/0000-0002-8742-7730> rdf:type owl:NamedIndividual ,
+                                                 dcterms:Agent ;
+                                        rdfs:comment "Contact Nicholas on nicholas.car@csiro.au"@en ;
+                                        rdfs:label "Nicholas Car"@en .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi

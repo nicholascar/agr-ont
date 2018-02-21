@@ -1,0 +1,519 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://promsns.org/def/agr"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://promsns.org/def/agr"
+     versionIRI="http://promsns.org/def/agr/1.3">
+    <Prefix name="" IRI="http://promsns.org/def/agr#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="prov" IRI="http://www.w3.org/ns/prov#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="dcterms" IRI="http://purl.org/dc/terms/"/>
+    <Import>http://www.w3.org/ns/org.ttl</Import>
+    <Import>http://www.w3.org/ns/prov-o#</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2018-02-21</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2016-09-12</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Agreements ontology</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#string">1.3</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">This Agreements Ontology is designed to model &apos;agreements&apos; which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata.
+
+Agreements&apos; porposes are to effect the behaviour of Agents that use Entities or undertake Activities. This ontology defines those effects as further actions (Requirment Resolutions) that satisfy stated Requirements articulated within the Agreement. The Requirement Resolutions can compelled to be performed with one of a number of different Imperatives such as MUST, SHOULD etc.
+
+This ontology&apos;s purpose is to support data sharing by making explicit the relationships between agreements and data, agreements and actions and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+        <IRI>http://orcid.org/0000-0002-8742-7730</IRI>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+        <IRI>https://orcid.org/0000-0002-8742-7730</IRI>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#Requirement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://creativecommons.org/ns#Requirement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SHOULD"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MUST_NOT"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RequirementResolution"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="dcterms:Agent"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MUST"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#withinScopeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#satisfiedBy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Agreement"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#MAY"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RequirementLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Imperative"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#scopeOf"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#requires"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#OPTIONAL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI=""/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#wasMemberOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hadAgreement"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hadScope"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="https://orcid.org/0000-0002-8742-7730"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hadImperative"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#satisfies"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:hasPart"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="#requirementOf"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SHALL_NOT"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:isPartOf"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#License"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SHOULD_NOT"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#RECOMMENDED"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:source"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SHALL"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#REQUIRED"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/elements/1.1/creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:created"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dcterms:creator"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Agreement"/>
+        <Class abbreviatedIRI="prov:Collection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Imperative"/>
+        <Class abbreviatedIRI="prov:Plan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#License"/>
+        <Class IRI="#Agreement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Requirement"/>
+        <Class abbreviatedIRI="prov:Plan"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Requirement"/>
+        <Class IRI="https://creativecommons.org/ns#Requirement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Requirement"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#wasMemberOf"/>
+            <Class IRI="#Agreement"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Requirement"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#hadImperative"/>
+            <Class IRI="#Imperative"/>
+        </ObjectExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RequirementResolution"/>
+        <Class abbreviatedIRI="prov:Activity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RequirementResolution"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#satisfies"/>
+            <Class IRI="#Requirement"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#MAY"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#MUST"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#MUST_NOT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#OPTIONAL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#RECOMMENDED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#REQUIRED"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#SHALL"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#SHALL_NOT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#SHOULD"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#RequirementLevel"/>
+        <NamedIndividual IRI="#SHOULD_NOT"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="dcterms:Agent"/>
+        <NamedIndividual IRI="https://orcid.org/0000-0002-8742-7730"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hadAgreement"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hadImperative"/>
+        <ObjectProperty abbreviatedIRI="prov:hadPlan"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hadScope"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#satisfiedBy"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#satisfies"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#scopeOf"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#wasMemberOf"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#withinScopeOf"/>
+        <ObjectProperty abbreviatedIRI="prov:wasInfluencedBy"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hadScope"/>
+        <ObjectProperty IRI="#scopeOf"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#satisfiedBy"/>
+        <ObjectProperty IRI="#satisfies"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#wasMemberOf"/>
+        <ObjectProperty abbreviatedIRI="prov:hadMember"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#satisfies"/>
+        <Class IRI="#RequirementResolution"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hadAgreement"/>
+        <Class IRI="#Agreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hadImperative"/>
+        <Class IRI="#Imperative"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#satisfies"/>
+        <Class IRI="#Requirement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#scopeOf"/>
+        <Class IRI="#Agreement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#withinScopeOf"/>
+        <Class IRI="#Agreement"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Agreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A collection of Requirements.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Agreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="dcterms:source"/>
+        <IRI>#Imperative</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Named Individual Imperatives in this ontology are taken from RFC2119 (https://www.ietf.org/rfc/rfc2119.txt).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Imperative</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An Imperative is the force with which a Requirement compels an Agents within the scope of an Agreement containing that Requirment to take action expressed in a RequirementResolution.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Imperative</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Imperative</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#License</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A specialised Agreement pertaining to licensing.
+
+This subclass introduces no restrictions to Agreement but is defined in this ontology due to the common expected use of Agreements for licenses. Its inclusion also indicated how (by subclassing) laws, MoUs and other specialised Agreements should be made.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MAY</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MAY</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MUST</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MUST</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MUST_NOT</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">MUST NOT</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#OPTIONAL</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">OPTIONAL</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RECOMMENDED</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">RECOMMENDED</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#REQUIRED</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">REQUIRED</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Requirement</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An action that may be requested of an agent requiring demonstrable fullfillment via a RequirmentResolution action with an imperative given by a RequirementLevel. The RequirmentResolution is thus conducted in accordance with the instructions implicit or explicit in the Requirement.
+
+A Requrement is a specialised version of both a Creative Commons Requirement (a cc:Requirement is &quot;an action that may or may not be requested of you&quot;) and a prov:Plan (&quot;A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals&quot;).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Requirement</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Requirement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#RequirementResolution</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An action (a prov:Activity) that resolves one or more Requirements.
+
+Since a Requirement is a subclass of prov:Plan, a Requirement Resolution is then a prov:Activity which is conducted according to the Plan.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#RequirementResolution</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Requirement Resolution</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SHALL</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SHALL</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SHALL_NOT</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SHALL NOT</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SHOULD</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SHOULD</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#SHOULD_NOT</IRI>
+        <Literal datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">SHOULD NOT</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hadAgreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Anything (an endurant thing like a Dataset or a Car) or a perdurant thing (like a course of action or a process) can have a related Agreement that affects Agents related to the production, use or agency related to the thing.
+
+The way Agreements affect Agents is through the articulation of Requirements - required actions - which exist with varying imperatives.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hadAgreement</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">had agreement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hadImperative</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Something (permissive domain for this property) had an imperative according to a particular Imperative.
+
+e.g. Requirement X: &quot;Undertake Action Y&quot; hadImperative agr:MUST
+
+This indicates the Requirment MUST be stafisfied by the undertaking of Action Y.
+
+The Imperative individuals are sources from RFC2119 (https://www.ietf.org/rfc/rfc2119.txt).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#hadImperative</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">had imperative</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#satisfiedBy</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">satisfied by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#satisfies</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">A Requirement Resolution may satisfy Requirement(s)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#satisfies</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">satisfies</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#scopeOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">An Agent is within the scopeOf an Agreement if that Agent, or members of it if it is a collection Agent such as a Group or Organisation, are bound by that Agreement&apos;s requirements within a certain Agreement use scenario.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#scopeOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">scope of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#withinScopeOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">inverse of hasWithinScope</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#withinScopeOf</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">within scope</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://orcid.org/0000-0002-8742-7730</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Contact Nicholas on nicholas.car@csiro.au</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>https://orcid.org/0000-0002-8742-7730</IRI>
+        <Literal xml:lang="en" datatypeIRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral">Nicholas Car</Literal>
+    </AnnotationAssertion>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#requirementOf"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:isPartOf"/>
+    </SubAnnotationPropertyOf>
+    <SubAnnotationPropertyOf>
+        <AnnotationProperty IRI="#requires"/>
+        <AnnotationProperty abbreviatedIRI="dcterms:hasPart"/>
+    </SubAnnotationPropertyOf>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#requirementOf"/>
+        <IRI>#Agreement</IRI>
+    </AnnotationPropertyRange>
+    <AnnotationPropertyRange>
+        <AnnotationProperty IRI="#requires"/>
+        <IRI>#Requirement</IRI>
+    </AnnotationPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->

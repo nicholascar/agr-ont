@@ -1,973 +1,478 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html>
-<html>
-<head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <title>Agreements ontology</title>
-    <title>Agreements ontology</title>
-    <link href="http://eelst.cs.unibo.it/apps/LODE/owl.css" rel="stylesheet"
-    type="text/css">
-    <link href="http://eelst.cs.unibo.it/apps/LODE/Primer.css" rel="stylesheet"
-    type="text/css">
-    <link href="http://eelst.cs.unibo.it/apps/LODE/rec.css" rel="stylesheet"
-    type="text/css">
-    <link href="http://eelst.cs.unibo.it/apps/LODE/extra.css" rel="stylesheet"
-    type="text/css">
-    <link href="http://eelst.cs.unibo.it/apps/LODE/favicon.ico" rel=
-    "shortcut icon">
-    <script src="http://eelst.cs.unibo.it/apps/LODE/jquery.js">
-    </script>
-    <script src="http://eelst.cs.unibo.it/apps/LODE/jquery.scrollTo.js">
-    </script>
-    <script src="/static/js/marked.min.js">
-    </script>
-    <script>
-                $(document).ready(
-                    function () {
-                        jQuery(".markdown").each(function(el){
-                            jQuery(this).after(marked(jQuery(this).text())).remove()});
-                        var list = $('a[name="http://www.essepuntato.it/tmp/1476252778-ontology"]');
-                        if (list.size() != 0) {
-                            var element = list.first();
-                            $.scrollTo(element);
-                        }
-                    });
-    </script>
-</head>
-<body>
-    <div class="head">
-        <h1>Agreements ontology</h1>
-        <dl>
-            <dt>IRI:</dt>
-            <dd>http://promsns.org/def/agr</dd>
-        </dl>
-        <dl>
-            <dt>Current version:</dt>
-            <dd>v1.1</dd>
-        </dl>
-        <dl>
-            <dt>Authors:</dt>
-            <dd>Nicholas Car</dd>
-            <dd>
-                <a href=
-                "http://promsns.org/id/person/nicholascar">http://promsns.org/id/person/nicholascar</a>
-            </dd>
-        </dl>
-        <dl>
-            <dt>Imported Ontologies:</dt>
-            <dd>
-                <a href=
-                "http://creativecommons.org/schema.rdf">http://creativecommons.org/schema.rdf</a>
-                (<a href=
-                "http://www.essepuntato.it/lode/owlapi/http://creativecommons.org/schema.rdf">visualise
-                it with LODE</a>)
-            </dd>
-            <dd>
-                <a href=
-                "http://www.w3.org/2004/02/skos/core">http://www.w3.org/2004/02/skos/core</a>
-                (<a href=
-                "http://www.essepuntato.it/lode/owlapi/http://www.w3.org/2004/02/skos/core">visualise
-                it with LODE</a>)
-            </dd>
-            <dd>
-                <a href=
-                "http://www.w3.org/ns/org.ttl">http://www.w3.org/ns/org.ttl</a>
-                (<a href=
-                "http://www.essepuntato.it/lode/owlapi/http://www.w3.org/ns/org.ttl">visualise
-                it with LODE</a>)
-            </dd>
-            <dd>
-                <a href=
-                "http://www.w3.org/ns/prov-o#">http://www.w3.org/ns/prov-o#</a>
-                (<a href=
-                "http://www.essepuntato.it/lode/owlapi/http://www.w3.org/ns/prov-o#">visualise
-                it with LODE</a>)
-            </dd>
-            <dd>
-                <a href=
-                "http://xmlns.com/foaf/0.1/">http://xmlns.com/foaf/0.1/</a>
-                (<a href=
-                "http://www.essepuntato.it/lode/owlapi/http://xmlns.com/foaf/0.1/">visualise
-                it with LODE</a>)
-            </dd>
-        </dl>
-        <dl>
-            <dt>Other visualisation:</dt>
-            <dd>
-                <a href=
-                "http://eelst.cs.unibo.it/apps/LODE/source?url=http://www.essepuntato.it/tmp/1476252778-ontology">
-                Ontology source</a>
-            </dd>
-        </dl>
-    </div>
-    <hr>
-    <h2>Abstract</h2><span class="markdown">This Agreements Ontology is
-    designed to model 'agreements' which are social contracts that include
-    licenses, laws, contracts, Memoranda of Understanding, standards and
-    definitional metadata. Its purpose is to support data sharing by making
-    explicit the relationships between agreements and data and agreements and
-    Agents (people and organisations). Eventually it will also help with the
-    interplay between different classes of agreements.</span>
-    <div id="toc">
-        <h2>Table of Content</h2>
-        <ol>
-            <li>
-                <a href="#classes">Classes</a>
-            </li>
-            <li>
-                <a href="#objectproperties">Object Properties</a>
-            </li>
-            <li>
-                <a href="#namedindividuals">Named Individuals</a>
-            </li>
-            <li>
-                <a href="#namespacedeclarations">Namespace Declarations</a>
-            </li>
-        </ol>
-    </div>
-    <div id="classes">
-        <h2>Classes</h2>
-        <ul class="hlist">
-            <li>
-                <a href="#d4e3386" title=
-                "http://promsns.org/def/agr#Agreement">Agreement</a>
-            </li>
-            <li>
-                <a href="#d4e3412" title=
-                "http://promsns.org/def/agr#Requirement">Requirement</a>
-            </li>
-            <li>
-                <a href="#d4e3439" title=
-                "http://promsns.org/def/agr#RequirementLevel">Requirement Level</a>
-            </li>
-            <li>
-                <a href="#RequirementResolution" title=
-                "http://promsns.org/def/agr#RequirementResolution">Requirement Resolution</a>
-            </li>
-        </ul>
-        <div class="entity" id="Agreement">
-            <a id="http://promsns.org/def/agr#Agreement" name=
-            "http://promsns.org/def/agr#Agreement"></a>
-            <h3>Agreement<sup class="type-c" title="class">c</sup> <span class=
-            "backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#classes">Class ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#Agreement</p>
-            <div class="comment">
-                <span class="markdown">A description of a set of required
-                actions by particular agents. All the required actions are
-                detailed in Requirements class objects that this is a
-                Collection of so the Agreement is just a container</span>
-            </div>
-            <dl class="description">
-                <dt>has super-classes</dt>
-                <dd><span class="dotted" title=
-                "http://www.w3.org/2004/02/skos/core#Collection">collection</span></dd>
-                <dd><span class="dotted" title=
-                "http://www.w3.org/ns/prov#Plan">plan</span></dd>
-                <dd>
-                    <a href="#d4e2274" title=
-                    "http://promsns.org/def/agr#requires">requires</a><sup class="type-op"
-                    title="object property">op</sup> <span class=
-                    "logic">min</span> 1
-                </dd>
-                <dt>is in domain of</dt>
-                <dd>
-                    <a href="#d4e2201" title=
-                    "http://promsns.org/def/agr#hasScope">has
-                    scope</a><sup class="type-op" title=
-                    "object property">op</sup>, <a href="#d4e2221" title=
-                    "http://promsns.org/def/agr#hasWithinScope">has within
-                    scope</a><sup class="type-op" title=
-                    "object property">op</sup>, <a href="#d4e2274" title=
-                    "http://promsns.org/def/agr#requires">requires</a><sup class="type-op"
-                    title="object property">op</sup>
-                </dd>
-                <dt>is in range of</dt>
-                <dd>
-                    <a href="#d4e2254" title=
-                    "http://promsns.org/def/agr#requirementOf">requirement
-                    of</a><sup class="type-op" title=
-                    "object property">op</sup>, <a href="#d4e2335" title=
-                    "http://promsns.org/def/agr#scopeOf">scope
-                    of</a><sup class="type-op" title=
-                    "object property">op</sup>, <a href="#d4e2353" title=
-                    "http://promsns.org/def/agr#withinScopeOf">within
-                    scope</a><sup class="type-op" title=
-                    "object property">op</sup>
-                </dd>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Agreements ontology</title>
+        <link href="http://promsns.org/static/LODE/owl.css" rel="stylesheet" type="text/css" />
+        <link href="http://promsns.org/static/LODE/Primer.css" rel="stylesheet" type="text/css" />
+        <link href="http://promsns.org/static/LODE/rec.css" rel="stylesheet" type="text/css" />
+        <link href="http://promsns.org/static/LODE/extra.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="http://promsns.org/static/LODE/favicon.ico" />
+        <script src="http://promsns.org/static/LODE/jquery.js"></script>
+        <script src="http://promsns.org/static/LODE/jquery.scrollTo.js"></script>
+        <script src="http://promsns.org/static/LODE/marked.min.js"></script>
+        <script>
+            $(document).ready(
+                function () {
+                	jQuery(".markdown").each(function(el){
+            jQuery(this).after(marked(jQuery(this).text())).remove()});
+                    var list = $('a[id="http://www.essepuntato.it/tmp/1519163903-ontology"]');
+                    if (list.size() != 0) {
+                    	var element = list.first();
+                    	$.scrollTo(element);
+                    }
+                });
+        </script>
+    </head>
+    <body>
+        <div class="head">
+            <h1>Agreements ontology</h1>
+            <dl>
+                <dt>IRI:</dt>
+                <dd>http://promsns.org/def/agr</dd>
+                <dt>Version IRI:</dt>
+                <dd>http://promsns.org/def/agr/1.3</dd>
+            </dl>
+            <dl>
+                <dt>Current version:</dt>
+                <dd>1.3</dd>
+            </dl>
+            <dl>
+                <dt>Authors:</dt>
+                <dd><a href="http://orcid.org/0000-0002-8742-7730">http://orcid.org/0000-0002-8742-7730</a></dd>
+            </dl>
+            <dl>
+                <dt>Imported Ontologies:</dt>
+                <dd><a href="http://www.w3.org/ns/org">http://www.w3.org/ns/org</a></dd>
+                <dd><a href="http://www.w3.org/ns/prov-o#">http://www.w3.org/ns/prov-o#</a></dd>
+            </dl>
+            <dl>
+                <dt>Other formats:</dt>
+                <dd><a href="http://promsns.org/def/agr.ttl">Ontology source in RDF (turtle)</a></dd>
+            </dl>
+            <dl>
+                <dt>Further documentation &amp; examples:</dt>
+                <dd><a href="http://github.com/nicholascar/agr-ont">This ontology on GitHub</a></dd>
             </dl>
         </div>
-        <div class="entity" id="Requirement">
-            <a id="http://promsns.org/def/agr#Requirement" name=
-            "http://promsns.org/def/agr#Requirement"></a>
-            <h3>Requirement<sup class="type-c" title="class">c</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#classes">Class ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#Requirement</p>
-            <div class="comment">
-                <span class="markdown">This class is analagous to the Creative
-                Commons ontology formerly available. According to CC, a
-                Requirement is "an action that may or may not be requested of
-                you". In this ontology, it is only "an action that may be
-                requested of you"</span>
-            </div>
-            <dl class="description">
-                <dt>has super-classes</dt>
-                <dd><span class="dotted" title=
-                "http://www.w3.org/2004/02/skos/core#Concept">concept</span></dd>
-                <dd><span class="dotted" title=
-                "http://www.w3.org/ns/prov#Plan">plan</span></dd>
-                <dd>
-                    <a href="#d4e2239" title=
-                    "http://promsns.org/def/agr#requirementLevel">requirement
-                    level</a><sup class="type-op" title=
-                    "object property">op</sup> <span class=
-                    "logic">exactly</span> 1
-                </dd>
-                <dt>is in domain of</dt>
-                <dd>
-                    <a href="#d4e2239" title=
-                    "http://promsns.org/def/agr#requirementLevel">requirement
-                    level</a><sup class="type-op" title=
-                    "object property">op</sup>, <a href="#d4e2254" title=
-                    "http://promsns.org/def/agr#requirementOf">requirement
-                    of</a><sup class="type-op" title=
-                    "object property">op</sup>, <a href="#d4e2295" title=
-                    "http://promsns.org/def/agr#satisfiedBy">satisfied
-                    by</a><sup class="type-op" title="object property">op</sup>
-                </dd>
-                <dt>is in range of</dt>
-                <dd>
-                    <a href="#d4e2274" title=
-                    "http://promsns.org/def/agr#requires">requires</a><sup class="type-op"
-                    title="object property">op</sup>, <a href="#d4e2315" title=
-                    "http://promsns.org/def/agr#satisfies">satisfies</a><sup class="type-op"
-                    title="object property">op</sup>
-                </dd>
-            </dl>
+        <hr />
+        <h2>Abstract</h2>
+        <span class="markdown">This Agreements Ontology is designed to model 'agreements' which are social contracts that include licenses, laws, contracts, Memoranda of Understanding, standards and definitional metadata.
+        Agreements' porposes are to effect the behaviour of Agents that use Entities or undertake Activities. This ontology defines those effects as further actions (Requirment Resolutions) that satisfy stated Requirements articulated within the Agreement. The Requirement Resolutions can compelled to be performed with one of a number of different Imperatives such as MUST, SHOULD etc.
+        This ontology's purpose is to support data sharing by making explicit the relationships between agreements and data, agreements and actions and agreements and Agents (people and organisations). Eventually it will also help with the interplay between different classes of agreements.</span>
+        <div id="toc">
+            <h2>Table of Content</h2>
+            <ol>
+                <li><a href="#classes">Classes</a></li>
+                <li><a href="#objectproperties">Object Properties</a></li>
+                <li><a href="#namedindividuals">Named Individuals</a></li>
+                <li><a href="#annotationproperties">Annotation Properties</a></li>
+                <li><a href="#namespacedeclarations">Namespace Declarations</a></li>
+            </ol>
         </div>
-        <div class="entity" id="RequirementLevel">
-            <a id="http://promsns.org/def/agr#RequirementLevel" name=
-            "http://promsns.org/def/agr#RequirementLevel"></a>
-            <h3>Requirement Level<sup class="type-c" title="class">c</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#classes">Class ToC</a></span></h3>
-            <p><strong>IRI:</strong>
-            http://promsns.org/def/agr#RequirementLevel</p>
-            <div class="comment">
-                <span class="markdown">An RequirementLevel is the level at
-                which an Agreement complels the Agents it affects to action.
-                The initial instances of Imperative are taken from
-                RFC2119.</span>
+        <div id="img">
+      		<img src="agr.png" alt="Image of all Agreements ontology classes and properties">
+      		<p><em><strong>Figure 1</strong>: All the Agreements ontology classes and their properties</em></p>
+      	</div>
+        <div id="classes">
+            <h2>Classes</h2>
+            <ul class="hlist">
+                <li><a href="#Agreement" title="http://promsns.org/def/agr#Agreement">Agreement</a></li>
+                <li><a href="#Imperative" title="http://promsns.org/def/agr#Imperative">Imperative</a></li>
+                <li><a href="#License" title="http://promsns.org/def/agr#License"><span>license</span></a></li>
+                <li><a href="#Requirement" title="http://promsns.org/def/agr#Requirement">Requirement</a></li>
+                <li><a href="#RequirementResolution" title="http://promsns.org/def/agr#RequirementResolution">Requirement Resolution</a></li>
+            </ul>
+            <div id="Agreement" class="entity">
+                <a name="http://promsns.org/def/agr#Agreement"></a>
+                <h3>Agreement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#Agreement</p>
+                <div class="comment"><span class="markdown">A collection of Requirements.</span></div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/ns/prov#Collection">collection</span></dd>
+                    <dt>has sub-classes</dt>
+                    <dd><a href="#License" title="http://promsns.org/def/agr#License">license</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>is in range of</dt>
+                    <dd><a href="#hadAgreement" title="http://promsns.org/def/agr#hadAgreement">had agreement</a><sup title="object property" class="type-op">op</sup>, <span class="dotted" title="http://promsns.org/def/agr#requirementOf">requirement of</span>, <a href="#scopeOf" title="http://promsns.org/def/agr#scopeOf">scope of</a><sup title="object property" class="type-op">op</sup>, <a href="#withinScopeOf" title="http://promsns.org/def/agr#withinScopeOf">within scope</a><sup title="object property" class="type-op">op</sup></dd>
+                </dl>
             </div>
-            <dl class="description">
-                <dt>has super-classes</dt>
-                <dd><span class="dotted" title=
-                "http://www.w3.org/2004/02/skos/core#Concept">concept</span></dd>
-                <dt>is in range of</dt>
-                <dd>
-                    <a href="#d4e2239" title=
-                    "http://promsns.org/def/agr#requirementLevel">requirement
-                    level</a><sup class="type-op" title=
-                    "object property">op</sup>
-                </dd>
-                <dt>has members</dt>
-                <dd>
-                    <a href="#d4e3949" title=
-                    "http://promsns.org/def/agr#MAY">MAY</a><sup class=
-                    "type-ni" title="named individual">ni</sup>, <a href=
-                    "#d4e3960" title=
-                    "http://promsns.org/def/agr#MUST">MUST</a><sup class=
-                    "type-ni" title="named individual">ni</sup>, <a href=
-                    "#d4e3970" title="http://promsns.org/def/agr#MUST_NOT">MUST
-                    NOT</a><sup class="type-ni" title=
-                    "named individual">ni</sup>, <a href="#OPTIONAL" title=
-                    "http://promsns.org/def/agr#OPTIONAL">OPTIONAL</a><sup class="type-ni"
-                    title="named individual">ni</sup>, <a href="#RECOMMENDED"
-                    title="http://promsns.org/def/agr#RECOMMENDED">RECOMMENDED</a><sup class="type-ni"
-                    title="named individual">ni</sup>, <a href="#REQUIRED"
-                    title="http://promsns.org/def/agr#REQUIRED">REQUIRED</a><sup class="type-ni"
-                    title="named individual">ni</sup>, <a href="#SHALL"
-                    title="http://promsns.org/def/agr#SHALL">SHALL</a><sup class="type-ni"
-                    title="named individual">ni</sup>, <a href="#SHALL_NOT"
-                    title="http://promsns.org/def/agr#SHALL_NOT">SHALL
-                    NOT</a><sup class="type-ni" title=
-                    "named individual">ni</sup>, <a href="#SHOULD" title=
-                    "http://promsns.org/def/agr#SHOULD">SHOULD</a><sup class=
-                    "type-ni" title="named individual">ni</sup>, <a href=
-                    "#SHOULD_NOT" title=
-                    "http://promsns.org/def/agr#SHOULD_NOT">SHOULD
-                    NOT</a><sup class="type-ni" title=
-                    "named individual">ni</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="RequirementResolution">
-            <a id="http://promsns.org/def/agr#RequirementResolution" name=
-            "http://promsns.org/def/agr#RequirementResolution"></a>
-            <h3>Requirement Resolution<sup class="type-c" title="class">c</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#classes">Class ToC</a></span></h3>
-            <p><strong>IRI:</strong>
-            http://promsns.org/def/agr#RequirementResolution</p>
-            <div class="comment">
-                <span class="markdown">An action that resolves
-                requirements</span>
+            <div id="Imperative" class="entity">
+                <a name="http://promsns.org/def/agr#Imperative"></a>
+                <h3>Imperative<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#Imperative</p>
+                <div class="comment"><span class="markdown">An Imperative is the force with which a Requirement compels an Agents within the scope of an Agreement containing that Requirment to take action expressed in a RequirementResolution.</span></div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/ns/prov#Plan">plan</span></dd>
+                    <dt>is in range of</dt>
+                    <dd><a href="#hadImperative" title="http://promsns.org/def/agr#hadImperative">had imperative</a><sup title="object property" class="type-op">op</sup></dd>
+                </dl>
             </div>
-            <dl class="description">
-                <dt>has super-classes</dt>
-                <dd><span class="dotted" title=
-                "http://www.w3.org/2004/02/skos/core#Concept">concept</span></dd>
-                <dd><span class="dotted" title=
-                "http://www.w3.org/ns/prov#Activity">activity</span></dd>
-                <dd>
-                    <a href="#d4e2315" title=
-                    "http://promsns.org/def/agr#satisfies">satisfies</a><sup class="type-op"
-                    title="object property">op</sup> <span class=
-                    "logic">exactly</span> 1
-                </dd>
-                <dt>is in domain of</dt>
-                <dd>
-                    <a href="#d4e2315" title=
-                    "http://promsns.org/def/agr#satisfies">satisfies</a><sup class="type-op"
-                    title="object property">op</sup>
-                </dd>
-                <dt>is in range of</dt>
-                <dd>
-                    <a href="#d4e2295" title=
-                    "http://promsns.org/def/agr#satisfiedBy">satisfied
-                    by</a><sup class="type-op" title="object property">op</sup>
-                </dd>
-            </dl>
-        </div>
-    </div>
-    <div id="objectproperties">
-        <h2>Object Properties</h2>
-        <ul class="hlist">
-            <li>
-                <a href="#hasScope" title=
-                "http://promsns.org/def/agr#hasScope">has scope</a>
-            </li>
-            <li>
-                <a href="#hasWithinScope" title=
-                "http://promsns.org/def/agr#hasWithinScope">has within
-                scope</a>
-            </li>
-            <li>
-                <a href="#requirementLevel" title=
-                "http://promsns.org/def/agr#requirementLevel">requirement
-                level</a>
-            </li>
-            <li>
-                <a href="#requirementOf" title=
-                "http://promsns.org/def/agr#requirementOf">requirement of</a>
-            </li>
-            <li>
-                <a href="#requires" title=
-                "http://promsns.org/def/agr#requires">requires</a>
-            </li>
-            <li>
-                <a href="#d4e2295" title=
-                "http://promsns.org/def/agr#satisfiedBy">satisfied by</a>
-            </li>
-            <li>
-                <a href="#satisfies" title=
-                "http://promsns.org/def/agr#satisfies">satisfies</a>
-            </li>
-            <li>
-                <a href="#scopeOf" title=
-                "http://promsns.org/def/agr#scopeOf">scope of</a>
-            </li>
-            <li>
-                <a href="#withinScope" title=
-                "http://promsns.org/def/agr#withinScopeOf">within scope</a>
-            </li>
-        </ul>
-        <div class="entity" id="hasScope">
-            <a id="http://promsns.org/def/agr#hasScope" name=
-            "http://promsns.org/def/agr#hasScope"></a>
-            <h3>has scope<sup class="type-op" title="object property">op</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#objectproperties">Object Property ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#hasScope</p>
-            <div class="comment">
-                <span class="markdown">This property is the union (group) of
-                all Agents indicated as being within the scope of an Agreement
-                by the hasWithinScope property.</span>
+            <div id="License" class="entity">
+                <a name="http://promsns.org/def/agr#License"></a>
+                <h3>license<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#License</p>
+                <div class="comment"><span class="markdown">A specialised Agreement pertaining to licensing.
+                    This subclass introduces no restrictions to Agreement but is defined in this ontology due to the common expected use of Agreements for licenses. Its inclusion also indicated how (by subclassing) laws, MoUs and other specialised Agreements should be made.</span>
+                </div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><a href="#Agreement" title="http://promsns.org/def/agr#Agreement">Agreement</a><sup title="class" class="type-c">c</sup></dd>
+                </dl>
             </div>
-            <div class="description">
-                <dl>
-                    <dt>has super-properties</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#influenced">influenced</span></dd>
-                    <dt>has domain</dt>
-                    <dd>
-                        <a href="#Agreement" title=
-                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>has range</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#Agent">agent</span></dd>
-                    <dt>is inverse of</dt>
-                    <dd>
-                        <a href="#scopeOf" title=
-                        "http://promsns.org/def/agr#scopeOf">scope
-                        of</a><sup class="type-op" title=
-                        "object property">op</sup>
-                    </dd>
+            <div id="Requirement" class="entity">
+                <a name="http://promsns.org/def/agr#Requirement"></a>
+                <h3>Requirement<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#Requirement</p>
+                <div class="comment"><span class="markdown">An action that may be requested of an agent requiring demonstrable fullfillment via a RequirmentResolution action with an imperative given by a RequirementLevel. The RequirmentResolution is thus conducted in accordance with the instructions implicit or explicit in the Requirement.
+                    A Requrement is a specialised version of both a Creative Commons Requirement (a cc:Requirement is "an action that may or may not be requested of you") and a prov:Plan ("A plan is an entity that represents a set of actions or steps intended by one or more agents to achieve some goals").</span>
+                </div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/ns/prov#Plan">plan</span></dd>
+                    <dd><span class="dotted" title="https://creativecommons.org/ns#Requirement">requirement</span><sup title="class" class="type-c">c</sup></dd>
+                    <dd><a href="#hadImperative" title="http://promsns.org/def/agr#hadImperative">had imperative</a><sup title="object property" class="type-op">op</sup> <span class="logic">exactly</span> 1 <a href="#Imperative" title="http://promsns.org/def/agr#Imperative">Imperative</a><sup title="class" class="type-c">c</sup></dd>
+                    <dd><a href="#wasMemberOf" title="http://promsns.org/def/agr#wasMemberOf">was member of</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <a href="#Agreement" title="http://promsns.org/def/agr#Agreement">Agreement</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>is in range of</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#requires">requires</span>, <a href="#satisfies" title="http://promsns.org/def/agr#satisfies">satisfies</a><sup title="object property" class="type-op">op</sup></dd>
+                </dl>
+            </div>
+            <div id="RequirementResolution" class="entity">
+                <a name="http://promsns.org/def/agr#RequirementResolution"></a>
+                <h3>Requirement Resolution<sup title="class" class="type-c">c</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#RequirementResolution</p>
+                <div class="comment"><span class="markdown">An action (a prov:Activity) that resolves one or more Requirements.
+                    Since a Requirement is a subclass of prov:Plan, a Requirement Resolution is then a prov:Activity which is conducted according to the Plan.</span>
+                </div>
+                <dl class="description">
+                    <dt>has super-classes</dt>
+                    <dd><span class="dotted" title="http://www.w3.org/ns/prov#Activity">activity</span></dd>
+                    <dd><a href="#satisfies" title="http://promsns.org/def/agr#satisfies">satisfies</a><sup title="object property" class="type-op">op</sup> <span class="logic">some</span> <a href="#Requirement" title="http://promsns.org/def/agr#Requirement">Requirement</a><sup title="class" class="type-c">c</sup></dd>
+                    <dt>is in domain of</dt>
+                    <dd><a href="#satisfies" title="http://promsns.org/def/agr#satisfies">satisfies</a><sup title="object property" class="type-op">op</sup></dd>
                 </dl>
             </div>
         </div>
-        <div class="entity" id="hasWithinScope">
-            <a id="http://promsns.org/def/agr#hasWithinScope" name=
-            "http://promsns.org/def/agr#hasWithinScope"></a>
-            <h3>has within scope<sup class="type-op" title=
-            "object property">op</sup> <span class="backlink">back to <a href=
-            "#toc">ToC</a> or <a href="#objectproperties">Object Property
-            ToC</a></span></h3>
-            <p><strong>IRI:</strong>
-            http://promsns.org/def/agr#hasWithinScope</p>
-            <div class="comment">
-                <span class="markdown">This property indicates an Agent
-                affected by an Agreement. It is likely that the Agent will be a
-                group (foaf:Group) or an Organization (org:Organisation) rather
-                than an individual person and certainly not a machine Agent.
-                Individual Agents indicated as being affected by an Agreement
-                via this property collectively make a group, formal or
-                informal, that can be indicated as being the entire scope group
-                of an Agreement via hasScopeOf property of it.</span>
+        <div id="objectproperties">
+            <h2>Object Properties</h2>
+            <ul class="hlist">
+                <li><a href="#hadAgreement" title="http://promsns.org/def/agr#hadAgreement">had agreement</a></li>
+                <li><a href="#hadImperative" title="http://promsns.org/def/agr#hadImperative">had imperative</a></li>
+                <li><a href="#hadScope" title="http://promsns.org/def/agr#hadScope"><span>had scope</span></a></li>
+                <li><a href="#satisfiedBy" title="http://promsns.org/def/agr#satisfiedBy"><span>satisfied by</span></a></li>
+                <li><a href="#satisfies" title="http://promsns.org/def/agr#satisfies">satisfies</a></li>
+                <li><a href="#scopeOf" title="http://promsns.org/def/agr#scopeOf">scope of</a></li>
+                <li><a href="#wasMemberOf" title="http://promsns.org/def/agr#wasMemberOf"><span>was member of</span></a></li>
+                <li><a href="#withinScopeOf" title="http://promsns.org/def/agr#withinScopeOf">within scope</a></li>
+            </ul>
+            <div id="hadAgreement" class="entity">
+                <a name="http://promsns.org/def/agr#hadAgreement"></a>
+                <h3>had agreement<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#hadAgreement</p>
+                <div class="comment"><span class="markdown">Anything (an endurant thing like a Dataset or a Car) or a perdurant thing (like a course of action or a process) can have a related Agreement that affects Agents related to the production, use or agency related to the thing.
+                    The way Agreements affect Agents is through the articulation of Requirements - required actions - which exist with varying imperatives.</span>
+                </div>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#Agreement" title="http://promsns.org/def/agr#Agreement">Agreement</a><sup title="class" class="type-c">c</sup></dd>
+                    </dl>
+                </div>
             </div>
-            <div class="description">
-                <dl>
-                    <dt>has super-properties</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#influenced">influenced</span></dd>
-                    <dt>has domain</dt>
-                    <dd>
-                        <a href="#Agreement" title=
-                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>has range</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#Agent">agent</span></dd>
-                    <dt>is inverse of</dt>
-                    <dd>
-                        <a href="#withinScope" title=
-                        "http://promsns.org/def/agr#withinScopeOf">within
-                        scope</a><sup class="type-op" title=
-                        "object property">op</sup>
-                    </dd>
+            <div id="hadImperative" class="entity">
+                <a name="http://promsns.org/def/agr#hadImperative"></a>
+                <h3>had imperative<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#hadImperative</p>
+                <div class="comment"><span class="markdown">Something (permissive domain for this property) had an imperative according to a particular Imperative.
+                    e.g. Requirement X: "Undertake Action Y" hadImperative agr:MUST
+                    This indicates the Requirment MUST be stafisfied by the undertaking of Action Y.
+                    The Imperative individuals are sources from RFC2119 (https://www.ietf.org/rfc/rfc2119.txt).</span>
+                </div>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#hadPlan">had plan</span></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#Imperative" title="http://promsns.org/def/agr#Imperative">Imperative</a><sup title="class" class="type-c">c</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="hadScope" class="entity">
+                <a name="http://promsns.org/def/agr#hadScope"></a>
+                <h3>had scope<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#hadScope</p>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span></dd>
+                        <dt>is inverse of</dt>
+                        <dd><a href="#scopeOf" title="http://promsns.org/def/agr#scopeOf">scope of</a><sup title="object property" class="type-op">op</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="satisfiedBy" class="entity">
+                <a name="http://promsns.org/def/agr#satisfiedBy"></a>
+                <h3>satisfied by<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#satisfiedBy</p>
+                <div class="comment"><span class="markdown">satisfied by</span></div>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span></dd>
+                        <dt>is inverse of</dt>
+                        <dd><a href="#satisfies" title="http://promsns.org/def/agr#satisfies">satisfies</a><sup title="object property" class="type-op">op</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="satisfies" class="entity">
+                <a name="http://promsns.org/def/agr#satisfies"></a>
+                <h3>satisfies<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#satisfies</p>
+                <div class="comment"><span class="markdown">A Requirement Resolution may satisfy Requirement(s)</span></div>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span></dd>
+                        <dt>has domain</dt>
+                        <dd><a href="#RequirementResolution" title="http://promsns.org/def/agr#RequirementResolution">Requirement Resolution</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#Requirement" title="http://promsns.org/def/agr#Requirement">Requirement</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>is inverse of</dt>
+                        <dd><a href="#satisfiedBy" title="http://promsns.org/def/agr#satisfiedBy">satisfied by</a><sup title="object property" class="type-op">op</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="scopeOf" class="entity">
+                <a name="http://promsns.org/def/agr#scopeOf"></a>
+                <h3>scope of<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#scopeOf</p>
+                <div class="comment"><span class="markdown">An Agent is within the scopeOf an Agreement if that Agent, or members of it if it is a collection Agent such as a Group or Organisation, are bound by that Agreement's requirements within a certain Agreement use scenario.</span></div>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#Agreement" title="http://promsns.org/def/agr#Agreement">Agreement</a><sup title="class" class="type-c">c</sup></dd>
+                        <dt>is inverse of</dt>
+                        <dd><a href="#hadScope" title="http://promsns.org/def/agr#hadScope">had scope</a><sup title="object property" class="type-op">op</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="wasMemberOf" class="entity">
+                <a name="http://promsns.org/def/agr#wasMemberOf"></a>
+                <h3>was member of<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#wasMemberOf</p>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span></dd>
+                        <dt>is inverse of</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#hadMember">had member</span></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="withinScopeOf" class="entity">
+                <a name="http://promsns.org/def/agr#withinScopeOf"></a>
+                <h3>within scope<sup title="object property" class="type-op">op</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#withinScopeOf</p>
+                <div class="comment"><span class="markdown">inverse of hasWithinScope</span></div>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://www.w3.org/ns/prov#wasInfluencedBy">was influenced by</span></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#Agreement" title="http://promsns.org/def/agr#Agreement">Agreement</a><sup title="class" class="type-c">c</sup></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div id="namedindividuals">
+            <h2>Named Individuals</h2>
+            <ul class="hlist">
+                <li><a href="#MAY" title="http://promsns.org/def/agr#MAY">MAY</a></li>
+                <li><a href="#MUST" title="http://promsns.org/def/agr#MUST">MUST</a></li>
+                <li><a href="#MUST_NOT" title="http://promsns.org/def/agr#MUST_NOT">MUST NOT</a></li>
+                <li><a href="#d4e411" title="https://orcid.org/0000-0002-8742-7730">Nicholas Car</a></li>
+                <li><a href="#OPTIONAL" title="http://promsns.org/def/agr#OPTIONAL">OPTIONAL</a></li>
+                <li><a href="#RECOMMENDED" title="http://promsns.org/def/agr#RECOMMENDED">RECOMMENDED</a></li>
+                <li><a href="#REQUIRED" title="http://promsns.org/def/agr#REQUIRED">REQUIRED</a></li>
+                <li><a href="#SHALL" title="http://promsns.org/def/agr#SHALL">SHALL</a></li>
+                <li><a href="#SHALL_NOT" title="http://promsns.org/def/agr#SHALL_NOT">SHALL NOT</a></li>
+                <li><a href="#SHOULD" title="http://promsns.org/def/agr#SHOULD">SHOULD</a></li>
+                <li><a href="#SHOULD_NOT" title="http://promsns.org/def/agr#SHOULD_NOT">SHOULD NOT</a></li>
+            </ul>
+            <div id="MAY" class="entity">
+                <a name="http://promsns.org/def/agr#MAY"></a>
+                <h3>MAY<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#MAY</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="MUST" class="entity">
+                <a name="http://promsns.org/def/agr#MUST"></a>
+                <h3>MUST<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#MUST</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="MUST_NOT" class="entity">
+                <a name="http://promsns.org/def/agr#MUST_NOT"></a>
+                <h3>MUST NOT<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#MUST_NOT</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="d4e411" class="entity">
+                <a name="https://orcid.org/0000-0002-8742-7730"></a>
+                <h3>Nicholas Car<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> https://orcid.org/0000-0002-8742-7730</p>
+                <div class="comment"><span class="markdown">Contact Nicholas on nicholas.car@csiro.au</span></div>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://purl.org/dc/terms/Agent">agent</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="OPTIONAL" class="entity">
+                <a name="http://promsns.org/def/agr#OPTIONAL"></a>
+                <h3>OPTIONAL<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#OPTIONAL</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="RECOMMENDED" class="entity">
+                <a name="http://promsns.org/def/agr#RECOMMENDED"></a>
+                <h3>RECOMMENDED<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#RECOMMENDED</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="REQUIRED" class="entity">
+                <a name="http://promsns.org/def/agr#REQUIRED"></a>
+                <h3>REQUIRED<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#REQUIRED</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="SHALL" class="entity">
+                <a name="http://promsns.org/def/agr#SHALL"></a>
+                <h3>SHALL<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#SHALL</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="SHALL_NOT" class="entity">
+                <a name="http://promsns.org/def/agr#SHALL_NOT"></a>
+                <h3>SHALL NOT<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#SHALL_NOT</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="SHOULD" class="entity">
+                <a name="http://promsns.org/def/agr#SHOULD"></a>
+                <h3>SHOULD<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#SHOULD</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
+                </dl>
+            </div>
+            <div id="SHOULD_NOT" class="entity">
+                <a name="http://promsns.org/def/agr#SHOULD_NOT"></a>
+                <h3>SHOULD NOT<sup title="named individual" class="type-ni">ni</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#namedindividuals">Named Individual ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#SHOULD_NOT</p>
+                <dl class="description">
+                    <dt>belongs to</dt>
+                    <dd><span class="dotted" title="http://promsns.org/def/agr#RequirementLevel">requirement level</span><sup title="class" class="type-c">c</sup></dd>
                 </dl>
             </div>
         </div>
-        <div class="entity" id="requirementLevel">
-            <a id="http://promsns.org/def/agr#requirementLevel" name=
-            "http://promsns.org/def/agr#requirementLevel"></a>
-            <h3>requirement level<sup class="type-op" title=
-            "object property">op</sup> <span class="backlink">back to <a href=
-            "#toc">ToC</a> or <a href="#objectproperties">Object Property
-            ToC</a></span></h3>
-            <p><strong>IRI:</strong>
-            http://promsns.org/def/agr#requirementLevel</p>
-            <div class="comment">
-                <span class="markdown">a Requirement has a requirementLevel of
-                a RequirementLevel</span>
+        <div id="annotationproperties">
+            <h2>Annotation Properties</h2>
+            <ul class="hlist">
+                <li><a href="#d4e55" title="http://purl.org/dc/terms/hasPart"><span>has part</span></a></li>
+                <li><a href="#d4e59" title="http://purl.org/dc/terms/isPartOf"><span>is part of</span></a></li>
+                <li><a href="#requirementOf" title="http://promsns.org/def/agr#requirementOf"><span>requirement of</span></a></li>
+                <li><a href="#requires" title="http://promsns.org/def/agr#requires"><span>requires</span></a></li>
+                <li><a href="#d4e64" title="http://purl.org/dc/terms/source"><span>source</span></a></li>
+            </ul>
+            <div id="d4e55" class="entity">
+                <a name="http://purl.org/dc/terms/hasPart"></a>
+                <h3>has part<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/dc/terms/hasPart</p>
+                <div class="description">
+                    <dl>
+                        <dt>has sub-properties</dt>
+                        <dd><a href="#requires" title="http://promsns.org/def/agr#requires">requires</a><sup title="annotation property" class="type-ap">ap</sup></dd>
+                    </dl>
+                </div>
             </div>
-            <div class="description">
-                <dl>
-                    <dt>has domain</dt>
-                    <dd>
-                        <a href="#Requirement" title=
-                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>has range</dt>
-                    <dd>
-                        <a href="#RequirementLevel" title=
-                        "http://promsns.org/def/agr#RequirementLevel">Requirement
-                        Level</a><sup class="type-c" title="class">c</sup>
-                    </dd>
-                </dl>
+            <div id="d4e59" class="entity">
+                <a name="http://purl.org/dc/terms/isPartOf"></a>
+                <h3>is part of<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/dc/terms/isPartOf</p>
+                <div class="description">
+                    <dl>
+                        <dt>has sub-properties</dt>
+                        <dd><a href="#requirementOf" title="http://promsns.org/def/agr#requirementOf">requirement of</a><sup title="annotation property" class="type-ap">ap</sup></dd>
+                    </dl>
+                </div>
             </div>
-        </div>
-        <div class="entity" id="requirementOf">
-            <a id="http://promsns.org/def/agr#requirementOf" name=
-            "http://promsns.org/def/agr#requirementOf"></a>
-            <h3>requirement of<sup class="type-op" title=
-            "object property">op</sup> <span class="backlink">back to <a href=
-            "#toc">ToC</a> or <a href="#objectproperties">Object Property
-            ToC</a></span></h3>
-            <p><strong>IRI:</strong>
-            http://promsns.org/def/agr#requirementOf</p>
-            <div class="comment">
-                <span class="markdown">A Requirement is a requirementOf an
-                Agreement</span>
+            <div id="requirementOf" class="entity">
+                <a name="http://promsns.org/def/agr#requirementOf"></a>
+                <h3>requirement of<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#requirementOf</p>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://purl.org/dc/terms/isPartOf">is part of</span><sup title="annotation property" class="type-ap">ap</sup></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#Agreement" title="http://promsns.org/def/agr#Agreement">Agreement</a><sup title="class" class="type-c">c</sup></dd>
+                    </dl>
+                </div>
             </div>
-            <div class="description">
-                <p><strong>has characteristics:</strong> inverse functional</p>
-                <dl>
-                    <dt>has super-properties</dt>
-                    <dd><span class="dotted" title=
-                    "http://purl.org/dc/terms/isPartOf">Is Part Of</span></dd>
-                    <dt>has domain</dt>
-                    <dd>
-                        <a href="#Requirement" title=
-                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>has range</dt>
-                    <dd>
-                        <a href="#Agreement" title=
-                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>is inverse of</dt>
-                    <dd>
-                        <a href="#requires" title=
-                        "http://promsns.org/def/agr#requires">requires</a><sup class="type-op"
-                        title="object property">op</sup>
-                    </dd>
-                </dl>
+            <div id="requires" class="entity">
+                <a name="http://promsns.org/def/agr#requires"></a>
+                <h3>requires<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://promsns.org/def/agr#requires</p>
+                <div class="description">
+                    <dl>
+                        <dt>has super-properties</dt>
+                        <dd><span class="dotted" title="http://purl.org/dc/terms/hasPart">has part</span><sup title="annotation property" class="type-ap">ap</sup></dd>
+                        <dt>has range</dt>
+                        <dd><a href="#Requirement" title="http://promsns.org/def/agr#Requirement">Requirement</a><sup title="class" class="type-c">c</sup></dd>
+                    </dl>
+                </div>
+            </div>
+            <div id="d4e64" class="entity">
+                <a name="http://purl.org/dc/terms/source"></a>
+                <h3>source<sup title="annotation property" class="type-ap">ap</sup><span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#annotationproperties">Annotation Property ToC</a></span></h3>
+                <p><strong>IRI:</strong> http://purl.org/dc/terms/source</p>
             </div>
         </div>
-        <div class="entity" id="requires">
-            <a id="http://promsns.org/def/agr#requires" name=
-            "http://promsns.org/def/agr#requires"></a>
-            <h3>requires<sup class="type-op" title="object property">op</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#objectproperties">Object Property ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#requires</p>
-            <div class="comment">
-                <span class="markdown">An Agreement requires a
-                Requirement</span>
-            </div>
-            <div class="description">
-                <dl>
-                    <dt>has super-properties</dt>
-                    <dd><span class="dotted" title=
-                    "http://purl.org/dc/terms/hasPart">Has Part</span></dd>
-                    <dt>has domain</dt>
-                    <dd>
-                        <a href="#Agreement" title=
-                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>has range</dt>
-                    <dd>
-                        <a href="#Requirement" title=
-                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>is inverse of</dt>
-                    <dd>
-                        <a href="#requirementOf" title=
-                        "http://promsns.org/def/agr#requirementOf">requirement
-                        of</a><sup class="type-op" title=
-                        "object property">op</sup>
-                    </dd>
-                </dl>
-            </div>
-        </div>
-        <div class="entity" id="satisfiedBy">
-            <a id="http://promsns.org/def/agr#satisfiedBy" name=
-            "http://promsns.org/def/agr#satisfiedBy"></a>
-            <h3>satisfied by<sup class="type-op" title=
-            "object property">op</sup> <span class="backlink">back to <a href=
-            "#toc">ToC</a> or <a href="#objectproperties">Object Property
-            ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#satisfiedBy</p>
-            <div class="comment">
-                <span class="markdown">inverse of satisfies</span>
-            </div>
-            <div class="description">
-                <p><strong>has characteristics:</strong> inverse functional</p>
-                <dl>
-                    <dt>has super-properties</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#influenced">influenced</span></dd>
-                    <dt>has domain</dt>
-                    <dd>
-                        <a href="#Requirement" title=
-                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>has range</dt>
-                    <dd>
-                        <a href="#RequirementResolution" title=
-                        "http://promsns.org/def/agr#RequirementResolution">Requirement
-                        Resolution</a><sup class="type-c" title="class">c</sup>
-                    </dd>
-                    <dt>is inverse of</dt>
-                    <dd>
-                        <a href="#satisfies" title=
-                        "http://promsns.org/def/agr#satisfies">satisfies</a><sup class="type-op"
-                        title="object property">op</sup>
-                    </dd>
-                </dl>
-            </div>
-        </div>
-        <div class="entity" id="satisfies">
-            <a id="http://promsns.org/def/agr#satisfies" name=
-            "http://promsns.org/def/agr#satisfies"></a>
-            <h3>satisfies<sup class="type-op" title="object property">op</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#objectproperties">Object Property ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#satisfies</p>
-            <div class="comment">
-                <span class="markdown">a Requirement Resolution satisfies a
-                Requirement</span>
-            </div>
-            <div class="description">
-                <dl>
-                    <dt>has super-properties</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#wasInfluencedBy">was influenced
-                    by</span></dd>
-                    <dt>has domain</dt>
-                    <dd>
-                        <a href="#RequirementResolution" title=
-                        "http://promsns.org/def/agr#RequirementResolution">Requirement
-                        Resolution</a><sup class="type-c" title="class">c</sup>
-                    </dd>
-                    <dt>has range</dt>
-                    <dd>
-                        <a href="#Requirement" title=
-                        "http://promsns.org/def/agr#Requirement">Requirement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>is inverse of</dt>
-                    <dd>
-                        <a href="#satisfiedBy" title=
-                        "http://promsns.org/def/agr#satisfiedBy">satisfied
-                        by</a><sup class="type-op" title=
-                        "object property">op</sup>
-                    </dd>
-                </dl>
-            </div>
-        </div>
-        <div class="entity" id="scopeOf">
-            <a id="http://promsns.org/def/agr#scopeOf" name=
-            "http://promsns.org/def/agr#scopeOf"></a>
-            <h3>scope of<sup class="type-op" title="object property">op</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#objectproperties">Object Property ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#scopeOf</p>
-            <div class="comment">
-                <span class="markdown">inverse of hasScopeOf</span>
-            </div>
-            <div class="description">
-                <dl>
-                    <dt>has super-properties</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#wasInfluencedBy">was influenced
-                    by</span></dd>
-                    <dt>has domain</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#Agent">agent</span></dd>
-                    <dt>has range</dt>
-                    <dd>
-                        <a href="#Agreement" title=
-                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>is inverse of</dt>
-                    <dd>
-                        <a href="#hasScope" title=
-                        "http://promsns.org/def/agr#hasScope">has
-                        scope</a><sup class="type-op" title=
-                        "object property">op</sup>
-                    </dd>
-                </dl>
-            </div>
-        </div>
-        <div class="entity" id="withinScope">
-            <a id="http://promsns.org/def/agr#withinScopeOf" name=
-            "http://promsns.org/def/agr#withinScopeOf"></a>
-            <h3>within scope<sup class="type-op" title=
-            "object property">op</sup> <span class="backlink">back to <a href=
-            "#toc">ToC</a> or <a href="#objectproperties">Object Property
-            ToC</a></span></h3>
-            <p><strong>IRI:</strong>
-            http://promsns.org/def/agr#withinScopeOf</p>
-            <div class="comment">
-                <span class="markdown">inverse of hasWithinScope</span>
-            </div>
-            <div class="description">
-                <dl>
-                    <dt>has super-properties</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#wasInfluencedBy">was influenced
-                    by</span></dd>
-                    <dt>has domain</dt>
-                    <dd><span class="dotted" title=
-                    "http://www.w3.org/ns/prov#Agent">agent</span></dd>
-                    <dt>has range</dt>
-                    <dd>
-                        <a href="#Agreement" title=
-                        "http://promsns.org/def/agr#Agreement">Agreement</a><sup class="type-c"
-                        title="class">c</sup>
-                    </dd>
-                    <dt>is inverse of</dt>
-                    <dd>
-                        <a href="#hasWithinScope" title=
-                        "http://promsns.org/def/agr#hasWithinScope">has within
-                        scope</a><sup class="type-op" title=
-                        "object property">op</sup>
-                    </dd>
-                </dl>
-            </div>
-        </div>
-    </div>
-    <div id="namedindividuals">
-        <h2>Named Individuals</h2>
-        <ul class="hlist">
-            <li>
-                <a href="#agr-o" title=
-                "http://promsns.org/def/agr"><span>Agreements
-                ontology</span></a>
-            </li>
-            <li>
-                <a href="#MAY" title=
-                "http://promsns.org/def/agr#MAY">MAY</a>
-            </li>
-            <li>
-                <a href="#MUST" title=
-                "http://promsns.org/def/agr#MUST">MUST</a>
-            </li>
-            <li>
-                <a href="#MUST_NOT" title=
-                "http://promsns.org/def/agr#MUST_NOT">MUST NOT</a>
-            </li>
-            <li>
-                <a href="#OPTIONAL" title=
-                "http://promsns.org/def/agr#OPTIONAL">OPTIONAL</a>
-            </li>
-            <li>
-                <a href="#RECOMMENDED" title=
-                "http://promsns.org/def/agr#RECOMMENDED">RECOMMENDED</a>
-            </li>
-            <li>
-                <a href="#REQUIRED" title=
-                "http://promsns.org/def/agr#REQUIRED">REQUIRED</a>
-            </li>
-            <li>
-                <a href="#SHALL" title=
-                "http://promsns.org/def/agr#SHALL">SHALL</a>
-            </li>
-            <li>
-                <a href="#SHALL_NOT" title=
-                "http://promsns.org/def/agr#SHALL_NOT">SHALL NOT</a>
-            </li>
-            <li>
-                <a href="#SHOULD" title=
-                "http://promsns.org/def/agr#SHOULD">SHOULD</a>
-            </li>
-            <li>
-                <a href="#SHOULD_NOT" title=
-                "http://promsns.org/def/agr#SHOULD_NOT">SHOULD NOT</a>
-            </li>
-        </ul>
-        <div class="entity" id="agr-o">
-            <a id="http://promsns.org/def/agr" name=
-            "http://promsns.org/def/agr"></a>
-            <h3>Agreements ontology<sup class="type-ni" title=
-            "named individual">ni</sup> <span class="backlink">back to <a href=
-            "#toc">ToC</a> or <a href="#namedindividuals">Named Individual
-            ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr</p>
-            <dl class="description">
-                <dt>has facts</dt>
-                <dd>
-                    <a href="#d4e3125" title=
-                    "http://purl.org/dc/terms/created">Date
-                    Created</a><sup class="type-dp" title=
-                    "data property">dp</sup> <span class=
-                    "literal">"2016-09-12"^^<span class="dotted" title=
-                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
-                </dd>
-                <dd>
-                    <a href="#d4e3309" title=
-                    "http://purl.org/dc/terms/modified">Date
-                    Modified</a><sup class="type-dp" title=
-                    "data property">dp</sup> <span class=
-                    "literal">"2016-10-09"^^<span class="dotted" title=
-                    "http://www.w3.org/2001/XMLSchema#date">date</span></span>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="MAY">
-            <a id="http://promsns.org/def/agr#MAY" name=
-            "http://promsns.org/def/agr#MAY"></a>
-            <h3>MAY<sup class="type-ni" title="named individual">ni</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#namedindividuals">Named Individual ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#MAY</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="MUST">
-            <a id="http://promsns.org/def/agr#MUST" name=
-            "http://promsns.org/def/agr#MUST"></a>
-            <h3>MUST<sup class="type-ni" title="named individual">ni</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#namedindividuals">Named Individual ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#MUST</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="MUST_NOT">
-            <a id="http://promsns.org/def/agr#MUST_NOT" name=
-            "http://promsns.org/def/agr#MUST_NOT"></a>
-            <h3>MUST NOT<sup class="type-ni" title="named individual">ni</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#namedindividuals">Named Individual ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#MUST_NOT</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="OPTIONAL">
-            <a id="http://promsns.org/def/agr#OPTIONAL" name=
-            "http://promsns.org/def/agr#OPTIONAL"></a>
-            <h3>OPTIONAL<sup class="type-ni" title="named individual">ni</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#namedindividuals">Named Individual ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#OPTIONAL</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="RECOMMENDED">
-            <a id="http://promsns.org/def/agr#RECOMMENDED" name=
-            "http://promsns.org/def/agr#RECOMMENDED"></a>
-            <h3>RECOMMENDED<sup class="type-ni" title=
-            "named individual">ni</sup> <span class="backlink">back to <a href=
-            "#toc">ToC</a> or <a href="#namedindividuals">Named Individual
-            ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#RECOMMENDED</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="REQUIRED">
-            <a id="http://promsns.org/def/agr#REQUIRED" name=
-            "http://promsns.org/def/agr#REQUIRED"></a>
-            <h3>REQUIRED<sup class="type-ni" title="named individual">ni</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#namedindividuals">Named Individual ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#REQUIRED</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="SHALL">
-            <a id="http://promsns.org/def/agr#SHALL" name=
-            "http://promsns.org/def/agr#SHALL"></a>
-            <h3>SHALL<sup class="type-ni" title="named individual">ni</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#namedindividuals">Named Individual ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#SHALL</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="SHALL_NOT">
-            <a id="http://promsns.org/def/agr#SHALL_NOT" name=
-            "http://promsns.org/def/agr#SHALL_NOT"></a>
-            <h3>SHALL NOT<sup class="type-ni" title="named individual">ni</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#namedindividuals">Named Individual ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#SHALL_NOT</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="SHOULD">
-            <a id="http://promsns.org/def/agr#SHOULD" name=
-            "http://promsns.org/def/agr#SHOULD"></a>
-            <h3>SHOULD<sup class="type-ni" title="named individual">ni</sup>
-            <span class="backlink">back to <a href="#toc">ToC</a> or <a href=
-            "#namedindividuals">Named Individual ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#SHOULD</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-        <div class="entity" id="SHOULD_NOT">
-            <a id="http://promsns.org/def/agr#SHOULD_NOT" name=
-            "http://promsns.org/def/agr#SHOULD_NOT"></a>
-            <h3>SHOULD NOT<sup class="type-ni" title=
-            "named individual">ni</sup> <span class="backlink">back to <a href=
-            "#toc">ToC</a> or <a href="#namedindividuals">Named Individual
-            ToC</a></span></h3>
-            <p><strong>IRI:</strong> http://promsns.org/def/agr#SHOULD_NOT</p>
-            <dl class="description">
-                <dt>belongs to</dt>
-                <dd>
-                    <a href="#RequirementLevel" title=
-                    "http://promsns.org/def/agr#RequirementLevel">Requirement
-                    Level</a><sup class="type-c" title="class">c</sup>
-                </dd>
-            </dl>
-        </div>
-    </div>
-    <div id="namespacedeclarations">
-        <h2>Namespace Declarations <span class="backlink">back to <a href=
-        "#toc">ToC</a></span></h2>
-        <dl>
+        <div id="namespacedeclarations">
+            <h2>Namespace Declarations <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+            <dl>
             <dt><em>default namespace</em></dt>
             <dd>http://promsns.org/def/agr#</dd>
-            <dt>creativecommons-org</dt>
-            <dd>http://creativecommons.org/</dd>
             <dt>dc</dt>
             <dd>http://purl.org/dc/elements/1.1/</dd>
             <dt>owl</dt>
@@ -978,18 +483,12 @@
             <dd>http://www.w3.org/1999/02/22-rdf-syntax-ns#</dd>
             <dt>rdfs</dt>
             <dd>http://www.w3.org/2000/01/rdf-schema#</dd>
-            <dt>skos</dt>
-            <dd>http://www.w3.org/2004/02/skos/core#</dd>
-            <dt>terms</dt>
+            <dt>dct</dt>
             <dd>http://purl.org/dc/terms/</dd>
             <dt>xsd</dt>
             <dd>http://www.w3.org/2001/XMLSchema#</dd>
-        </dl>
-    </div>
-    <p class="endnote">This HTML document was obtained by processing the OWL
-    ontology source code through <a href=
-    "http://www.essepuntato.it/lode">LODE</a>, <em>Live OWL Documentation
-    Environment</em>, developed by <a href="http://www.essepuntato.it">Silvio
-    Peroni</a>.</p>
-</body>
+            </dl>
+        </div>
+        <p class="endnote">This HTML document was obtained by processing the OWL ontology source code through <a href="http://www.essepuntato.it/lode">LODE</a>, <em>Live OWL Documentation Environment</em>, developed by <a href="http://www.essepuntato.it">Silvio Peroni</a>.</p>
+    </body>
 </html>
