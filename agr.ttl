@@ -150,7 +150,8 @@ The Imperative individuals are sources from RFC2119 (https://www.ietf.org/rfc/rf
          rdfs:subClassOf :Agreement ;
          rdfs:comment """A specialised Agreement pertaining to licensing.
 
-This subclass introduces no restrictions to Agreement but is defined in this ontology due to the common expected use of Agreements for licenses. Its inclusion also indicated how (by subclassing) laws, MoUs and other specialised Agreements should be made."""@en .
+This subclass introduces no restrictions to Agreement but is defined in this ontology due to the common expected use of Agreements for licenses. Its inclusion also indicated how (by subclassing) laws, MoUs and other specialised Agreements should be made."""@en ;
+         rdfs:label "License"@en .
 
 
 ###  http://promsns.org/def/agr#Requirement
